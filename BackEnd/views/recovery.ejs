@@ -1,0 +1,50 @@
+<%- include ('partials/header.ejs') %>
+<body>
+    <div class="container">
+        <h3>Redefinição de senha!</h3>
+        <hr>
+        <h5>Sua senha deve conter os seguintes requisitos:</h5>
+        <ul>
+            <li>Ao menos 1 número</li>
+            <li>Ao menos 1 caractere especial (! @ $ % & *)</li>
+            <li>Ao menos 1 caractere maiúsculo</li>
+            <li>Tamanho maior ou igual a 6 caracteres</li>
+            <li>Os campos devem conter a mesma senha</li>
+        </ul>
+        <div class="form-group">
+            <form method="POST" action="/redefinepassword/<%= token %>">
+                <label>Nova Senha</label>
+                <input id="newpassword" type="password" name="newpassword" class="form-control" oninput="changeSubmitState()" required>
+                <label>Confirmar Nova Senha</label>
+                <input id="confirmnewpassword" type="password" name="confirmnewpassword" class="form-control" oninput="changeSubmitState()" required>
+                <br>
+                <button id="submit" type="submit" class="btn btn-success" disabled>Enviar</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+function checkPassword() {
+    if (document.getElementById('newpassword').value != document.getElementById('confirmnewpassword').value) {
+        return true
+    }
+    else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/.test(document.getElementById('newpassword').value)) {
+        return true;
+    }
+    else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/.test(document.getElementById('confirmnewpassword').value)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+function changeSubmitState() {
+    if(checkPassword()) {
+        document.getElementById('submit').disabled = true;
+    }
+    else {
+        document.getElementById('submit').disabled = false;
+    }
+}
+</script>
+<%- include ('partials/footer.ejs') %>

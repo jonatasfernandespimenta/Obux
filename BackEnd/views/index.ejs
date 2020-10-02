@@ -1,0 +1,16 @@
+<%- include ('partials/header.ejs') %>
+<body>
+    <div class="container">
+        <h3>Redefinição de senha!</h3>
+        <hr>
+        <div class="form-group">
+            <form method="POST" action="/request">
+                <label>Digite seu e-mail</label>
+                <input type="email" name="email" class="form-control" required>
+                <br>
+                <button type="submit" class="btn btn-success">Enviar</button>
+            </form>
+        </div>
+    </div>
+</body>
+<%- include ('partials/footer.ejs') %>
