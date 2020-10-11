@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Login from '../../Components/Login';
+import Login from '../../Screens/Login';
 
 import { login } from '../../services/api/usersApi';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Register from '../../Components/Register';
+import Register from '../../Screens/Register';
 
 import { createUser } from '../../services/api/usersApi';
 

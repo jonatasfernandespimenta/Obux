@@ -1,6 +1,6 @@
 import React, {useRef} from 'react';
 
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import {
   Container,
@@ -16,7 +16,7 @@ export default function InputComponent({ icon, iconColor, ...rest }) {
         <Container>
             {icon && (
                 <IconContainer>
-                    <Icon name={icon} color={iconColor || '#000'} size={16}/>
+                    <Icon name={icon} color={iconColor || '#fff'} size={16}/>
                 </IconContainer>
             )}
             <Input {...rest} ref={inputRef} />

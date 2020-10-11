@@ -17,6 +17,7 @@ export const Container = styled.View`
 export const IconContainer = styled.View`
   justify-content: center;
   align-items: center;
+  margin: 10px;
 `;
 
 export const Input = styled.TextInput`
