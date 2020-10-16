@@ -17,7 +17,7 @@ const Home = () => {
           <Book/><Book/><Book/><Book/><Book/><Book/><Book/><Book/><Book/><Book/><Book/><Book/>
         </Container>
       </Scroll>
-      <Menu />
+      <Menu/>
     </>
   );
 }

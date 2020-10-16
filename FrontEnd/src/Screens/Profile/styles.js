@@ -8,10 +8,10 @@ export const Container = styled.View`
 `;
 
 export const IconContainer = styled.TouchableOpacity`
-  justify-content: flex-start;
-  align-items: center;
-  margin-top: -185px;
-  margin-right: -350px;
+  align-items: flex-end;
+  position: absolute;
+  margin: 10px;
+  z-index: 1;
 `;
 
 export const H1 = styled.Text`
@@ -55,12 +55,13 @@ export const Text = styled.Text`
   color: white;
   font-size: 15px;
   width: 40%;
-  margin-left: 20px;
+  margin-left: 25px;
 `;
 
 export const InfoContainer = styled.View`
   padding: 50px;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   flex-wrap: wrap;
 `;
@@ -69,6 +70,8 @@ export const Pfp = styled.TouchableOpacity`
   margin-top: 100px;
   height: 160px;
   width: 160px;
+  align-items: center;
+  justify-content: center;
   border-radius: 100px;
   background-color: white;
   margin-bottom: 15px;

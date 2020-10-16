@@ -74,7 +74,7 @@ export default function Register({navigation, createUser}) {
         <Text style={{ color: 'white', marginBottom: 10 }}>Adicionar foto</Text>
 
         <Input
-          icon="account"
+          icon="user"
           iconColor="#fff"
           placeholder="Nome de Usuario"
           placeholderTextColor="white"
@@ -82,7 +82,7 @@ export default function Register({navigation, createUser}) {
           value={nome}
         />
         <Input
-          icon="email"
+          icon="envelope"
           iconColor="#fff"
           placeholder="E-mail"
           placeholderTextColor="white"
@@ -99,7 +99,7 @@ export default function Register({navigation, createUser}) {
           value={senha}
         />
         <Input
-          icon="lock-alert"
+          icon="lock"
           iconColor="#fff"
           placeholder="Confirmar Senha"
           secureTextEntry={true}
@@ -108,7 +108,7 @@ export default function Register({navigation, createUser}) {
           value={confirmSenha}
         />
         <Input
-          icon="account-card-details"
+          icon="address-card"
           iconColor="#fff"
           placeholder="CPF"
           placeholderTextColor="white"
@@ -124,7 +124,7 @@ export default function Register({navigation, createUser}) {
           value={dataNasc}
         />
         <Input
-          icon="cellphone"
+          icon="mobile"
           iconColor="#fff"
           placeholder="Telefone"
           placeholderTextColor="white"
@@ -144,7 +144,7 @@ export default function Register({navigation, createUser}) {
           </Column>
           <Column fill=".6">
             <Input
-              icon="city-variant"
+              icon="building"
               iconColor="#fff"
               placeholder="Estado"
               placeholderTextColor="white"

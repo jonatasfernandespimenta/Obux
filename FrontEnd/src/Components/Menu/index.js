@@ -9,6 +9,9 @@ const Menu = () => {
 
   const navigation = useNavigation();
 
+  const handleChatClick = () => {
+    navigation.navigate('ChatList');
+  };
 
   const handleHomeClick = () => {
     navigation.navigate('Home');
@@ -17,16 +20,20 @@ const Menu = () => {
   const handleProfileClick = () => {
     navigation.navigate('Profile');
   };
+
+  const handleHistoryClick = () => {
+    navigation.navigate('History');
+  };
   
   return(
     <>
     <Navbar>
 
-      <TouchableOpacity>
+      <TouchableOpacity onPress={handleChatClick}>
         <Icon name={'comments'} size={30} color={'white'} />
       </TouchableOpacity>
       
-      <TouchableOpacity>
+      <TouchableOpacity onPress={handleHistoryClick}>
         <Icon name={'calendar'} size={30}  color={'white'}/>
       </TouchableOpacity>
 

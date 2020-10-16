@@ -20,23 +20,30 @@ import {
   ImagePreview,
   IconContainer
 } from './styles';
+import { useNavigation } from '@react-navigation/native';
 
-const Home = () => {
+const Profile = () => {
   const image = { uri: "https://lcconroy.files.wordpress.com/2014/04/london-rain.jpg" };
+
+  const navigation = useNavigation();
+
+  const handleEditClick = () => {
+    navigation.navigate('EditProfile');
+  };
 
   const pfp = {uri: 'https://cdn.dicionariopopular.com/imagens/hipster-og.jpg'}
 
   return(
     <>
-
       <Scroll>
+
+        <IconContainer onPress={handleEditClick}>
+          <Icon name={'ellipsis-v'} size={40} color={'white'} />
+        </IconContainer>
         <Container>
           <BgImg source={image}>
             <Pfp>
               <ImagePreview source={pfp} />
-            <IconContainer>
-              <Icon name={'ellipsis-v'} size={40} color={'white'} />
-            </IconContainer>
             </Pfp>
           </BgImg>
 
@@ -49,7 +56,7 @@ const Home = () => {
               <Icon name={'star'} color={'yellow'} size={20} style={{ margin: 2 }} />
               <Icon name={'star'} color={'yellow'} size={20} style={{ margin: 2 }} />
               <Icon name={'star'} color={'yellow'} size={20} style={{ margin: 2 }} />
-              <Icon name={'star'} color={'yellow'} size={20} style={{ margin: 2 }} />
+              <Icon name={'star'} color={'gray'} size={20} style={{ margin: 2 }} />
             </Row>
 
             <H2>Descrição:</H2>
@@ -71,4 +78,4 @@ const Home = () => {
   );
 }
 
-export default Home;
+export default Profile;
