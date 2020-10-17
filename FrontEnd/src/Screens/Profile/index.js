@@ -17,6 +17,7 @@ import {
   Text,
   BookContainer,
   Book,
+  BookPlus,
   ImagePreview,
   IconContainer
 } from './styles';
@@ -30,6 +31,11 @@ const Profile = () => {
   const handleEditClick = () => {
     navigation.navigate('EditProfile');
   };
+
+  const handleBookClick = () => {
+    navigation.navigate('AddBook');
+  };
+
 
   const pfp = {uri: 'https://cdn.dicionariopopular.com/imagens/hipster-og.jpg'}
 
@@ -70,6 +76,7 @@ const Profile = () => {
           <Book/><Book/><Book/>
           <Book/><Book/><Book/>
           <Book/><Book/><Book/>
+          <BookPlus onPress={handleBookClick}><Icon name="plus" color="white" size={50} /></BookPlus>
         </BookContainer>
 
       </Scroll>

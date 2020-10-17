@@ -1,4 +1,4 @@
-import api from '../';
+import api from '../index';
 
 export const createUser = async (nome, dataNasc, email, telefone, cpf, senha, cidade, estado, pfp) => {
     const form = new FormData;

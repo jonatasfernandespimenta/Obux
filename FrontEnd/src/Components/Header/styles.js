@@ -11,8 +11,6 @@ export const Container = styled.View`
   `}
 
   justify-content: center;
-  border-bottom-color: white;
-  border-bottom-width: 1px;
 `;
 
 export const Text = styled.Text`

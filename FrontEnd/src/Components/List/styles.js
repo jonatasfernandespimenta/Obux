@@ -8,7 +8,7 @@ export const Text = styled.Text`
 export const Chat = styled.TouchableOpacity`
   width: 100%;
   height: 50px;
-  margin-bottom: 10px;
+  margin-top: 10px;
   justify-content: space-around;
   align-items: center;
   flex-direction: row;

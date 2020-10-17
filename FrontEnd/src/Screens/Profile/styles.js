@@ -42,11 +42,21 @@ export const BookContainer = styled.View`
   padding: 10px;
 `;
 
-export const Book = styled.View`
+export const Book = styled.TouchableOpacity`
   background: red;
   margin: 10px;
   width: 100px;
   height: 180px;
+`;
+
+export const BookPlus = styled.TouchableOpacity`
+  justify-content: center;
+  align-items: center;
+  background: gray;
+  margin: 10px;
+  width: 100px;
+  height: 180px;
+  color: white;
 `;
 
 export const Text = styled.Text`
@@ -98,4 +108,5 @@ export const Scroll = styled.ScrollView.attrs({
   }
 })`
   width: 100%;
+  margin-bottom: 50px;
 `;

@@ -1,8 +1,8 @@
 import styled, {css} from 'styled-components/native';
 
 export const Container = styled.TouchableOpacity`
+  background: ${({ background }) => background || '#970000' };
 
-  background: #970000;
   justify-content: center;
   align-items: center;
   margin: ${({ marginX, marginY }) => `${marginY || 0}px ${marginX || 0}px`};

@@ -10,28 +10,17 @@ import logo from '../../assets/LOGO.png';
 
 import { Container, Form } from './styles';
 
-export default function Login({ login }) {
+export default function Login( ) {
   const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
 
-  const handleLogin = () => {
-      login(email, pass).then(() => {
-        Alert.alert('Logado com sucesso', 'Login realizado com sucesso!', [
-          { text: "OK" }
-          ],
-          { cancelable: true });
-      }).catch((err) => {
-        console.log(err);
-      });  
+  const handleLoginClick = () => {
+    navigation.navigate('Home');
   };
 
   const handleRegisterClick = () => {
     navigation.navigate('Register');
-  };
-  
-  const handleLoginClick = () => {
-    navigation.navigate('Home');
   };
 
   return (
@@ -44,7 +33,7 @@ export default function Login({ login }) {
         <Input placeholder='E-mail' placeholderTextColor="white" onChangeText={(text) => setEmail(text)} value={email} />
         <Input placeholder='Senha' secureTextEntry={true} placeholderTextColor="white" onChangeText={(text) => setPass(text)} value={pass} />
         <Button marginY={20} color="blue" width={200} onPress={handleLoginClick} height={40} >Logar</Button>
-        <Hr lineColor="white" width={1} text="Não possui uma conta?" onPress={handleLogin} textStyles={{ color: "white" }} />
+        <Hr lineColor="white" width={1} text="Não possui uma conta?" textStyles={{ color: "white" }} />
         <Button marginY={20} color="blue" width={200} height={40} onPress={handleRegisterClick} >Registrar</Button>
       </Form>
     </Container>
