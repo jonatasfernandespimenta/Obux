@@ -10,8 +10,16 @@ import CheckBox from '@react-native-community/checkbox';
 import { Red, Container, Text, BookPlus, Col, Row, Title, InputsContainer, Scroll, Hr, Center } from './styles.js';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { useNavigation } from '@react-navigation/native';
 
 const Home = () => {
+
+  const navigation = useNavigation();
+
+  const handleCancelClick = () => {
+    navigation.navigate("Profile");
+  };
+
   return(
     <>
     <Scroll>
@@ -52,7 +60,7 @@ const Home = () => {
 
     <Center>
       <Button width={150} height={40} marginX={10} background={'#007019'} >Salvar</Button>
-      <Button width={150} height={40} marginX={10}>Cancelar</Button>
+      <Button width={150} height={40} marginX={10} onPress={handleCancelClick}>Cancelar</Button>
     </Center>
     </Scroll>
     <Menu />

@@ -29,7 +29,7 @@ export default function Register({navigation, createUser}) {
         { text: "OK" }
       ]);
     }else {
-      createUser(nome, dataNasc, email, telefone, cpf, senha, cidade, estado, pfp).then(() => {
+      await createUser(nome, dataNasc, telefone, email, cpf, senha, cidade, estado, pfp).then(() => {
         Alert.alert('Conta criada com sucesso', 'Sua conta foi criada, basta fazer o login', [
           { text: "OK", onPress: () => navigation.navigate('Login') }
           ],
@@ -140,6 +140,7 @@ export default function Register({navigation, createUser}) {
               placeholder="Cidade"
               placeholderTextColor="white"
               onChangeText={(text) => setCidade(text)}
+              value={cidade}
             />
           </Column>
           <Column fill=".6">
@@ -150,6 +151,7 @@ export default function Register({navigation, createUser}) {
               placeholderTextColor="white"
               maxLength={2}
               onChangeText={(text) => setEstado(text)}
+              value={estado}
             />
           </Column>
         </Row>

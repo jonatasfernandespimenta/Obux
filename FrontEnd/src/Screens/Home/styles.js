@@ -21,4 +21,5 @@ export const Scroll = styled.ScrollView.attrs({
   }
 })`
   width: 100%;
+  margin-bottom: 50px;
 `;
