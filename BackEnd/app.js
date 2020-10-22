@@ -13,23 +13,6 @@ dotenv.config();
 const server = http.createServer(app);
 const io = socket(server, { wsEngine: 'ws' });
 
-let messages = [];
-
-io.on('connection', socket => {
-  console.log(`Socket conectado ${socket.id}`);
-  socket.emit('prevMsg', messages);
-
-  socket.on('message', data => {
-    messages.push(data);
-
-    if(messages.length >= 10) {
-      messages = messages.slice(10, messages.length);
-    }
-
-    socket.broadcast.emit('messagedSend', data);
-  });
-});
-
 app.use(express.json());
 app.use(cors());
 
@@ -41,7 +24,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 mongoose.connect('mongodb://localhost:27017/obux', { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
   .then(() => console.log('connected'))
-  .catch(() => console.error('error to connect'));
+  .catch((e) => console.error('error to connect: ', e));
 
 app.use(require('./src/routes'));
 

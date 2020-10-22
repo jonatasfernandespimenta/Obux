@@ -11,6 +11,10 @@ const userController = require('./Controllers/userController');
 const bookController = require('./Controllers/bookController');
 const passRecoveryController = require('./Controllers/passRecoveryController');
 
+routes.get('/saas', function(req, res) {
+  res.send('Oi, teste');
+});
+
 routes.post('/createuser', multer(createUserMulterConfig).single('pfp'), userController.createUser);
 routes.get('/getuser/:id', userController.getUser);
 routes.post('/login', userController.login);
@@ -18,6 +22,7 @@ routes.delete('/deluser/:id', userController.delUser);
 routes.put('/updateuser/:id', userController.updateUser);
 routes.post('/rateuser/:id', userController.rateUser);
 routes.post('/finduser', userController.findUserByRegion);
+
 routes.get('/files/:fileName', (req, res) => {
   const { fileName } = req.params;
 

@@ -72,24 +72,27 @@ module.exports = {
       });
       return res.json(createdUser);
     } catch (e) {
-      console.log(e);
-      return res.status(500).send('Error');
+      return console.log(e);
     }
   },
 
   async login(req, res) {
     const { email, senha } = req.body;
-
-    const user = await userSchema.findOne({ email }).select(['+senha']);
-
-    if (user) {
-      if (bcrypt.compareSync(senha, user.senha)) {
-        user.senha = undefined;
-        return res.send({ user });
+    console.log(req.body)
+    try {
+      const user = await userSchema.findOne({ email }).select(['+senha']);
+      if (user) {
+        if (bcrypt.compareSync(senha, user.senha)) {
+          user.senha = undefined;
+          return res.send({ "login": true });
+        } else {
+          return res.send({ "login": false });
+        }
       }
-      return res.status(400).send('Incorrect Email or Password');
+      return res.send({ "login": false });
+    } catch (e) {
+      console.log(e);
     }
-    return res.send('User does not exists');
   },
 
   async registerBook(req, res) {
@@ -104,16 +107,17 @@ module.exports = {
 
     if(!book) {
       const createBook = await bookSchema.create({ titulo, qualidade, disponibilidade, foto: fileName });
-      
+
       const createdBook = await userSchema.findOneAndUpdate({ email, $push: { biblioteca: createBook } });
-      
+
       console.log(createdBook);
       res.send(createdBook);
     }
   },
 
   async updateUser(req, res) {
-    const { id, nome,
+    const {
+      id, nome,
       dataNasc,
       telefone,
       email,
@@ -122,7 +126,7 @@ module.exports = {
       pfp } = req.body;
 
     const user = await userSchema.findByIdAndUpdate({ id }, {
-      nome, 
+      nome,
       dataNasc,
       telefone,
       email,
@@ -155,7 +159,7 @@ module.exports = {
         const saas = await user.save();
         res.json(saas);
       } else {
-        res.send('User not found');
+        res.status(400).send('User not found');
       }
 
     } catch(e) {
