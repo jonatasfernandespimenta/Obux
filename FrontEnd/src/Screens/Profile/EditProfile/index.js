@@ -5,6 +5,7 @@ import Input from '../../../Components/Input';
 import Button from '../../../Components/Button';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { useInfo } from '../../../Contexts/info.context';
 
 import { 
   Scroll,
@@ -20,6 +21,8 @@ import {
 
 const EditProfile = () => {
   const image = { uri: "https://lcconroy.files.wordpress.com/2014/04/london-rain.jpg" };
+
+  const {userName, userCity, userState, userPfp} = useInfo();
 
   const pfp = {uri: 'https://cdn.dicionariopopular.com/imagens/hipster-og.jpg'}
 
@@ -40,10 +43,10 @@ const EditProfile = () => {
           </BgImg>
 
           <InfoContainer>
-            <Input placeholderTextColor='#ffffff90' placeholder='Nome' color={'white'} height={40}>Franklin Clinton</Input>
+            <Input placeholderTextColor='#ffffff90' placeholder='Nome' color={'white'} height={40}>{userName}</Input>
             <Row>
-              <Input placeholderTextColor='#ffffff90' width={150} placeholder='Cidade'>New York</Input>
-              <Input placeholderTextColor='#ffffff90' placeholder='Estado'>NY</Input>
+              <Input placeholderTextColor='#ffffff90' width={150} placeholder='Cidade'>{userCity}</Input>
+              <Input placeholderTextColor='#ffffff90' placeholder='Estado'>{userState}</Input>
             </Row>
 
             <H2>Descrição:</H2>

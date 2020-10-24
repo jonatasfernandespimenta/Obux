@@ -10,18 +10,31 @@ import logo from '../../assets/LOGO.png';
 
 import { Container, Form } from './styles';
 
-import { login } from '../../services/api/userService';
+import { login, getuser } from '../../services/api/userService';
+
+import { useInfo } from '../../Contexts/info.context';
 
 export default function LoginScreen() {
   const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
+  const { setUserName, setUserPhone, setUserEmail, setUserCity, setUserState, setUserPfp } = useInfo();
+
   const handleLoginClick = async() => {
     try {
       const loginstatus = await login(email, senha);
 
       if(loginstatus.data.login) {
+
+        const User = await getuser(loginstatus.data.id);
+        setUserName(User.data.user.nome);
+        setUserPhone(User.data.user.telefone);
+        setUserEmail(User.data.user.email);
+        setUserCity(User.data.user.cidade);
+        setUserState(User.data.user.estado);
+        setUserPfp(User.data.user.pfp);
+
         navigation.navigate('Home');
       } else {
         Alert.alert('Erro no login', 'Email ou senha incorretos', [

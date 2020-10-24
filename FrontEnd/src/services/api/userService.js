@@ -18,3 +18,7 @@ export const createUser = async (nome, dataNasc, telefone, email, cpf, senha, ci
 export const login = async (email, senha) => {
   return await api.post('/login', { email, senha });
 };
+
+export const getuser = async(id) => {
+  return await api.get('/getuser/' + id);
+};

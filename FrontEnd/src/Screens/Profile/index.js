@@ -4,6 +4,8 @@ import Menu from '../../Components/Menu';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+import { useInfo } from '../../Contexts/info.context';
+
 import { 
   Scroll,
   Container,
@@ -21,9 +23,12 @@ import {
   ImagePreview,
   IconContainer
 } from './styles';
+
 import { useNavigation } from '@react-navigation/native';
 
 const Profile = () => {
+  const {userName, userCity, userState, userPfp} = useInfo();
+
   const image = { uri: "https://lcconroy.files.wordpress.com/2014/04/london-rain.jpg" };
 
   const navigation = useNavigation();
@@ -54,8 +59,8 @@ const Profile = () => {
           </BgImg>
 
           <InfoContainer>
-            <H1>Franklin Clinton</H1>
-            <H3>Idade: 23 / New York, NY </H3>
+            <H1>{userName}</H1>
+            <H3>Idade: 23 / {userCity}, {userState} </H3>
 
             <Row>
               <Icon name={'star'} color={'yellow'} size={20} style={{ margin: 2 }} />

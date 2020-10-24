@@ -84,7 +84,7 @@ module.exports = {
       if (user) {
         if (bcrypt.compareSync(senha, user.senha)) {
           user.senha = undefined;
-          return res.send({ "login": true });
+          return res.send({ "login": true, "id": user._id });
         } else {
           return res.send({ "login": false });
         }
