@@ -36,7 +36,7 @@ module.exports = {
 
   async createUser(req, res) {
     try {
-      const { nome, dataNasc, telefone, email, cpf, senha, cidade, estado, } = req.body;
+      const { nome, dataNasc, telefone, email, cpf, senha, cidade, estado, descricao} = req.body;
 
       const salt = bcrypt.genSaltSync(10);
       const encryptedCPF = md5(cpf);
@@ -69,6 +69,7 @@ module.exports = {
         cidade,
         estado,
         pfp: fileName,
+        descricao
       });
       return res.json(createdUser);
     } catch (e) {
@@ -123,7 +124,9 @@ module.exports = {
       email,
       cidade,
       estado,
-      pfp } = req.body;
+      pfp,
+      descricao 
+    } = req.body;
 
     const user = await userSchema.findByIdAndUpdate({ id }, {
       nome,
@@ -132,7 +135,9 @@ module.exports = {
       email,
       cidade,
       estado,
-      pfp });
+      pfp, 
+      descricao
+    });
 
     res.send(user + ' updated')
   },
