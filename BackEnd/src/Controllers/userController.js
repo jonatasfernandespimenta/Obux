@@ -36,7 +36,7 @@ module.exports = {
 
   async createUser(req, res) {
     try {
-      const { nome, dataNasc, telefone, email, cpf, senha, cidade, estado, descricao} = req.body;
+      const { nome, dataNasc, telefone, email, cpf, senha, cidade, estado, descricao } = req.body;
 
       const salt = bcrypt.genSaltSync(10);
       const encryptedCPF = md5(cpf);
@@ -49,7 +49,6 @@ module.exports = {
       }).select('+cpf').exec();
 
       const userVerify = verify(user, cpf, dataNasc);
-
       if (userVerify) {
         const filePath = path.resolve(__dirname, '..', '..', 'uploads', req.file.filename);
         fs.unlinkSync(filePath);
@@ -58,7 +57,7 @@ module.exports = {
 
       const encyptedPassword = bcrypt.hashSync(senha, salt);
 
-      const fileName = `http://localhost:3000/files/${req.file.filename}`;
+      const fileName = `http://192.168.56.1:3000/files/${req.file.filename}`;
       const createdUser = await userSchema.create({
         nome,
         dataNasc,
@@ -97,22 +96,25 @@ module.exports = {
   },
 
   async registerBook(req, res) {
-    const { email, biblioteca } = req.body;
+    try {
+      const { userID, titulo, qualidade, disponibilidade } = req.body;
+      const book = await bookSchema.findOne({ titulo });
 
-    const { titulo, qualidade, disponibilidade } = req.body;
-    const book = await bookSchema.findOne({ titulo });
+      const filePath = path.resolve(__dirname, '..', '..', 'uploads', req.file.filename);
 
-    const filePath = path.resolve(__dirname, '..', '..', 'uploads', req.file.filename);
-    fs.unlinkSync(filePath);
-    const fileName = `http://localhost:3000/files/${req.file.filename}`;
+      fs.unlinkSync(filePath);
+      const fileName = `http://192.168.56.1:3000/files/${req.file.filename}`;
 
-    if(!book) {
-      const createBook = await bookSchema.create({ titulo, qualidade, disponibilidade, foto: fileName });
+      if(!book) {
+        const createBook = await bookSchema.create({ titulo, qualidade, disponibilidade, foto: fileName });
 
-      const createdBook = await userSchema.findOneAndUpdate({ email, $push: { biblioteca: createBook } });
+        //const createdBook = await userSchema.findByIdAndUpdate({ userID, biblioteca: createBook._id });
 
-      console.log(createdBook);
-      res.send(createdBook);
+        console.log(createBook);
+        res.send(createBook);
+      }
+    } catch (e) {
+      console.log(e);
     }
   },
 
@@ -125,7 +127,7 @@ module.exports = {
       cidade,
       estado,
       pfp,
-      descricao 
+      descricao
     } = req.body;
 
     const user = await userSchema.findByIdAndUpdate({ id }, {
@@ -135,7 +137,7 @@ module.exports = {
       email,
       cidade,
       estado,
-      pfp, 
+      pfp,
       descricao
     });
 

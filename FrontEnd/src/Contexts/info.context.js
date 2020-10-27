@@ -6,16 +6,20 @@ export const useInfo = () => useContext(InfoContext);
 
 export const InfoContextProvider = ({ children }) => {
   
+  const [userId, setUserId] = useState('');
   const [userName, setUserName] = useState('');
   const [userPhone, setUserPhone] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [userCity, setUserCity] = useState('');
   const [userState, setUserState] = useState('');
   const [userPfp, setUserPfp] = useState('');
+  const [userDescricao, setUserDescricao] = useState('');
 
   return (
     <InfoContext.Provider
       value={{
+        userId,
+        setUserId,
         userName,
         setUserName,
         userPhone,
@@ -27,7 +31,9 @@ export const InfoContextProvider = ({ children }) => {
         userState,
         setUserState,
         userPfp,
-        setUserPfp
+        setUserPfp,
+        userDescricao,
+        setUserDescricao
       }}
     >
       {children}

@@ -35,7 +35,7 @@ routes.get('/files/:fileName', (req, res) => {
 
 routes.post('/registerbook', multer(createUserMulterConfig).single('foto'), userController.registerBook);
 routes.get('/getbook/:id', bookController.getBook);
-routes.delete('/delbook:id', bookController.delBook);
+routes.delete('/delbook/:id', bookController.delBook);
 routes.put('/updatebook', bookController.updateBook);
 routes.post('/findbook', bookController.findBook);
 

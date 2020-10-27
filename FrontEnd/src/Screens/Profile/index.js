@@ -27,7 +27,7 @@ import {
 import { useNavigation } from '@react-navigation/native';
 
 const Profile = () => {
-  const {userName, userCity, userState, userPfp} = useInfo();
+  const {userName, userCity, userState, userPfp, userDescricao} = useInfo();
 
   const image = { uri: "https://lcconroy.files.wordpress.com/2014/04/london-rain.jpg" };
 
@@ -41,8 +41,8 @@ const Profile = () => {
     navigation.navigate('AddBook');
   };
 
-
-  const pfp = {uri: 'https://cdn.dicionariopopular.com/imagens/hipster-og.jpg'}
+  console.log(userPfp);
+  const pfp = {uri: userPfp}
 
   return(
     <>
@@ -54,7 +54,7 @@ const Profile = () => {
         <Container>
           <BgImg source={image}>
             <Pfp>
-              <ImagePreview source={pfp} />
+              <ImagePreview source={{uri: userPfp}} />
             </Pfp>
           </BgImg>
 
@@ -71,7 +71,7 @@ const Profile = () => {
             </Row>
 
             <H2>Descrição:</H2>
-            <H2 style={{ width: 250 }}>Muito maneiro compartilhar livros e eu sou um hipster barbudão.</H2>
+            <H2 style={{ width: 250 }}>{userDescricao}</H2>
           </InfoContainer>
 
         </Container>

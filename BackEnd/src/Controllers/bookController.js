@@ -6,7 +6,7 @@ module.exports = {
 
     const book = await bookSchema.findById(id);
 
-    return book ? res.send({ book }) : res.status(404).send({});
+    res.send(book);
   },
 
   async updateBook(req, res) {

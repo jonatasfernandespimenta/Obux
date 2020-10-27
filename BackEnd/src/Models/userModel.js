@@ -42,7 +42,10 @@ const userSchema = mongoose.Schema({
     ref: 'Books',
   },
   pfp: String,
-  descricao: String,
+  descricao: {
+    type: String,
+    default: 'Olá, agora estou usando o Obux'
+  },
   givenrates: {default: 0, type: Number},
   totalrates: {
     type: Number,

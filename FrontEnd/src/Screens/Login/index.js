@@ -19,21 +19,22 @@ export default function LoginScreen() {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
-  const { setUserName, setUserPhone, setUserEmail, setUserCity, setUserState, setUserPfp } = useInfo();
+  const { setUserId, setUserName, setUserPhone, setUserEmail, setUserCity, setUserState, setUserPfp, setUserDescricao } = useInfo();
 
   const handleLoginClick = async() => {
     try {
       const loginstatus = await login(email, senha);
-
+      console.log(loginstatus.data.login);
       if(loginstatus.data.login) {
-
         const User = await getuser(loginstatus.data.id);
+        setUserId(loginstatus.data.id);
         setUserName(User.data.user.nome);
         setUserPhone(User.data.user.telefone);
         setUserEmail(User.data.user.email);
         setUserCity(User.data.user.cidade);
         setUserState(User.data.user.estado);
         setUserPfp(User.data.user.pfp);
+        setUserDescricao(User.data.user.descricao);
 
         navigation.navigate('Home');
       } else {
