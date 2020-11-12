@@ -110,7 +110,7 @@ hello@world:~$ react-native run-android
 | `sinopse`         | synopsis     | String | false   |
 
 ## Design
-[Clicke here to check the app design at figma]('https://www.figma.com/file/tAH0UaEkDmD9pgSNjInOwj/Untitled?node-id=157%3A177')
+[Click here to check the app design at figma](https://www.figma.com/file/tAH0UaEkDmD9pgSNjInOwj/Untitled?node-id=157%3A177)
 
 ## Project Members
 | <img src="https://avatars.githubusercontent.com/jonatasfernandespimenta" width=115> | <img src="https://avatars.githubusercontent.com/LucaKmit" width=115> | <img src="https://avatars.githubusercontent.com/murilindo" width=115> | <img src="https://avatars.githubusercontent.com/JulioCelloto" width=115> | <img src="https://avatars.githubusercontent.com/capjackOrigins" width=115> |  
