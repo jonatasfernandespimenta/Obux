@@ -107,6 +107,8 @@ hello@world:~$ react-native run-android
 | `disponibilidade` | availability | Number | true    |
 | `sinopse`         | synopsis     | String | false   |
 
+## Design
+[Clique aqui para ver o design do aplicativo no figma](https://www.figma.com/file/tAH0UaEkDmD9pgSNjInOwj/Untitled?node-id=157%3A177)
 
 ## Project Members
 | <img src="https://avatars.githubusercontent.com/jonatasfernandespimenta" width=115> | <img src="https://avatars.githubusercontent.com/LucaKmit" width=115> | <img src="https://avatars.githubusercontent.com/murilindo" width=115> | <img src="https://avatars.githubusercontent.com/JulioCelloto" width=115> | <img src="https://avatars.githubusercontent.com/capjackOrigins" width=115> |  
