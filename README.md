@@ -105,7 +105,7 @@ hello@world:~$ react-native run-android
 | `ano`             | year         | String | false   |
 | `genero`          | genre        | String | false   |
 | `qualidade`       | quality      | Number | true    |
-| `foto`            | Photo        | String | false   |
+| `foto`            | photo        | String | false   |
 | `disponibilidade` | availability | Number | true    |
 | `sinopse`         | synopsis     | String | false   |
 
