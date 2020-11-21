@@ -41,9 +41,6 @@ const Profile = () => {
     navigation.navigate('AddBook');
   };
 
-  console.log(userPfp);
-  const pfp = {uri: userPfp}
-
   return(
     <>
       <Scroll>

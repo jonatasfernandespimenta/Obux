@@ -23,7 +23,7 @@ export default function Register({navigation}) {
   const [confirmSenha, setConfirmSenha] = useState('');
   const [cidade, setCidade] = useState('');
   const [estado, setEstado] = useState('');
-  const [pfp, setPfp] = useState({ uri: '', name: '', type: '' });
+  const [pfp, setPfp] = useState([]);
   const [description, setDescription] = useState('');
   
   const handleRegisterClick = async () => {
@@ -58,15 +58,13 @@ export default function Register({navigation}) {
     ImagePicker.showImagePicker(options, response => {
      if(!response.didCancel) {
       setPfp({
-        uri: Platform.OS === "android" ? response.uri : response.uri.replace("file://", ""),
+        uri: response.uri,
         name: response.fileName,
         type: response.type,
       });
      }
     });
   };
-
-  console.log(pfp);
 
   return (
     <Container>
@@ -76,8 +74,8 @@ export default function Register({navigation}) {
           <Image source={pfp.uri ? { uri: pfp.uri} : addPfpIcon} 
             style={{width: 150, 
             height: 150, 
-            borderRadius: 150}} r
-            esizeMode="cover"
+            borderRadius: 150}}
+            resizeMode="cover"
           />
         </TouchableOpacity>
 

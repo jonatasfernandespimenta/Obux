@@ -105,10 +105,12 @@ hello@world:~$ react-native run-android
 | `ano`             | year         | String | false   |
 | `genero`          | genre        | String | false   |
 | `qualidade`       | quality      | Number | true    |
-| `foto`            | Photo        | String | false   |
+| `foto`            | photo        | String | false   |
 | `disponibilidade` | availability | Number | true    |
 | `sinopse`         | synopsis     | String | false   |
 
+## Design
+[Click here to check the app design at figma](https://www.figma.com/file/tAH0UaEkDmD9pgSNjInOwj/Untitled?node-id=157%3A177)
 
 ## Project Members
 | <img src="https://avatars.githubusercontent.com/jonatasfernandespimenta" width=115> | <img src="https://avatars.githubusercontent.com/LucaKmit" width=115> | <img src="https://avatars.githubusercontent.com/murilindo" width=115> | <img src="https://avatars.githubusercontent.com/JulioCelloto" width=115> | <img src="https://avatars.githubusercontent.com/capjackOrigins" width=115> |  

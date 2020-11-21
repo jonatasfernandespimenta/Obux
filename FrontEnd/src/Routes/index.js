@@ -11,6 +11,7 @@ import EditProfile from '../Screens/Profile/EditProfile';
 import ChatList from '../Screens/ChatList';
 import History from '../Screens/History';
 import AddBook from '../Screens/AddBook';
+import BookDetails from '../Screens/BookDetails';
 
 const Stack = createStackNavigator();
 
@@ -25,6 +26,7 @@ const Routes = () => {
         <Stack.Screen name="ChatList" component={ChatList} />
         <Stack.Screen name="History" component={History} />
         <Stack.Screen name="AddBook" component={AddBook} />
+        <Stack.Screen name="BookDetails" component={BookDetails} />
       </Stack.Navigator>
     </NavigationContainer>
   );

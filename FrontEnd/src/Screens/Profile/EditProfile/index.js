@@ -22,9 +22,7 @@ import {
 const EditProfile = () => {
   const image = { uri: "https://lcconroy.files.wordpress.com/2014/04/london-rain.jpg" };
 
-  const {userName, userCity, userState, userPfp} = useInfo();
-
-  const pfp = {uri: 'https://cdn.dicionariopopular.com/imagens/hipster-og.jpg'}
+  const {userName, userCity, userState, userPfp, userDescricao} = useInfo();
 
   return(
     <>
@@ -35,7 +33,7 @@ const EditProfile = () => {
         <Container>
           <BgImg source={image}>
             <Pfp>
-              <ImagePreview source={pfp} />
+              <ImagePreview source={{uri: userPfp}} />
               <IconContainer>
                 <Icon name={'plus-square'} size={40} color={'#ffffff90'} />
               </IconContainer>
@@ -50,7 +48,7 @@ const EditProfile = () => {
             </Row>
 
             <H2>Descrição:</H2>
-            <Input width={250} multiline={true} height={100}>Muito maneiro compartilhar livros e eu sou um hipster barbudão.</Input>
+            <Input width={250} multiline={true} height={100}>{userDescricao}</Input>
 
             <Button width={100}>Salvar</Button>
           </InfoContainer>
