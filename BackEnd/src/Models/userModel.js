@@ -1,56 +1,29 @@
-const mongoose = require('mongoose');
+const { Model, DataTypes } = require('sequelize');
+const Book = require('./booksSchema');
 
-const userSchema = mongoose.Schema({
-  nome: {
-    type: String,
-    required: true,
-  },
-  dataNasc: {
-    type: Date,
-    required: true,
-  },
-  telefone: String,
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  cpf: {
-    type: String,
-    required: true,
-    max: 14,
-    select: true,
-    unique: true,
-  },
-  senha: {
-    type: String,
-    required: true,
-    select: false,
-    min: 6,
-  },
-  cidade: {
-    type: String,
-    required: true,
-  },
-  estado: {
-    required: true,
-    type: String,
-    max: 2,
-  },
-  biblioteca: {
-    type: [mongoose.Schema.Types.ObjectId],
-    ref: 'Books',
-  },
-  pfp: String,
-  descricao: {
-    type: String,
-    default: 'Olá, agora estou usando o Obux'
-  },
-  givenrates: {default: 0, type: Number},
-  totalrates: {
-    type: Number,
-    default: 0,
-  },
-});
+class User extends Model {
+  static init(sequelize) {
+    super.init({
+      nome: DataTypes.STRING,
+      dataNasc: DataTypes.DATE,
+      telefone: DataTypes.INTEGER,
+      email: DataTypes.STRING,
+      cpf: DataTypes.STRING,
+      senha: DataTypes.STRING,
+      cidade: DataTypes.STRING,
+      estado: DataTypes.STRING,
+      biblioteca: DataTypes.INTEGER,
+      pfp: DataTypes.STRING,
+      descricao: DataTypes.STRING,
+      givenrates: DataTypes.INTEGER,
+      totalrates: DataTypes.INTEGER,
+    }, {
+      sequelize
+    })
+  }
+  static associate(models) {
+    this.hasMany(models.Books, { foreignKey: 'user_id', as: 'books' })
+  }
+}
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = User;

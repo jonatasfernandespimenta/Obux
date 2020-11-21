@@ -29,7 +29,7 @@ module.exports = {
   async getUser(req, res) {
     const { id } = req.params;
 
-    const user = await userSchema.findOne({ _id: id }).lean();
+    const user = await userSchema.findOne({ _id: id });
     user.stars = user.totalrates/user.givenrates;
     return user ? res.send({ user }) : res.status(404).send({});
   },
@@ -37,16 +37,18 @@ module.exports = {
   async createUser(req, res) {
     try {
       const { nome, dataNasc, telefone, email, cpf, senha, cidade, estado, descricao } = req.body;
-
+      
       const salt = bcrypt.genSaltSync(10);
       const encryptedCPF = md5(cpf);
-
+      
       const user = await userSchema.findOne({
-        $or: [
-          { email },
-          { cpf: encryptedCPF },
-        ],
-      }).select('+cpf').exec();
+        where: {
+          $or: [
+            { email },
+            { cpf: encryptedCPF },
+          ],
+        }
+      });
 
       const userVerify = verify(user, cpf, dataNasc);
       if (userVerify) {
@@ -99,12 +101,12 @@ module.exports = {
     try {
       const { userID, titulo, qualidade, disponibilidade } = req.body;
       const book = await bookSchema.findOne({ titulo });
-
+      
       const filePath = path.resolve(__dirname, '..', '..', 'uploads', req.file.filename);
-
+      
       fs.unlinkSync(filePath);
       const fileName = `http://192.168.56.1:3000/files/${req.file.filename}`;
-
+      
       if(!book) {
         const createBook = await bookSchema.create({ titulo, qualidade, disponibilidade, foto: fileName });
 

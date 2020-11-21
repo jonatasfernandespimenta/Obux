@@ -1,29 +1,25 @@
-const mongoose = require('mongoose');
+const { Model, DataTypes } = require('sequelize');
 
-const booksSchema = mongoose.Schema({
-  titulo: {
-    type: String,
-    required: true
-  },
-  autor: String,
-  ano: String,
-  genero: String,
-  qualidade: { 
-    type: Number,
-    required: true
-  },
-  foto: {
-    type: String,
-  },
-  disponibilidade: {
-    type: Number,
-    required: true
-  },
-  sinopse: String,
-  isAvailable: {
-    type: Boolean,
-    default: true
+class Book extends Model {
+  static init(sequelize) {
+    super.init({
+      titulo: DataTypes.STRING,
+      autor: DataTypes.STRING,
+      ano: DataTypes.INTEGER,
+      genero: DataTypes.STRING,
+      qualidade: DataTypes.INTEGER,
+      foto: DataTypes.STRING,
+      disponibilidade: DataTypes.INTEGER,
+      sinopse: DataTypes.STRING,
+      isAvailable: DataTypes.BOOLEAN
+    }, {
+      sequelize
+    })
   }
-});
 
-module.exports = mongoose.model('Books', booksSchema);
+  static associate(models) {
+    this.belongsTo(model.User, { foreignKey: 'user_id', as: 'owner' })
+  }
+}
+
+module.exports = Book;
