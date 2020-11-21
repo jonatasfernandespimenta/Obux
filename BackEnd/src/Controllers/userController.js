@@ -38,6 +38,7 @@ module.exports = {
     try {
       const { nome, dataNasc, telefone, email, cpf, senha, cidade, estado, descricao } = req.body;
       
+      
       const salt = bcrypt.genSaltSync(10);
       const encryptedCPF = md5(cpf);
       
@@ -159,7 +160,7 @@ module.exports = {
     const { id } = req.params;
 
     try {
-      const user = await userSchema.findById({_id: id});
+      const user = await userSchema.findOne({where: [{"_id": id}]});
       if(user) {
         const newRate = user.totalrates + stars;
         const newGivenRates = user.givenrates + 1;
