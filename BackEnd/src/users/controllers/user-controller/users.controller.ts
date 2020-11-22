@@ -4,7 +4,7 @@ import { AuthService } from '../../services/auth/auth.service';
 import { CreateUserDto } from '../../dtos/user-dtos/createuser.dto';
 import { LoginDto } from '../../dtos/user-dtos/login.dto';
 import { FileInterceptor } from '@nestjs/platform-express';
- 
+
 @Controller('users')
 export class UsersController {
 
@@ -23,10 +23,15 @@ export class UsersController {
     return this.user.getUsers();
   }
 
+  @Get('hello')
+  getHello() {
+    return 'Hello World!';
+  }
+
   @Post('upload')
-  @UseInterceptors(FileInterceptor('file'))
-  uploadFile(@UploadedFile() file) {
-    console.log(file);
+  @UseInterceptors(FileInterceptor('file', { dest: './uploads' }))
+  uploadSingle(@UploadedFile() file) {
+    console.log(file)
   }
 
   @Post('create')

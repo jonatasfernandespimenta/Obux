@@ -13,7 +13,7 @@ export class AuthService {
     const userList = await this.usersRepository.find();
 
     const foundLogin = userList.find(
-      x => x.email === user.email && bcrypt.compareSync(user.pass, x.senha)
+      x => x.email === user.email && bcrypt.compareSync(user.senha, x.senha)
     );
 
     if(!foundLogin) {

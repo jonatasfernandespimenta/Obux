@@ -45,5 +45,9 @@ __decorate([
     class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
 ], CreateUserDto.prototype, "estado", void 0);
+__decorate([
+    class_validator_1.IsNotEmpty(),
+    __metadata("design:type", String)
+], CreateUserDto.prototype, "file", void 0);
 exports.CreateUserDto = CreateUserDto;
 //# sourceMappingURL=createuser.dto.js.map

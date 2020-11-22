@@ -8,8 +8,9 @@ export declare class UsersController {
     constructor(user: UserService, auth: AuthService);
     getUser(params: any): Promise<import("../../domain/user-domain/user.entity").UserEntity[]>;
     getUsers(): Promise<import("../../domain/user-domain/user.entity").UserEntity[]>;
-    uploadFile(file: any): void;
-    createUser(newUser: CreateUserDto): Promise<import("@nestjs/common").BadRequestException | (CreateUserDto & import("../../domain/user-domain/user.entity").UserEntity)>;
+    getHello(): string;
+    uploadSingle(file: any): void;
+    createUser(newUser: CreateUserDto): Promise<(CreateUserDto & import("../../domain/user-domain/user.entity").UserEntity) | import("@nestjs/common").BadRequestException>;
     userLogin(userCredentials: LoginDto): Promise<import("../../domain/user-domain/user.entity").UserEntity>;
     isAvailable(email: any): Promise<boolean>;
     delUser(params: any): Promise<void>;

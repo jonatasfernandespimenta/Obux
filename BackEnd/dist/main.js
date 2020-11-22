@@ -6,12 +6,12 @@ const swagger_1 = require("@nestjs/swagger");
 const app_module_1 = require("./app.module");
 async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
+    app.enableCors();
     app.useGlobalPipes(new common_1.ValidationPipe());
     const options = new swagger_1.DocumentBuilder()
-        .setTitle('Pixly example')
-        .setDescription('Pixly Admin is a system made for Pixly (and by Pixly) to get the order details and pass to a ERP')
+        .setTitle('Obux')
         .setVersion('1.0')
-        .addTag('pixly')
+        .addTag('obux')
         .addBearerAuth()
         .build();
     const document = swagger_1.SwaggerModule.createDocument(app, options);

@@ -50,6 +50,8 @@ export class UserService {
     
     const userList = await this.usersRepository.find();
     
+    const fileName = `http://localhost:3000/files/${newUser.file}`;
+
     const existingUser = userList.find(x => x.email === newUser.email) || userList.find(x => x.cpf === newUser.cpf);
     
     if (existingUser) {
@@ -61,6 +63,7 @@ export class UserService {
       const encyptedPassword = bcrypt.hashSync(newUser.senha, salt);
       
       newUser.senha = encyptedPassword;
+      newUser.file = fileName;
   
       return await this.usersRepository.save(newUser);
     }

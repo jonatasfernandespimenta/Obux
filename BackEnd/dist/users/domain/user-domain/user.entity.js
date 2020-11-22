@@ -66,15 +66,15 @@ __decorate([
     __metadata("design:type", String)
 ], UserEntity.prototype, "estado", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column({ default: 'https://d32ogoqmya1dw8.cloudfront.net/images/serc/empty_user_icon_256.v2.png' }),
     __metadata("design:type", String)
-], UserEntity.prototype, "pfp", void 0);
+], UserEntity.prototype, "file", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column({ default: 0 }),
     __metadata("design:type", Number)
 ], UserEntity.prototype, "givenrates", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column({ default: 0 }),
     __metadata("design:type", Number)
 ], UserEntity.prototype, "totalrates", void 0);
 __decorate([

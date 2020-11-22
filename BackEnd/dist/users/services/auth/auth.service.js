@@ -25,7 +25,7 @@ let AuthService = class AuthService {
     ;
     async login(user) {
         const userList = await this.usersRepository.find();
-        const foundLogin = userList.find(x => x.email === user.email && bcrypt.compareSync(user.pass, x.senha));
+        const foundLogin = userList.find(x => x.email === user.email && bcrypt.compareSync(user.senha, x.senha));
         if (!foundLogin) {
             throw new common_1.BadRequestException('Invalid credentials');
         }

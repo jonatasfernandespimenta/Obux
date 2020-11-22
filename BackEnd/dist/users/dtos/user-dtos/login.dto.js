@@ -24,11 +24,11 @@ __decorate([
 ], LoginDto.prototype, "email", void 0);
 __decorate([
     swagger_1.ApiProperty({
-        example: '61ce9af81b15f87ac5f99acea801d585',
+        example: '123456',
         description: 'Hashed customer password'
     }),
     class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
-], LoginDto.prototype, "pass", void 0);
+], LoginDto.prototype, "senha", void 0);
 exports.LoginDto = LoginDto;
 //# sourceMappingURL=login.dto.js.map

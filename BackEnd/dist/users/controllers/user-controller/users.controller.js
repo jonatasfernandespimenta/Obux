@@ -30,7 +30,10 @@ let UsersController = class UsersController {
     getUsers() {
         return this.user.getUsers();
     }
-    uploadFile(file) {
+    getHello() {
+        return 'Hello World!';
+    }
+    uploadSingle(file) {
         console.log(file);
     }
     createUser(newUser) {
@@ -60,13 +63,19 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], UsersController.prototype, "getUsers", null);
 __decorate([
+    common_1.Get('hello'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], UsersController.prototype, "getHello", null);
+__decorate([
     common_1.Post('upload'),
-    common_1.UseInterceptors(platform_express_1.FileInterceptor('file')),
+    common_1.UseInterceptors(platform_express_1.FileInterceptor('file', { dest: './uploads' })),
     __param(0, common_1.UploadedFile()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
-], UsersController.prototype, "uploadFile", null);
+], UsersController.prototype, "uploadSingle", null);
 __decorate([
     common_1.Post('create'),
     __param(0, common_1.Body()),

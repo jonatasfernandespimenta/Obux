@@ -26,4 +26,7 @@ export class CreateUserDto {
   @IsNotEmpty()
   estado: String;
 
+  @IsNotEmpty()
+  file: String;
+
 }

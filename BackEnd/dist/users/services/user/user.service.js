@@ -54,6 +54,7 @@ let UserService = class UserService {
     }
     async createUser(newUser) {
         const userList = await this.usersRepository.find();
+        const fileName = `http://localhost:3000/files/${newUser.file}`;
         const existingUser = userList.find(x => x.email === newUser.email) || userList.find(x => x.cpf === newUser.cpf);
         if (existingUser) {
             throw new common_1.BadRequestException('User already exists!');
@@ -62,6 +63,7 @@ let UserService = class UserService {
             const salt = bcrypt.genSaltSync(10);
             const encyptedPassword = bcrypt.hashSync(newUser.senha, salt);
             newUser.senha = encyptedPassword;
+            newUser.file = fileName;
             return await this.usersRepository.save(newUser);
         }
         return new common_1.BadRequestException('Invalid CPF!');

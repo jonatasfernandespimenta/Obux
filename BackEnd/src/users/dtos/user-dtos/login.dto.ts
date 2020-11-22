@@ -10,9 +10,9 @@ export class LoginDto {
   email: string;
 
   @ApiProperty({
-    example: '61ce9af81b15f87ac5f99acea801d585',
+    example: '123456',
     description: 'Hashed customer password'
   })
   @IsNotEmpty()
-  pass: string;
+  senha: string;
 }

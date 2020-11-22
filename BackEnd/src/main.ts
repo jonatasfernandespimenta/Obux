@@ -5,13 +5,13 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.enableCors();
   app.useGlobalPipes(new ValidationPipe());
 
   const options = new DocumentBuilder()
-    .setTitle('Pixly example')
-    .setDescription('Pixly Admin is a system made for Pixly (and by Pixly) to get the order details and pass to a ERP')
+    .setTitle('Obux')
     .setVersion('1.0')
-    .addTag('pixly')
+    .addTag('obux')
     .addBearerAuth()
     .build();
   const document = SwaggerModule.createDocument(app, options);

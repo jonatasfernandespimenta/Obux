@@ -44,13 +44,13 @@ export class UserEntity extends BaseEntity{
   @Column()
   estado: String;
   
-  @Column()
-  pfp: String;
+  @Column({ default: 'https://d32ogoqmya1dw8.cloudfront.net/images/serc/empty_user_icon_256.v2.png' })
+  file: String;
   
-  @Column()
+  @Column({ default: 0 })
   givenrates: Number;
   
-  @Column()
+  @Column({ default: 0 })
   totalrates: Number;
   
   @OneToMany(type => BookEntity, book => book.user, { eager: true })

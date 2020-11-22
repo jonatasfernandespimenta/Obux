@@ -7,4 +7,5 @@ export declare class CreateUserDto {
     senha: string;
     cidade: String;
     estado: String;
+    file: String;
 }
