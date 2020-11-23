@@ -28,7 +28,7 @@ Trace:
 
 npm manifest: 
   {
-    "name": "pixly-admin",
+    "name": "obux",
     "version": "0.0.1",
     "description": "",
     "author": "",

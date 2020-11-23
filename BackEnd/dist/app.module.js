@@ -14,6 +14,8 @@ const chat_module_1 = require("./chats/chat.module");
 const typeorm_1 = require("@nestjs/typeorm");
 const admin_bro_1 = require("admin-bro");
 const typeorm_2 = require("@admin-bro/typeorm");
+const app_controller_1 = require("./app.controller");
+const app_service_1 = require("./app.service");
 admin_bro_1.default.registerAdapter({ Database: typeorm_2.Database, Resource: typeorm_2.Resource });
 let AppModule = class AppModule {
 };
@@ -25,6 +27,8 @@ AppModule = __decorate([
             book_module_1.BookModule,
             chat_module_1.ChatModule,
         ],
+        controllers: [app_controller_1.AppController],
+        providers: [app_service_1.AppService]
     })
 ], AppModule);
 exports.AppModule = AppModule;

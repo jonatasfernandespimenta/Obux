@@ -14,6 +14,8 @@ import { UserEntity } from './users/domain/user-domain/user.entity';
 import { BookEntity } from './books/domain/book-domain/book.entity';
 import { ChatEntity } from './chats/domain/chat-domain/chat.entity';
 import { TransactionEntity } from './chats/domain/transaction-domain/transaction.entity';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
 
 AdminBro.registerAdapter({ Database, Resource })
 
@@ -24,6 +26,8 @@ AdminBro.registerAdapter({ Database, Resource })
     BookModule,
     ChatModule,
   ],
+  controllers: [AppController],
+  providers: [AppService]
 })
 
 // AdminModule.createAdmin({

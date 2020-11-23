@@ -1,4 +1,4 @@
-import { Test, TestingModule } from 'src/books/controllers/items/node_modules/@nestjs/testing';
+import { Test, TestingModule } from '@nestjs/testing';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 

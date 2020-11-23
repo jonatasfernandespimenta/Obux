@@ -19,6 +19,8 @@ const auth_service_1 = require("../../services/auth/auth.service");
 const createuser_dto_1 = require("../../dtos/user-dtos/createuser.dto");
 const login_dto_1 = require("../../dtos/user-dtos/login.dto");
 const platform_express_1 = require("@nestjs/platform-express");
+const multer_1 = require("multer");
+const path_1 = require("path");
 let UsersController = class UsersController {
     constructor(user, auth) {
         this.user = user;
@@ -30,11 +32,8 @@ let UsersController = class UsersController {
     getUsers() {
         return this.user.getUsers();
     }
-    getHello() {
-        return 'Hello World!';
-    }
     uploadSingle(file) {
-        console.log(file);
+        return file;
     }
     createUser(newUser) {
         return this.user.createUser(newUser);
@@ -63,14 +62,16 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], UsersController.prototype, "getUsers", null);
 __decorate([
-    common_1.Get('hello'),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
-], UsersController.prototype, "getHello", null);
-__decorate([
     common_1.Post('upload'),
-    common_1.UseInterceptors(platform_express_1.FileInterceptor('file', { dest: './uploads' })),
+    common_1.UseInterceptors(platform_express_1.FileInterceptor('file', {
+        storage: multer_1.diskStorage({
+            destination: './uploads',
+            filename: (req, file, cb) => {
+                const randomName = Array(32).fill(null).map(() => (Math.round(Math.random() * 16)).toString(16)).join('');
+                cb(null, `${randomName}${path_1.extname(file.originalname)}`);
+            }
+        })
+    })),
     __param(0, common_1.UploadedFile()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),

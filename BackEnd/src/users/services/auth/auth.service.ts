@@ -17,7 +17,7 @@ export class AuthService {
     );
 
     if(!foundLogin) {
-      throw new BadRequestException('Invalid credentials');
+      return false;
     }
 
     return foundLogin;

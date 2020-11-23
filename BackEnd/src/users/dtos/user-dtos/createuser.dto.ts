@@ -6,7 +6,7 @@ export class CreateUserDto {
   nome: string;
 
   @IsNotEmpty()
-  dataNasc: Date;
+  dataNasc: String;
 
   @IsNotEmpty()
   telefone: number;

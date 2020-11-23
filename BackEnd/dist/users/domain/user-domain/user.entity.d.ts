@@ -7,13 +7,14 @@ export declare class UserEntity extends BaseEntity {
     createdAt: Date;
     updatedAt: Date;
     nome: string;
-    dataNasc: Date;
+    dataNasc: String;
     telefone: number;
     email: String;
     cpf: string;
     senha: string;
     cidade: String;
     estado: String;
+    description: String;
     file: String;
     givenrates: Number;
     totalrates: Number;

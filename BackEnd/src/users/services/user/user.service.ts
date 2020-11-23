@@ -1,10 +1,10 @@
-import { Injectable, Inject, BadRequestException } from '@nestjs/common';
+import { Injectable, Inject, BadRequestException, HttpException, HttpStatus } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { UserEntity } from '../../domain/user-domain/user.entity';
 import { CreateUserDto } from '../../dtos/user-dtos/createuser.dto';
 import * as bcrypt from 'bcrypt'
-import CPF, { validate } from 'cpf-check';
+import { validate } from 'cpf-check';
 
 @Injectable()
 export class UserService {
@@ -48,15 +48,21 @@ export class UserService {
 
   async createUser(newUser: CreateUserDto) {
     
-    const userList = await this.usersRepository.find();
-    
-    const fileName = `http://localhost:3000/files/${newUser.file}`;
+    const existingUser = await this.usersRepository.findOne({
+      where: [{
+        cpf: newUser.cpf
+      }, 
+      {
+        email: newUser.email
+      }
+      ]
+    })
 
-    const existingUser = userList.find(x => x.email === newUser.email) || userList.find(x => x.cpf === newUser.cpf);
-    
-    if (existingUser) {
-      throw new BadRequestException('User already exists!');
+    if(existingUser) {
+      throw new HttpException('User already exists!', HttpStatus.BAD_REQUEST);
     }
+
+    const fileName = `http://192.168.100.68:3000/files/${newUser.file}`;
 
     if(validate(newUser.cpf)) {
       const salt = bcrypt.genSaltSync(10);
@@ -64,7 +70,6 @@ export class UserService {
       
       newUser.senha = encyptedPassword;
       newUser.file = fileName;
-  
       return await this.usersRepository.save(newUser);
     }
 

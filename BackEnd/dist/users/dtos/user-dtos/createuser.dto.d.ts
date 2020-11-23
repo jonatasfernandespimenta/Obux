@@ -1,6 +1,6 @@
 export declare class CreateUserDto {
     nome: string;
-    dataNasc: Date;
+    dataNasc: String;
     telefone: number;
     email: String;
     cpf: string;

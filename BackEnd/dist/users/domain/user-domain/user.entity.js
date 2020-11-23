@@ -37,7 +37,7 @@ __decorate([
 __decorate([
     class_validator_1.IsNotEmpty(),
     typeorm_1.Column(),
-    __metadata("design:type", Date)
+    __metadata("design:type", String)
 ], UserEntity.prototype, "dataNasc", void 0);
 __decorate([
     typeorm_1.Column(),
@@ -65,6 +65,10 @@ __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
 ], UserEntity.prototype, "estado", void 0);
+__decorate([
+    typeorm_1.Column({ default: 'Olá, estou usando Obux' }),
+    __metadata("design:type", String)
+], UserEntity.prototype, "description", void 0);
 __decorate([
     typeorm_1.Column({ default: 'https://d32ogoqmya1dw8.cloudfront.net/images/serc/empty_user_icon_256.v2.png' }),
     __metadata("design:type", String)

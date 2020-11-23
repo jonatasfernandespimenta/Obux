@@ -53,12 +53,19 @@ let UserService = class UserService {
         this.usersRepository.delete(id);
     }
     async createUser(newUser) {
-        const userList = await this.usersRepository.find();
-        const fileName = `http://localhost:3000/files/${newUser.file}`;
-        const existingUser = userList.find(x => x.email === newUser.email) || userList.find(x => x.cpf === newUser.cpf);
+        const existingUser = await this.usersRepository.findOne({
+            where: [{
+                    cpf: newUser.cpf
+                },
+                {
+                    email: newUser.email
+                }
+            ]
+        });
         if (existingUser) {
-            throw new common_1.BadRequestException('User already exists!');
+            throw new common_1.HttpException('User already exists!', common_1.HttpStatus.BAD_REQUEST);
         }
+        const fileName = `http://192.168.100.68:3000/files/${newUser.file}`;
         if (cpf_check_1.validate(newUser.cpf)) {
             const salt = bcrypt.genSaltSync(10);
             const encyptedPassword = bcrypt.hashSync(newUser.senha, salt);

@@ -4,5 +4,5 @@ import { UserEntity } from '../../domain/user-domain/user.entity';
 export declare class AuthService {
     private usersRepository;
     constructor(usersRepository: Repository<UserEntity>);
-    login(user: LoginDto): Promise<UserEntity>;
+    login(user: LoginDto): Promise<false | UserEntity>;
 }

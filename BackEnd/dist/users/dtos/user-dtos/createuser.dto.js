@@ -19,7 +19,7 @@ __decorate([
 ], CreateUserDto.prototype, "nome", void 0);
 __decorate([
     class_validator_1.IsNotEmpty(),
-    __metadata("design:type", Date)
+    __metadata("design:type", String)
 ], CreateUserDto.prototype, "dataNasc", void 0);
 __decorate([
     class_validator_1.IsNotEmpty(),

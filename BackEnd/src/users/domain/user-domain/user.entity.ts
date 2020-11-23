@@ -22,7 +22,7 @@ export class UserEntity extends BaseEntity{
 
   @IsNotEmpty()
   @Column()
-  dataNasc: Date;
+  dataNasc: String;
 
   @Column()
   telefone: number;
@@ -43,22 +43,25 @@ export class UserEntity extends BaseEntity{
 
   @Column()
   estado: String;
-  
+
+  @Column({ default: 'Olá, estou usando Obux' })
+  description: String;
+
   @Column({ default: 'https://d32ogoqmya1dw8.cloudfront.net/images/serc/empty_user_icon_256.v2.png' })
   file: String;
-  
+
   @Column({ default: 0 })
   givenrates: Number;
-  
+
   @Column({ default: 0 })
   totalrates: Number;
-  
+
   @OneToMany(type => BookEntity, book => book.user, { eager: true })
   books: BookEntity[];
-  
+
   @OneToMany(type => ChatEntity, chat => chat.user, { eager: true })
   chats: ChatEntity[];
-  
+
   @OneToMany(type => TransactionEntity, transaction => transaction.user, { eager: true })
   transactions: TransactionEntity[];
 
