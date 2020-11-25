@@ -37,6 +37,7 @@ export class UsersController {
     })
   }))
   uploadSingle(@UploadedFile() file) {
+    console.log('ARQUIVO: ', file)
     return file;
   }
 
@@ -54,6 +55,11 @@ export class UsersController {
   @Post('isemailavailable')
   async isAvailable(@Body() email) {
     return this.user.isEmailAvailable(email);
+  }
+
+  @Put('update/:id')
+  updateUser(@Param() params, @Body() user) {
+    return this.user.updateUser(params.id, user);
   }
 
   @Delete('deluser/:id')

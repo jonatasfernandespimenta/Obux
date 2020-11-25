@@ -35,7 +35,6 @@ export class UserService {
     const userFound = await this.usersRepository.find({
       where: [{ "id": _id }]
     });
-
     if(userFound) {
       return await this.usersRepository.save(user);
     }
@@ -47,11 +46,11 @@ export class UserService {
   }
 
   async createUser(newUser: CreateUserDto) {
-    
+
     const existingUser = await this.usersRepository.findOne({
       where: [{
         cpf: newUser.cpf
-      }, 
+      },
       {
         email: newUser.email
       }
@@ -59,7 +58,7 @@ export class UserService {
     })
 
     if(existingUser) {
-      throw new HttpException('User already exists!', HttpStatus.BAD_REQUEST);
+      throw new HttpException('User already exists!', HttpStatus.UNAUTHORIZED);
     }
 
     const fileName = `http://192.168.100.68:3000/files/${newUser.file}`;
@@ -67,13 +66,13 @@ export class UserService {
     if(validate(newUser.cpf)) {
       const salt = bcrypt.genSaltSync(10);
       const encyptedPassword = bcrypt.hashSync(newUser.senha, salt);
-      
+
       newUser.senha = encyptedPassword;
       newUser.file = fileName;
       return await this.usersRepository.save(newUser);
     }
 
-    return new BadRequestException('Invalid CPF!');
+    return new HttpException('Invalid CPF!', HttpStatus.UNAUTHORIZED);
 
   }
 

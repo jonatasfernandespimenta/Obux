@@ -5,5 +5,6 @@ export declare class BookService {
     constructor(bookRepository: Repository<BookEntity>);
     getBooks(): Promise<BookEntity[]>;
     getBook(_id: number): Promise<BookEntity[]>;
+    deleteBook(id: string): Promise<void>;
     createBook(newBook: any): Promise<any>;
 }

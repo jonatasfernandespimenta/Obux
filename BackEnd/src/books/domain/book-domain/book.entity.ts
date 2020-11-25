@@ -11,6 +11,9 @@ export class BookEntity extends BaseEntity{
   titulo: String;
 
   @Column()
+  editora: String;
+
+  @Column()
   autor: String;
 
   @Column()
@@ -20,16 +23,16 @@ export class BookEntity extends BaseEntity{
   genero: String;
 
   @Column()
-  qualidade: Number;
-
-  @Column()
-  foto: String;
+  qualidade: String;
 
   @Column()
   disponibilidade: Number;
-
+  
   @Column()
   sinopse: String;
+
+  @Column()
+  foto: String;
 
   @ManyToOne(type => UserEntity, user => user.books)
   user: UserEntity[];

@@ -25,6 +25,10 @@ __decorate([
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
+], BookEntity.prototype, "editora", void 0);
+__decorate([
+    typeorm_1.Column(),
+    __metadata("design:type", String)
 ], BookEntity.prototype, "autor", void 0);
 __decorate([
     typeorm_1.Column(),
@@ -36,12 +40,8 @@ __decorate([
 ], BookEntity.prototype, "genero", void 0);
 __decorate([
     typeorm_1.Column(),
-    __metadata("design:type", Number)
-], BookEntity.prototype, "qualidade", void 0);
-__decorate([
-    typeorm_1.Column(),
     __metadata("design:type", String)
-], BookEntity.prototype, "foto", void 0);
+], BookEntity.prototype, "qualidade", void 0);
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", Number)
@@ -50,6 +50,10 @@ __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
 ], BookEntity.prototype, "sinopse", void 0);
+__decorate([
+    typeorm_1.Column(),
+    __metadata("design:type", String)
+], BookEntity.prototype, "foto", void 0);
 __decorate([
     typeorm_1.ManyToOne(type => user_entity_1.UserEntity, user => user.books),
     __metadata("design:type", Array)

@@ -17,7 +17,13 @@ export class BookService {
     })
   };
 
+  async deleteBook(id: string): Promise<void> {
+    this.bookRepository.delete(id);
+  }
+
   async createBook(newBook) {
+    const fileName = `http://192.168.100.68:3000/files/${newBook.foto}`;
+    newBook.foto = fileName;
     return await this.bookRepository.save(newBook);
   }
 

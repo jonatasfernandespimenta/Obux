@@ -33,6 +33,7 @@ let UsersController = class UsersController {
         return this.user.getUsers();
     }
     uploadSingle(file) {
+        console.log('ARQUIVO: ', file);
         return file;
     }
     createUser(newUser) {
@@ -43,6 +44,9 @@ let UsersController = class UsersController {
     }
     async isAvailable(email) {
         return this.user.isEmailAvailable(email);
+    }
+    updateUser(params, user) {
+        return this.user.updateUser(params.id, user);
     }
     delUser(params) {
         return this.user.deleteUser(params.id);
@@ -98,6 +102,13 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], UsersController.prototype, "isAvailable", null);
+__decorate([
+    common_1.Put('update/:id'),
+    __param(0, common_1.Param()), __param(1, common_1.Body()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:returntype", void 0)
+], UsersController.prototype, "updateUser", null);
 __decorate([
     common_1.Delete('deluser/:id'),
     __param(0, common_1.Param()),

@@ -3,12 +3,13 @@ import { BaseEntity } from 'typeorm';
 export declare class BookEntity extends BaseEntity {
     id: number;
     titulo: String;
+    editora: String;
     autor: String;
     ano: Number;
     genero: String;
-    qualidade: Number;
-    foto: String;
+    qualidade: String;
     disponibilidade: Number;
     sinopse: String;
+    foto: String;
     user: UserEntity[];
 }

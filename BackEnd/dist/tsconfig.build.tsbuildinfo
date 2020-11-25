@@ -3137,8 +3137,8 @@
         "affectsGlobalScope": false
       },
       "../src/books/domain/book-domain/book.entity.ts": {
-        "version": "8537e2010fc47f35fab41e6ab8776792505b2349804396f2cb9490be8a5726c6",
-        "signature": "cf75554c49b49d642f4da5d6944e4a0f10fe0f25b8ded05cc21da514fec81d47",
+        "version": "cfe41d9555f75f2c0ca9275a69d0d87b8783654b3508499c1a988061d5fbea95",
+        "signature": "b49f05dbfb2073d159bec2b4468c155cfc342fea97edbe61a8a560c89d6b729c",
         "affectsGlobalScope": false
       },
       "../src/chats/domain/chat-domain/chat.entity.ts": {
@@ -3352,8 +3352,8 @@
         "affectsGlobalScope": false
       },
       "../src/users/services/user/user.service.ts": {
-        "version": "f545c0f1e1ff67e57d74bac1001325cdd02d7ae01ccc9c07b988095ec16f97f0",
-        "signature": "255a1d754e48cca09b644fb7260efeb416487fd919922cb7bc90a61b4a3f297a",
+        "version": "2f222603e13542fd5e14a57f5febd023e6b78b34c7be3268fdb228c9661817da",
+        "signature": "d17086fa77afba84d5c8604c49b5aac197cbbe0f60c00e9a4045479957b57465",
         "affectsGlobalScope": false
       },
       "../src/users/dtos/user-dtos/login.dto.ts": {
@@ -3912,8 +3912,8 @@
         "affectsGlobalScope": false
       },
       "../src/users/controllers/user-controller/users.controller.ts": {
-        "version": "b5d569fd7b5f0a4eebb909eeddf94e7418477cba4dadb4fc204eaa376c629d79",
-        "signature": "a3eb6d50c6562d9fe75017725512eb945f29184a2630227bd7e04cdcc0d9aa03",
+        "version": "f0306ecafd5bd5658a5f2453c32e74ff80b920758f10675bdd4a36d5cff4be90",
+        "signature": "995a40b8d90c67e5197430e413df1095b6b33cf720c2234965017c56cdf5a945",
         "affectsGlobalScope": false
       },
       "../src/users/users.module.ts": {
@@ -3922,13 +3922,13 @@
         "affectsGlobalScope": false
       },
       "../src/books/services/book/book.service.ts": {
-        "version": "d6598b1fe96d5a00a573bcf8d3655b62530dbf9a1b14f3b7f4842405c94918c3",
-        "signature": "0a8f53fb8f4dd76671db60ae51b9c80be6fed94d80d3e83bb1ca85bd324a688b",
+        "version": "6986651dcb6949a492964cdd271b7ade3033bdf2ab1153e65f25911988df737b",
+        "signature": "ff6780d59a800edbb88b393f97fcd1b7e1761c20eb7aab77fad925786b9fb460",
         "affectsGlobalScope": false
       },
       "../src/books/controllers/books/book.controller.ts": {
-        "version": "ed1bf220a1cc4284144357c3c68ba1918aa0cde9b8ea3d9edfcbc47e240d2a1e",
-        "signature": "cca00c09cc736803f78cbfcc521d1e5eccaefa53366ecd4bc80d2e824a2a527e",
+        "version": "78016a1f7b02d996be6530f4143690db623340e2d4c006c319323bedf6685263",
+        "signature": "8e8de6e02630eb99dc89ad64d77041d423ec1b77ebbb45a0831d4b3232265c80",
         "affectsGlobalScope": false
       },
       "../src/books/book.module.ts": {
@@ -10405,6 +10405,7 @@
       "../src/books/controllers/books/book.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/platform-express/index.d.ts",
+        "../node_modules/@types/node/path.d.ts",
         "../src/books/services/book/book.service.ts"
       ],
       "../src/books/domain/book-domain/book.entity.ts": [

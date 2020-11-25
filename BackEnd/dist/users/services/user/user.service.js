@@ -63,7 +63,7 @@ let UserService = class UserService {
             ]
         });
         if (existingUser) {
-            throw new common_1.HttpException('User already exists!', common_1.HttpStatus.BAD_REQUEST);
+            throw new common_1.HttpException('User already exists!', common_1.HttpStatus.UNAUTHORIZED);
         }
         const fileName = `http://192.168.100.68:3000/files/${newUser.file}`;
         if (cpf_check_1.validate(newUser.cpf)) {
@@ -73,7 +73,7 @@ let UserService = class UserService {
             newUser.file = fileName;
             return await this.usersRepository.save(newUser);
         }
-        return new common_1.BadRequestException('Invalid CPF!');
+        return new common_1.HttpException('Invalid CPF!', common_1.HttpStatus.UNAUTHORIZED);
     }
 };
 UserService = __decorate([

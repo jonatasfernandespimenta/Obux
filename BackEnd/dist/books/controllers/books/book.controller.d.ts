@@ -4,6 +4,7 @@ export declare class BookController {
     constructor(book: BookService);
     getBook(params: any): Promise<import("../../domain/book-domain/book.entity").BookEntity[]>;
     getBooks(): Promise<import("../../domain/book-domain/book.entity").BookEntity[]>;
-    uploadFile(file: any): void;
+    delBook(params: any): Promise<void>;
+    uploadSingle(file: any): any;
     createBook(newBook: any): Promise<any>;
 }

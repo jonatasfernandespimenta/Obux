@@ -16,6 +16,8 @@ exports.BookController = void 0;
 const common_1 = require("@nestjs/common");
 const platform_express_1 = require("@nestjs/platform-express");
 const book_service_1 = require("../../services/book/book.service");
+const multer_1 = require("multer");
+const path_1 = require("path");
 let BookController = class BookController {
     constructor(book) {
         this.book = book;
@@ -26,8 +28,12 @@ let BookController = class BookController {
     getBooks() {
         return this.book.getBooks();
     }
-    uploadFile(file) {
-        console.log(file);
+    delBook(params) {
+        return this.book.deleteBook(params.id);
+    }
+    uploadSingle(file) {
+        console.log('ARQUIVO: ', file);
+        return file;
     }
     createBook(newBook) {
         return this.book.createBook(newBook);
@@ -47,13 +53,28 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], BookController.prototype, "getBooks", null);
 __decorate([
+    common_1.Delete('delete/:id'),
+    __param(0, common_1.Param()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], BookController.prototype, "delBook", null);
+__decorate([
     common_1.Post('upload'),
-    common_1.UseInterceptors(platform_express_1.FileInterceptor('file')),
+    common_1.UseInterceptors(platform_express_1.FileInterceptor('file', {
+        storage: multer_1.diskStorage({
+            destination: './uploads',
+            filename: (req, file, cb) => {
+                const randomName = Array(32).fill(null).map(() => (Math.round(Math.random() * 16)).toString(16)).join('');
+                cb(null, `${randomName}${path_1.extname(file.originalname)}`);
+            }
+        })
+    })),
     __param(0, common_1.UploadedFile()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
-], BookController.prototype, "uploadFile", null);
+], BookController.prototype, "uploadSingle", null);
 __decorate([
     common_1.Post('create'),
     __param(0, common_1.Body()),
