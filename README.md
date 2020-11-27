@@ -14,11 +14,11 @@ Obux Will let you trade books with someone that has a book of your interest, bor
 ## Technologies Used
 <p align="center" style="display: flex; align-items: center; justify-content: space-around">
   <img src="./readmeStuff/nodejs_logo.png" width="100">
-  <img src="./readmeStuff/mongo_logo.png" width="100">
+  <img src="https://avatars2.githubusercontent.com/u/20165699?s=400&v=4" width="100">
   <img src="./readmeStuff/rn_logo.png" width="100">
 </p>
 
-For this project, we've used NodeJS for the Backend, MongoDB for database and ReactNative for the Frontend (without Expo).
+For this project, we've used NodeJS for the Backend, TypeOrm for database and ReactNative for the Frontend (Expo).
 <br/>
 
 ## Documentation Summary
