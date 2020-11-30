@@ -55,21 +55,21 @@ hello@world:~$ expo star
 |       Route           |    Method    |                   Description                    |                                                                         
 |   :---------------:   | :----------: | :----------------------------------------------: |                                                                           
 |  `/users/create`        |    POST      |  Route that creates a User                       |                                                         
-|  `users/get/:id`       |    GET       |  Gets the user by its ID                         |   
-|  `users/login`             |    POST      |  Route for user login                            |                                                        
-|  `users/deluser/:id`       |    DELETE    |  Deletes the user by its ID                      |                 
-|  `users/update/:id`    |    PUT       |  Updates the user by its ID                      |                                                     
+|  `/users/get/:id`       |    GET       |  Gets the user by its ID                         |   
+|  `/users/login`             |    POST      |  Route for user login                            |                                                        
+|  `/users/deluser/:id`       |    DELETE    |  Deletes the user by its ID                      |                 
+|  `/users/update/:id`    |    PUT       |  Updates the user by its ID                      |                                                     
 |  `/rateuser`          |    POST      |  Creates a rating for the user based on reviews  |
 |  `/finduser`          |    POST      |  Find a user by its city and/or state            | 
 
 ### Book Routes
 |       Route       |    Method    |                                 Description                                  |                                                                                                          
 | :--------------:  | :----------: | :--------------------------------------------------------------------------: |                                                                           
-|  `books/create`   |    POST      |   Route that creates a book                                                  |                                                         
-|  `books/get/:id`  |    GET       |   Gets book by its ID                                                        |   
-|  `books/delete/:id`|    DELETE    |   Delete book by its ID                                                      |                                                        
-|  `books/update/:id` |    PUT       |   Updates a book by its ID                                                   |                 
-|  `books/find`      |    POST      |   Route to search for books by its name, genre, year or author               |
+|  `/books/create`   |    POST      |   Route that creates a book                                                  |                                                         
+|  `/books/get/:id`  |    GET       |   Gets book by its ID                                                        |   
+|  `/books/delete/:id`|    DELETE    |   Delete book by its ID                                                      |                                                        
+|  `/books/update/:id` |    PUT       |   Updates a book by its ID                                                   |                 
+|  `/books/find`      |    POST      |   Route to search for books by its name, genre, year or author               |
 
 ### Pass Recovery Routes
 |       Route            |    Method    |                                 Description                                  |                                                                                                          
