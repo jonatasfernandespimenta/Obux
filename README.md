@@ -18,7 +18,7 @@ Obux Will let you trade books with someone that has a book of your interest, bor
   <img src="./readmeStuff/rn_logo.png" width="100">
 </p>
 
-For this project, we've used NestJS for the Backend, TypeOrm for database and ReactNative for the Frontend (Expo).
+For this project, we've used NestJS for the Backend, MySQL (TypeOrm) for database and ReactNative for the Frontend (Expo).
 <br/>
 
 ## Documentation Summary
