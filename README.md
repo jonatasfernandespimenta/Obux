@@ -15,7 +15,7 @@ Obux Will let you trade books with someone that has a book of your interest, bor
 <p align="center" style="display: flex; align-items: center; justify-content: space-around">
   <img src="https://docs.nestjs.com/assets/logo-small.svg" width="100">
   <img src="https://avatars2.githubusercontent.com/u/20165699?s=400&v=4" width="100">
-  <img src="https://www.freepnglogos.com/uploads/logo-mysql-png/logo-mysql-mysql-and-moodle-elearningworld-5.png" width="100">
+  <img src="https://www.freepnglogos.com/uploads/logo-mysql-png/logo-mysql-mysql-and-moodle-elearningworld-5.png" width="120">
   <img src="./readmeStuff/rn_logo.png" width="100">
 </p>
 
@@ -40,13 +40,14 @@ hello@world:~$ yarn
 And now, all you gotta you do is run. Just run this command (Don't forget to set the environment variables in a .env file)
 
 ```console
-hello@world:~$ node app.js
+hello@world:~$ yarn start:dev
 ```
 
 #### FrontEnd
 First, you've gotta download and install Expo. After it, run the following command in the frontend folder.
 
 ```console
+hello@world:~$ yarn
 hello@world:~$ expo start
 ```
 
