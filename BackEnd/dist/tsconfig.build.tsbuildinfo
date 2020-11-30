@@ -3136,19 +3136,19 @@
         "signature": "1d5f30cbd06ffa2aab22346b087e140f069851c17b91189be8d1e168d53f9f93",
         "affectsGlobalScope": false
       },
+      "../src/chats/domain/transaction-domain/transaction.entity.ts": {
+        "version": "f3b08e79361aa613978125461a61632be3133b683fea4ef640590ab5710a772c",
+        "signature": "3c90fc3f8ffa21a0e7d0dbe48b9ebc74f6b2549afbd13367731a1e115312260a",
+        "affectsGlobalScope": false
+      },
       "../src/books/domain/book-domain/book.entity.ts": {
-        "version": "cfe41d9555f75f2c0ca9275a69d0d87b8783654b3508499c1a988061d5fbea95",
-        "signature": "b49f05dbfb2073d159bec2b4468c155cfc342fea97edbe61a8a560c89d6b729c",
+        "version": "4ec5c7294ec32fc8ab2b0d4ead2a45a45c2eb276d77830c2ba32be95254d965c",
+        "signature": "7aa98faa0a921d360feb822e7e15984df2da0eeaba4aeaf41df742740bbad872",
         "affectsGlobalScope": false
       },
       "../src/chats/domain/chat-domain/chat.entity.ts": {
-        "version": "47232ae4ce841c441e97c03bafd4aac835216ccecff8e341c23d21d5a39393da",
-        "signature": "331baa600293dc4d91f73a4c9cd4aae19cb330d1fa093338e92321f52fd70b09",
-        "affectsGlobalScope": false
-      },
-      "../src/chats/domain/transaction-domain/transaction.entity.ts": {
-        "version": "2fcf14a1dbeba11cd13a1ca61a4e54d805dc996914edc43f358a63d1142cfeb0",
-        "signature": "d34c0f347c2966fa0c69d7960c9b122ad9642d97b65c0ef68ec4e30c672d06a2",
+        "version": "8cb8efac2dd1b0fef07f1dabfa94de0024479932ec1b7415cf5d7006c2424eed",
+        "signature": "fd500116da1e0ad43bce9cb84eb6461fb9972dfa7362c5f390d13d6893696921",
         "affectsGlobalScope": false
       },
       "../src/users/domain/user-domain/user.entity.ts": {
@@ -3352,8 +3352,8 @@
         "affectsGlobalScope": false
       },
       "../src/users/services/user/user.service.ts": {
-        "version": "2f222603e13542fd5e14a57f5febd023e6b78b34c7be3268fdb228c9661817da",
-        "signature": "d17086fa77afba84d5c8604c49b5aac197cbbe0f60c00e9a4045479957b57465",
+        "version": "f39ea9548fee9021e377b31bd63566717436b5ae73370bf5e1873a6f7a94c295",
+        "signature": "b2ad9fc96e35f9cd674d1488ec805ad6edb2c9cac2e815c5615210f41d3dda53",
         "affectsGlobalScope": false
       },
       "../src/users/dtos/user-dtos/login.dto.ts": {
@@ -3912,8 +3912,8 @@
         "affectsGlobalScope": false
       },
       "../src/users/controllers/user-controller/users.controller.ts": {
-        "version": "f0306ecafd5bd5658a5f2453c32e74ff80b920758f10675bdd4a36d5cff4be90",
-        "signature": "995a40b8d90c67e5197430e413df1095b6b33cf720c2234965017c56cdf5a945",
+        "version": "a8c32226a6174cd3e465f6923171c6c7ecebadaea02dc175c6221bb3927318be",
+        "signature": "26e43305777c46cae18bf2d704e72e7a7cee4d643f124cf6bda8e6ac2333870a",
         "affectsGlobalScope": false
       },
       "../src/users/users.module.ts": {
@@ -3922,13 +3922,13 @@
         "affectsGlobalScope": false
       },
       "../src/books/services/book/book.service.ts": {
-        "version": "6986651dcb6949a492964cdd271b7ade3033bdf2ab1153e65f25911988df737b",
-        "signature": "ff6780d59a800edbb88b393f97fcd1b7e1761c20eb7aab77fad925786b9fb460",
+        "version": "c5404c25731c21bf3a7e6f17781cf7e55f831dda90175be6fabe5ab9778335b3",
+        "signature": "35961f25b108a10298162ecce3bec673394bdddde52ca9f2ec198d04e00a3467",
         "affectsGlobalScope": false
       },
       "../src/books/controllers/books/book.controller.ts": {
-        "version": "78016a1f7b02d996be6530f4143690db623340e2d4c006c319323bedf6685263",
-        "signature": "8e8de6e02630eb99dc89ad64d77041d423ec1b77ebbb45a0831d4b3232265c80",
+        "version": "51c7a1a4b84bb71c7ed49b22700fe16f41da386f938615065db5248aa06729d0",
+        "signature": "1cbe602c62e88ee141cf7892e36b530e02642c4fca0091d6270d13e444c50f62",
         "affectsGlobalScope": false
       },
       "../src/books/book.module.ts": {
@@ -3947,13 +3947,13 @@
         "affectsGlobalScope": false
       },
       "../src/chats/services/transactions/transactions.service.ts": {
-        "version": "536db11c19531d1dfb0be361c0fdbacfc7dd6be712b388b5587522a45d54f5e9",
-        "signature": "fce27b91ec486c43c7745066c1b6b43ea5be6b5b379b07428384e44367927927",
+        "version": "30814dd24a2fd623a1c97ba7f944f309ab92fa67eae0aff48e27ba4ee9e1c5ae",
+        "signature": "ec9ce9a6eaf39cd7abf6b2e938302ff26f8feaabab115524c60eb92fba844696",
         "affectsGlobalScope": false
       },
       "../src/chats/controllers/transactions/transactions.controller.ts": {
-        "version": "693ae7694b3c9aa837542d1ac00b6f8777a24cfe418e7e2c81cc2a636de96f30",
-        "signature": "44c5d380fea968ace9829eb3670f18bbd81360356cc309b3e1f7f461081cf57c",
+        "version": "7ef54c2f5180799636b1886e70fcc8edad67f34854afb22aff980d167b69eb1f",
+        "signature": "ab0d17b42840b9a0365ca0f9b7ded6ba6d14ba44cb82f8c860f803edf714fac7",
         "affectsGlobalScope": false
       },
       "../src/chats/chat.module.ts": {
@@ -5716,11 +5716,6 @@
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
         "affectsGlobalScope": false
       },
-      "../src/users/dtos/user-dtos/updateuser.dto.ts": {
-        "version": "4f58dc8b6f297ed679789f545d60e56fb75bff0a44d0de440ead1b35fbd7a081",
-        "signature": "49f88a14f412e6068341bca7de57279fc19e86016ae41055c60ebc912586d0f3",
-        "affectsGlobalScope": false
-      },
       "../node_modules/@types/anymatch/index.d.ts": {
         "version": "48b52264fa193879a074197839dbb4796fa07e86350ff888e5361e06aa46df76",
         "signature": "48b52264fa193879a074197839dbb4796fa07e86350ff888e5361e06aa46df76",
@@ -5759,6 +5754,11 @@
       "../node_modules/@types/cookiejar/index.d.ts": {
         "version": "8d48b8f8a377ade8dd1f000625bc276eea067f2529cc9cafdf082d17142107d6",
         "signature": "8d48b8f8a377ade8dd1f000625bc276eea067f2529cc9cafdf082d17142107d6",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/engine.io/index.d.ts": {
+        "version": "2bc5a885dc91b4006192c477dfae4f2856e5809c6ffbf62cc242ac010f15ab51",
+        "signature": "2bc5a885dc91b4006192c477dfae4f2856e5809c6ffbf62cc242ac010f15ab51",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/eslint/helpers.d.ts": {
@@ -5869,6 +5869,11 @@
       "../node_modules/@types/resolve/index.d.ts": {
         "version": "8a19491eba2108d5c333c249699f40aff05ad312c04a17504573b27d91f0aede",
         "signature": "8a19491eba2108d5c333c249699f40aff05ad312c04a17504573b27d91f0aede",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/socket.io/index.d.ts": {
+        "version": "7d666a6623022683b640930047127f754d79393a29c0f51f3447325f8435809f",
+        "signature": "7d666a6623022683b640930047127f754d79393a29c0f51f3447325f8435809f",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/source-list-map/index.d.ts": {
@@ -7310,6 +7315,12 @@
         "../node_modules/@types/node/http.d.ts",
         "../node_modules/@types/node/index.d.ts"
       ],
+      "../node_modules/@types/engine.io/index.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/index.d.ts",
+        "../node_modules/@types/node/net.d.ts"
+      ],
       "../node_modules/@types/eslint-scope/index.d.ts": [
         "../node_modules/@types/eslint/index.d.ts",
         "../node_modules/@types/estree/index.d.ts"
@@ -7528,6 +7539,13 @@
       "../node_modules/@types/serve-static/index.d.ts": [
         "../node_modules/@types/mime/index.d.ts",
         "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/index.d.ts"
+      ],
+      "../node_modules/@types/socket.io/index.d.ts": [
+        "../node_modules/@types/engine.io/index.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/https.d.ts",
         "../node_modules/@types/node/index.d.ts"
       ],
       "../node_modules/@types/superagent/index.d.ts": [
@@ -10409,7 +10427,9 @@
         "../src/books/services/book/book.service.ts"
       ],
       "../src/books/domain/book-domain/book.entity.ts": [
+        "../node_modules/@types/node/inspector.d.ts",
         "../node_modules/typeorm/index.d.ts",
+        "../src/chats/domain/transaction-domain/transaction.entity.ts",
         "../src/users/domain/user-domain/user.entity.ts"
       ],
       "../src/books/services/book/book.service.ts": [
@@ -10442,6 +10462,7 @@
       ],
       "../src/chats/domain/transaction-domain/transaction.entity.ts": [
         "../node_modules/typeorm/index.d.ts",
+        "../src/books/domain/book-domain/book.entity.ts",
         "../src/users/domain/user-domain/user.entity.ts"
       ],
       "../src/chats/services/chat/chat.service.ts": [
@@ -10487,9 +10508,6 @@
       ],
       "../src/users/dtos/user-dtos/login.dto.ts": [
         "../node_modules/@nestjs/swagger/index.d.ts",
-        "../node_modules/class-validator/types/index.d.ts"
-      ],
-      "../src/users/dtos/user-dtos/updateuser.dto.ts": [
         "../node_modules/class-validator/types/index.d.ts"
       ],
       "../src/users/services/auth/auth.service.ts": [
@@ -11820,6 +11838,12 @@
         "../node_modules/@types/node/http.d.ts",
         "../node_modules/@types/node/index.d.ts"
       ],
+      "../node_modules/@types/engine.io/index.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/index.d.ts",
+        "../node_modules/@types/node/net.d.ts"
+      ],
       "../node_modules/@types/eslint-scope/index.d.ts": [
         "../node_modules/@types/eslint/index.d.ts",
         "../node_modules/@types/estree/index.d.ts"
@@ -12038,6 +12062,13 @@
       "../node_modules/@types/serve-static/index.d.ts": [
         "../node_modules/@types/mime/index.d.ts",
         "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/index.d.ts"
+      ],
+      "../node_modules/@types/socket.io/index.d.ts": [
+        "../node_modules/@types/engine.io/index.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/https.d.ts",
         "../node_modules/@types/node/index.d.ts"
       ],
       "../node_modules/@types/superagent/index.d.ts": [
@@ -14887,23 +14918,30 @@
       ],
       "../src/books/controllers/books/book.controller.ts": [
         "../src/books/domain/book-domain/book.entity.ts",
-        "../src/books/services/book/book.service.ts"
+        "../src/books/services/book/book.service.ts",
+        "../src/chats/domain/transaction-domain/transaction.entity.ts",
+        "../src/users/domain/user-domain/user.entity.ts"
       ],
       "../src/books/domain/book-domain/book.entity.ts": [
         "../node_modules/typeorm/index.d.ts",
+        "../src/chats/domain/transaction-domain/transaction.entity.ts",
         "../src/users/domain/user-domain/user.entity.ts"
       ],
       "../src/books/services/book/book.service.ts": [
         "../node_modules/typeorm/index.d.ts",
-        "../src/books/domain/book-domain/book.entity.ts"
+        "../src/books/domain/book-domain/book.entity.ts",
+        "../src/chats/domain/transaction-domain/transaction.entity.ts",
+        "../src/users/domain/user-domain/user.entity.ts"
       ],
       "../src/chats/controllers/chat/chat.controller.ts": [
         "../src/chats/domain/chat-domain/chat.entity.ts",
         "../src/chats/services/chat/chat.service.ts"
       ],
       "../src/chats/controllers/transactions/transactions.controller.ts": [
+        "../src/books/domain/book-domain/book.entity.ts",
         "../src/chats/domain/transaction-domain/transaction.entity.ts",
-        "../src/chats/services/transactions/transactions.service.ts"
+        "../src/chats/services/transactions/transactions.service.ts",
+        "../src/users/domain/user-domain/user.entity.ts"
       ],
       "../src/chats/domain/chat-domain/chat.entity.ts": [
         "../node_modules/typeorm/index.d.ts",
@@ -14911,6 +14949,7 @@
       ],
       "../src/chats/domain/transaction-domain/transaction.entity.ts": [
         "../node_modules/typeorm/index.d.ts",
+        "../src/books/domain/book-domain/book.entity.ts",
         "../src/users/domain/user-domain/user.entity.ts"
       ],
       "../src/chats/services/chat/chat.service.ts": [
@@ -14919,10 +14958,15 @@
       ],
       "../src/chats/services/transactions/transactions.service.ts": [
         "../node_modules/typeorm/index.d.ts",
-        "../src/chats/domain/transaction-domain/transaction.entity.ts"
+        "../src/books/domain/book-domain/book.entity.ts",
+        "../src/chats/domain/transaction-domain/transaction.entity.ts",
+        "../src/users/domain/user-domain/user.entity.ts"
       ],
       "../src/users/controllers/user-controller/users.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
+        "../src/books/domain/book-domain/book.entity.ts",
+        "../src/chats/domain/chat-domain/chat.entity.ts",
+        "../src/chats/domain/transaction-domain/transaction.entity.ts",
         "../src/users/domain/user-domain/user.entity.ts",
         "../src/users/dtos/user-dtos/createuser.dto.ts",
         "../src/users/dtos/user-dtos/login.dto.ts",
@@ -14943,6 +14987,9 @@
       "../src/users/services/user/user.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/typeorm/index.d.ts",
+        "../src/books/domain/book-domain/book.entity.ts",
+        "../src/chats/domain/chat-domain/chat.entity.ts",
+        "../src/chats/domain/transaction-domain/transaction.entity.ts",
         "../src/users/domain/user-domain/user.entity.ts",
         "../src/users/dtos/user-dtos/createuser.dto.ts"
       ]
@@ -15329,6 +15376,7 @@
       "../node_modules/@types/body-parser/index.d.ts",
       "../node_modules/@types/connect/index.d.ts",
       "../node_modules/@types/cookiejar/index.d.ts",
+      "../node_modules/@types/engine.io/index.d.ts",
       "../node_modules/@types/eslint-scope/index.d.ts",
       "../node_modules/@types/eslint/helpers.d.ts",
       "../node_modules/@types/eslint/index.d.ts",
@@ -15401,6 +15449,7 @@
       "../node_modules/@types/react/index.d.ts",
       "../node_modules/@types/resolve/index.d.ts",
       "../node_modules/@types/serve-static/index.d.ts",
+      "../node_modules/@types/socket.io/index.d.ts",
       "../node_modules/@types/source-list-map/index.d.ts",
       "../node_modules/@types/stack-utils/index.d.ts",
       "../node_modules/@types/superagent/index.d.ts",
@@ -16142,7 +16191,6 @@
       "../src/users/domain/user-domain/user.entity.ts",
       "../src/users/dtos/user-dtos/createuser.dto.ts",
       "../src/users/dtos/user-dtos/login.dto.ts",
-      "../src/users/dtos/user-dtos/updateuser.dto.ts",
       "../src/users/services/auth/auth.service.ts",
       "../src/users/services/user/user.service.ts",
       "../src/users/users.module.ts"

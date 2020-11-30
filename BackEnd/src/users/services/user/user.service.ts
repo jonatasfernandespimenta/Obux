@@ -32,13 +32,14 @@ export class UserService {
   }
 
   async updateUser(_id: number, user: UserEntity) {
-    const userFound = await this.usersRepository.find({
-      where: [{ "id": _id }]
+    const property = await this.usersRepository.findOne({
+      where: { id: _id }
     });
-    if(userFound) {
-      return await this.usersRepository.save(user);
-    }
-    return new BadRequestException('User not found!');
+
+    return this.usersRepository.save({
+      ...property,
+      ...user
+    });
   }
 
   async deleteUser(id: string): Promise<void> {

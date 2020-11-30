@@ -6,11 +6,14 @@ import { Entity, Column, PrimaryGeneratedColumn, BaseEntity, ManyToOne } from 't
 export class ChatEntity extends BaseEntity{
   @PrimaryGeneratedColumn()
   id: number;
-  
+
   @Column()
-  messages: String;
+  chattingWith: number;
 
   @ManyToOne(type => UserEntity, user => user.chats)
   user: UserEntity[];
+
+  @Column({ nullable: true })
+  messages: String;
 
 }

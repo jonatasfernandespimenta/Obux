@@ -28,14 +28,25 @@ let BookController = class BookController {
     getBooks() {
         return this.book.getBooks();
     }
+    getBookByName(titulo) {
+        console.log(titulo.titulo);
+        const response = this.book.getBooksByName(titulo.titulo);
+        console.log(response);
+        return response;
+    }
     delBook(params) {
         return this.book.deleteBook(params.id);
     }
+    updateBook(params, book) {
+        console.log('UPDATE BOOK!!!!!');
+        return this.book.updateBook(params.id, book);
+    }
     uploadSingle(file) {
-        console.log('ARQUIVO: ', file);
+        console.log(file);
         return file;
     }
     createBook(newBook) {
+        console.log(newBook);
         return this.book.createBook(newBook);
     }
 };
@@ -53,12 +64,26 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], BookController.prototype, "getBooks", null);
 __decorate([
+    common_1.Post('/name'),
+    __param(0, common_1.Body()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], BookController.prototype, "getBookByName", null);
+__decorate([
     common_1.Delete('delete/:id'),
     __param(0, common_1.Param()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], BookController.prototype, "delBook", null);
+__decorate([
+    common_1.Put('update/:id'),
+    __param(0, common_1.Param()), __param(1, common_1.Body()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:returntype", void 0)
+], BookController.prototype, "updateBook", null);
 __decorate([
     common_1.Post('upload'),
     common_1.UseInterceptors(platform_express_1.FileInterceptor('file', {

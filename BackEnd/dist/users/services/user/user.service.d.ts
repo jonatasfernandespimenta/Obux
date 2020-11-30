@@ -1,4 +1,4 @@
-import { BadRequestException, HttpException } from '@nestjs/common';
+import { HttpException } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { UserEntity } from '../../domain/user-domain/user.entity';
 import { CreateUserDto } from '../../dtos/user-dtos/createuser.dto';
@@ -8,7 +8,27 @@ export declare class UserService {
     getUsers(): Promise<UserEntity[]>;
     getUser(_id: number): Promise<UserEntity[]>;
     isEmailAvailable(email: string): Promise<boolean>;
-    updateUser(_id: number, user: UserEntity): Promise<UserEntity | BadRequestException>;
+    updateUser(_id: number, user: UserEntity): Promise<{
+        id: number;
+        createdAt: Date;
+        updatedAt: Date;
+        nome: string;
+        dataNasc: String;
+        telefone: number;
+        email: String;
+        cpf: string;
+        senha: string;
+        cidade: String;
+        estado: String;
+        description: String;
+        file: String;
+        givenrates: Number;
+        totalrates: Number;
+        books: import("../../../books/domain/book-domain/book.entity").BookEntity[];
+        chats: import("../../../chats/domain/chat-domain/chat.entity").ChatEntity[];
+        transactions: import("../../../chats/domain/transaction-domain/transaction.entity").TransactionEntity[];
+        receivedTransactions: import("../../../chats/domain/transaction-domain/transaction.entity").TransactionEntity[];
+    } & UserEntity>;
     deleteUser(id: string): Promise<void>;
     createUser(newUser: CreateUserDto): Promise<HttpException | (CreateUserDto & UserEntity)>;
 }

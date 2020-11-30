@@ -66,5 +66,4 @@ export class UsersController {
   delUser(@Param() params) {
     return this.user.deleteUser(params.id);
   }
-
 }

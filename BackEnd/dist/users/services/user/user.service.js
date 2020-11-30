@@ -41,13 +41,10 @@ let UserService = class UserService {
         }
     }
     async updateUser(_id, user) {
-        const userFound = await this.usersRepository.find({
-            where: [{ "id": _id }]
+        const property = await this.usersRepository.findOne({
+            where: { id: _id }
         });
-        if (userFound) {
-            return await this.usersRepository.save(user);
-        }
-        return new common_1.BadRequestException('User not found!');
+        return this.usersRepository.save(Object.assign(Object.assign({}, property), user));
     }
     async deleteUser(id) {
         this.usersRepository.delete(id);

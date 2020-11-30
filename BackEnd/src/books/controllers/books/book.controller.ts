@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Post, UploadedFile, UseInterceptors } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put, UploadedFile, UseInterceptors } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { BookService } from '../../services/book/book.service';
 import { diskStorage } from 'multer'
@@ -20,9 +20,23 @@ export class BookController {
     return this.book.getBooks();
   }
 
+  @Post('/name')
+  getBookByName(@Body() titulo) {
+    console.log(titulo.titulo)
+    const response = this.book.getBooksByName(titulo.titulo);
+    console.log(response);
+    return response;
+  }
+
   @Delete('delete/:id')
   delBook(@Param() params) {
     return this.book.deleteBook(params.id);
+  }
+
+  @Put('update/:id')
+  updateBook(@Param() params, @Body() book) {
+    console.log('UPDATE BOOK!!!!!')
+    return this.book.updateBook(params.id, book);
   }
 
   @Post('upload')
@@ -36,12 +50,14 @@ export class BookController {
     })
   }))
   uploadSingle(@UploadedFile() file) {
-    console.log('ARQUIVO: ', file)
+    console.log(file)
     return file;
   }
 
   @Post('create')
   createBook(@Body() newBook) {
+    console.log(newBook)
     return this.book.createBook(newBook);
   }
+
 }

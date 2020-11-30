@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BookEntity = void 0;
+const transaction_entity_1 = require("../../../chats/domain/transaction-domain/transaction.entity");
 const user_entity_1 = require("../../../users/domain/user-domain/user.entity");
 const typeorm_1 = require("typeorm");
 let BookEntity = class BookEntity extends typeorm_1.BaseEntity {
@@ -19,27 +20,27 @@ __decorate([
     __metadata("design:type", Number)
 ], BookEntity.prototype, "id", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column({ default: ' ' }),
     __metadata("design:type", String)
 ], BookEntity.prototype, "titulo", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column({ default: ' ' }),
     __metadata("design:type", String)
 ], BookEntity.prototype, "editora", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column({ default: ' ' }),
     __metadata("design:type", String)
 ], BookEntity.prototype, "autor", void 0);
 __decorate([
-    typeorm_1.Column(),
-    __metadata("design:type", Number)
+    typeorm_1.Column({ default: ' ' }),
+    __metadata("design:type", String)
 ], BookEntity.prototype, "ano", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column({ default: ' ' }),
     __metadata("design:type", String)
 ], BookEntity.prototype, "genero", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column({ default: ' ' }),
     __metadata("design:type", String)
 ], BookEntity.prototype, "qualidade", void 0);
 __decorate([
@@ -47,17 +48,21 @@ __decorate([
     __metadata("design:type", Number)
 ], BookEntity.prototype, "disponibilidade", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column({ default: ' ' }),
     __metadata("design:type", String)
 ], BookEntity.prototype, "sinopse", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column({ default: ' ' }),
     __metadata("design:type", String)
 ], BookEntity.prototype, "foto", void 0);
 __decorate([
     typeorm_1.ManyToOne(type => user_entity_1.UserEntity, user => user.books),
-    __metadata("design:type", Array)
+    __metadata("design:type", user_entity_1.UserEntity)
 ], BookEntity.prototype, "user", void 0);
+__decorate([
+    typeorm_1.OneToMany(type => transaction_entity_1.TransactionEntity, transaction => transaction.book),
+    __metadata("design:type", transaction_entity_1.TransactionEntity)
+], BookEntity.prototype, "transaction", void 0);
 BookEntity = __decorate([
     typeorm_1.Entity()
 ], BookEntity);

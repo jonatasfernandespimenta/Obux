@@ -1,3 +1,4 @@
+import { TransactionEntity } from 'src/chats/domain/transaction-domain/transaction.entity';
 import { UserEntity } from 'src/users/domain/user-domain/user.entity';
 import { BaseEntity } from 'typeorm';
 export declare class BookEntity extends BaseEntity {
@@ -5,11 +6,12 @@ export declare class BookEntity extends BaseEntity {
     titulo: String;
     editora: String;
     autor: String;
-    ano: Number;
+    ano: String;
     genero: String;
     qualidade: String;
     disponibilidade: Number;
     sinopse: String;
     foto: String;
-    user: UserEntity[];
+    user: UserEntity;
+    transaction: TransactionEntity;
 }

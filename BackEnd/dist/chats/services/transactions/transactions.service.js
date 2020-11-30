@@ -22,17 +22,28 @@ let TransactionService = class TransactionService {
         this.transactionRepository = transactionRepository;
     }
     async getTransactions() {
-        return await this.transactionRepository.find();
+        return await this.transactionRepository.find({
+            order: { id: "DESC" },
+            where: [{ "accepted": true }]
+        });
     }
     ;
     async getTransaction(_id) {
         return await this.transactionRepository.find({
-            where: [{ "id": _id }]
+            where: [{ "id": _id }],
+            relations: ['user']
         });
     }
     ;
     async createTransaction(newTransaction) {
         return await this.transactionRepository.save(newTransaction);
+    }
+    ;
+    async updateTransaction(_id, transaction) {
+        const property = await this.transactionRepository.findOne({
+            where: { id: _id }
+        });
+        return this.transactionRepository.save(Object.assign(Object.assign({}, property), transaction));
     }
 };
 TransactionService = __decorate([

@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
 import { TransactionService } from 'src/chats/services/transactions/transactions.service';
 
 @Controller('transactions')
@@ -21,4 +21,10 @@ export class TransactionController {
   createChat(@Body() newTransaction) {
     return this.transaction.createTransaction(newTransaction);
   }
+
+  @Put('update/:id')
+  updateBook(@Param() params, @Body() transaction) {
+    return this.transaction.updateTransaction(params.id, transaction);
+  }
+
 }

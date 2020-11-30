@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.TransactionEntity = void 0;
 const user_entity_1 = require("../../../users/domain/user-domain/user.entity");
 const typeorm_1 = require("typeorm");
+const book_entity_1 = require("../../../books/domain/book-domain/book.entity");
 let TransactionEntity = class TransactionEntity extends typeorm_1.BaseEntity {
 };
 __decorate([
@@ -30,6 +31,14 @@ __decorate([
     typeorm_1.ManyToOne(type => user_entity_1.UserEntity, receiver => receiver.transactions),
     __metadata("design:type", Array)
 ], TransactionEntity.prototype, "receiver", void 0);
+__decorate([
+    typeorm_1.ManyToOne(type => book_entity_1.BookEntity, book => book.transaction, { eager: true }),
+    __metadata("design:type", Array)
+], TransactionEntity.prototype, "book", void 0);
+__decorate([
+    typeorm_1.Column({ default: false }),
+    __metadata("design:type", Boolean)
+], TransactionEntity.prototype, "accepted", void 0);
 TransactionEntity = __decorate([
     typeorm_1.Entity()
 ], TransactionEntity);

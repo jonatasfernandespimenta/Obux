@@ -20,12 +20,16 @@ __decorate([
 ], ChatEntity.prototype, "id", void 0);
 __decorate([
     typeorm_1.Column(),
-    __metadata("design:type", String)
-], ChatEntity.prototype, "messages", void 0);
+    __metadata("design:type", Number)
+], ChatEntity.prototype, "chattingWith", void 0);
 __decorate([
     typeorm_1.ManyToOne(type => user_entity_1.UserEntity, user => user.chats),
     __metadata("design:type", Array)
 ], ChatEntity.prototype, "user", void 0);
+__decorate([
+    typeorm_1.Column({ nullable: true }),
+    __metadata("design:type", String)
+], ChatEntity.prototype, "messages", void 0);
 ChatEntity = __decorate([
     typeorm_1.Entity()
 ], ChatEntity);

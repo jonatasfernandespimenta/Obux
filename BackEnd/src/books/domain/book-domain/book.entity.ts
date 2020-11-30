@@ -1,5 +1,7 @@
+import { Profiler } from 'inspector';
+import { TransactionEntity } from 'src/chats/domain/transaction-domain/transaction.entity';
 import { UserEntity } from 'src/users/domain/user-domain/user.entity';
-import { Entity, Column, PrimaryGeneratedColumn, BaseEntity, OneToOne, ManyToOne } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, BaseEntity, OneToOne, ManyToOne, JoinColumn, RelationId, JoinTable, OneToMany } from 'typeorm';
 
 @Entity()
 
@@ -7,34 +9,36 @@ export class BookEntity extends BaseEntity{
   @PrimaryGeneratedColumn()
   id: number;
   
-  @Column()
+  @Column({ default: ' ' })
   titulo: String;
 
-  @Column()
+  @Column({ default: ' ' })
   editora: String;
 
-  @Column()
+  @Column({ default: ' ' })
   autor: String;
 
-  @Column()
-  ano: Number;
+  @Column({ default: ' ' })
+  ano: String;
 
-  @Column()
+  @Column({ default: ' ' })
   genero: String;
 
-  @Column()
+  @Column({ default: ' ' })
   qualidade: String;
 
   @Column()
   disponibilidade: Number;
   
-  @Column()
+  @Column({ default: ' ' })
   sinopse: String;
 
-  @Column()
+  @Column({ default: ' ' })
   foto: String;
 
   @ManyToOne(type => UserEntity, user => user.books)
-  user: UserEntity[];
-
+  user: UserEntity;
+  
+  @OneToMany(type => TransactionEntity, transaction => transaction.book)
+  transaction: TransactionEntity;
 }

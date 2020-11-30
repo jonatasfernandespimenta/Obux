@@ -28,6 +28,9 @@ let TransactionController = class TransactionController {
     createChat(newTransaction) {
         return this.transaction.createTransaction(newTransaction);
     }
+    updateBook(params, transaction) {
+        return this.transaction.updateTransaction(params.id, transaction);
+    }
 };
 __decorate([
     common_1.Get(':id'),
@@ -49,6 +52,13 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], TransactionController.prototype, "createChat", null);
+__decorate([
+    common_1.Put('update/:id'),
+    __param(0, common_1.Param()), __param(1, common_1.Body()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:returntype", void 0)
+], TransactionController.prototype, "updateBook", null);
 TransactionController = __decorate([
     common_1.Controller('transactions'),
     __metadata("design:paramtypes", [transactions_service_1.TransactionService])

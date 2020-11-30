@@ -22,17 +22,32 @@ let BookService = class BookService {
         this.bookRepository = bookRepository;
     }
     async getBooks() {
-        return await this.bookRepository.find();
+        return await this.bookRepository.find({
+            order: { id: "DESC" }
+        });
+    }
+    ;
+    async getBooksByName(titulo) {
+        return await this.bookRepository.find({
+            titulo: typeorm_2.Like('%' + titulo + '%'),
+        });
     }
     ;
     async getBook(_id) {
         return await this.bookRepository.find({
-            where: [{ "id": _id }]
+            where: [{ "id": _id }],
+            relations: ['user'],
         });
     }
     ;
     async deleteBook(id) {
         this.bookRepository.delete(id);
+    }
+    async updateBook(_id, book) {
+        const property = await this.bookRepository.findOne({
+            where: { id: _id }
+        });
+        return this.bookRepository.save(Object.assign(Object.assign({}, property), book));
     }
     async createBook(newBook) {
         const fileName = `http://192.168.100.68:3000/files/${newBook.foto}`;
