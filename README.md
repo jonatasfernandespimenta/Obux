@@ -15,6 +15,7 @@ Obux Will let you trade books with someone that has a book of your interest, bor
 <p align="center" style="display: flex; align-items: center; justify-content: space-around">
   <img src="https://docs.nestjs.com/assets/logo-small.svg" width="100">
   <img src="https://avatars2.githubusercontent.com/u/20165699?s=400&v=4" width="100">
+  <img src="https://www.freepnglogos.com/uploads/logo-mysql-png/logo-mysql-mysql-and-moodle-elearningworld-5.png" width="100">
   <img src="./readmeStuff/rn_logo.png" width="100">
 </p>
 
