@@ -109,6 +109,13 @@ hello@world:~$ expo start
 | `disponibilidade` | availability | Number | true    |
 | `sinopse`         | synopsis     | String | false   |
 
+### Transaction Schema
+| FieldName       | Translated   | Type   | Required |
+|:-----------------:|:--------------:|:--------:|:---------:|
+| `due`             | due          | Date   | true    |
+| `user`            | user         | ObjectId | false   |
+| `receiver`            | receiver         | ObjectId | false   |
+
 ## Design
 [Click here to check the app design at figma](https://www.figma.com/file/tAH0UaEkDmD9pgSNjInOwj/Untitled?node-id=157%3A177)
 
