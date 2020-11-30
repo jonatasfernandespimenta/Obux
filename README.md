@@ -85,13 +85,13 @@ hello@world:~$ expo start
 |:------------:|:---------------:|:----------------------------------------:|:---------:|:--------:|
 | `nome`       | name          | String                                 | true    | false  |
 | `dataNasc`   | birthday      | Date                                   | true    | false  |
-| `telefone`  | mobile number | String                                  | false   | false  |
+| `telefone`   | mobile number | String                                  | false   | false  |
 | `email`      | email         | String                                 | true    | true   |
 | `cpf`        | cpf           | String                                 | true    | true   |
 | `senha`      | password      | String                                 | true    | false  |
 | `cidade`     | city          | String                                 | true    | false  |
 | `estado`     | state         | String                                 | true    | false  |
-| `biblioteca` | library       |  \[mongoose\.Schema\.Types\.ObjectId\] | false   | false  |
+| `biblioteca` | library       | ObjectId                               | false   | false  |
 | `pfp`        | profile pic   | String                                 | false   | false  |
 | `givenrates` | givenrates    | Number                                 | false   | false  |
 | `totalrates` | totalrates    | Number                                 | false   | false  |
