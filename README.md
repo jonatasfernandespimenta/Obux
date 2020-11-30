@@ -46,7 +46,7 @@ hello@world:~$ node app.js
 First, you've gotta download and install Expo. After it, run the following command in the frontend folder.
 
 ```console
-hello@world:~$ expo star
+hello@world:~$ expo start
 ```
 
 # Project Routes
