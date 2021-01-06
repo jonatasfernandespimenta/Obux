@@ -13,12 +13,13 @@ Obux Will let you trade books with someone that has a book of your interest, bor
 
 ## Technologies Used
 <p align="center" style="display: flex; align-items: center; justify-content: space-around">
-  <img src="./readmeStuff/nodejs_logo.png" width="100">
-  <img src="./readmeStuff/mongo_logo.png" width="100">
+  <img src="https://docs.nestjs.com/assets/logo-small.svg" width="100">
+  <img src="https://avatars2.githubusercontent.com/u/20165699?s=400&v=4" width="100">
+  <img src="https://www.freepnglogos.com/uploads/logo-mysql-png/logo-mysql-mysql-and-moodle-elearningworld-5.png" width="120">
   <img src="./readmeStuff/rn_logo.png" width="100">
 </p>
 
-For this project, we've used NodeJS for the Backend, MongoDB for database and ReactNative for the Frontend (without Expo).
+For this project, we've used NestJS for the Backend, MySQL (TypeOrm) for database and ReactNative for the Frontend (Expo).
 <br/>
 
 ## Documentation Summary
@@ -39,14 +40,15 @@ hello@world:~$ yarn
 And now, all you gotta you do is run. Just run this command (Don't forget to set the environment variables in a .env file)
 
 ```console
-hello@world:~$ node app.js
+hello@world:~$ yarn start:dev
 ```
 
 #### FrontEnd
-First, you've gotta download and install React Native (without expo) and just run the following command in the frontend folder
+First, you've gotta download and install Expo. After it, run the following command in the frontend folder.
 
 ```console
-hello@world:~$ react-native run-android
+hello@world:~$ yarn
+hello@world:~$ expo start
 ```
 
 # Project Routes
@@ -54,22 +56,22 @@ hello@world:~$ react-native run-android
 ### User Routes
 |       Route           |    Method    |                   Description                    |                                                                         
 |   :---------------:   | :----------: | :----------------------------------------------: |                                                                           
-|  `/createuser`        |    POST      |  Route that creates a User                       |                                                         
-|  `/getuser/:id`       |    GET       |  Gets the user by its ID                         |   
-|  `/login`             |    POST      |  Route for user login                            |                                                        
-|  `/deluser/:id`       |    DELETE    |  Deletes the user by its ID                      |                 
-|  `/updateuser/:id`    |    PUT       |  Updates the user by its ID                      |                                                     
+|  `/users/create`        |    POST      |  Route that creates a User                       |                                                         
+|  `/users/get/:id`       |    GET       |  Gets the user by its ID                         |   
+|  `/users/login`             |    POST      |  Route for user login                            |                                                        
+|  `/users/deluser/:id`       |    DELETE    |  Deletes the user by its ID                      |                 
+|  `/users/update/:id`    |    PUT       |  Updates the user by its ID                      |                                                     
 |  `/rateuser`          |    POST      |  Creates a rating for the user based on reviews  |
 |  `/finduser`          |    POST      |  Find a user by its city and/or state            | 
 
 ### Book Routes
 |       Route       |    Method    |                                 Description                                  |                                                                                                          
 | :--------------:  | :----------: | :--------------------------------------------------------------------------: |                                                                           
-|  `/registerbook`  |    POST      |   Route that creates a book                                                  |                                                         
-|  `/getbook/:id`   |    GET       |   Gets book by its ID                                                        |   
-|  `/delbook:id`    |    DELETE    |   Delete book by its ID                                                      |                                                        
-|  `/updatebook:id` |    PUT       |   Updates a book by its ID                                                   |                 
-|  `/findbook`      |    POST      |   Route to search for books by its name, genre, year or author               |
+|  `/books/create`   |    POST      |   Route that creates a book                                                  |                                                         
+|  `/books/get/:id`  |    GET       |   Gets book by its ID                                                        |   
+|  `/books/delete/:id`|    DELETE    |   Delete book by its ID                                                      |                                                        
+|  `/books/update/:id` |    PUT       |   Updates a book by its ID                                                   |                 
+|  `/books/find`      |    POST      |   Route to search for books by its name, genre, year or author               |
 
 ### Pass Recovery Routes
 |       Route            |    Method    |                                 Description                                  |                                                                                                          
@@ -85,13 +87,13 @@ hello@world:~$ react-native run-android
 |:------------:|:---------------:|:----------------------------------------:|:---------:|:--------:|
 | `nome`       | name          | String                                 | true    | false  |
 | `dataNasc`   | birthday      | Date                                   | true    | false  |
-| `telefone`  | mobile number | String                                 | false   | true   |
+| `telefone`   | mobile number | String                                  | false   | false  |
 | `email`      | email         | String                                 | true    | true   |
 | `cpf`        | cpf           | String                                 | true    | true   |
 | `senha`      | password      | String                                 | true    | false  |
 | `cidade`     | city          | String                                 | true    | false  |
 | `estado`     | state         | String                                 | true    | false  |
-| `biblioteca` | library       |  \[mongoose\.Schema\.Types\.ObjectId\] | false   | false  |
+| `biblioteca` | library       | ObjectId                               | false   | false  |
 | `pfp`        | profile pic   | String                                 | false   | false  |
 | `givenrates` | givenrates    | Number                                 | false   | false  |
 | `totalrates` | totalrates    | Number                                 | false   | false  |
@@ -104,15 +106,22 @@ hello@world:~$ react-native run-android
 | `autor`           | author       | String | false   |
 | `ano`             | year         | String | false   |
 | `genero`          | genre        | String | false   |
-| `qualidade`       | quality      | Number | true    |
+| `qualidade`       | quality      | String | true    |
 | `foto`            | photo        | String | false   |
 | `disponibilidade` | availability | Number | true    |
 | `sinopse`         | synopsis     | String | false   |
 
+### Transaction Schema
+| FieldName       | Translated   | Type   | Required |
+|:-----------------:|:--------------:|:--------:|:---------:|
+| `due`             | due          | Date   | true    |
+| `user`            | user         | ObjectId | false   |
+| `receiver`            | receiver         | ObjectId | false   |
+
 ## Design
 [Click here to check the app design at figma](https://www.figma.com/file/tAH0UaEkDmD9pgSNjInOwj/Untitled?node-id=157%3A177)
 
-## Project Members
-| <img src="https://avatars.githubusercontent.com/jonatasfernandespimenta" width=115> | <img src="https://avatars.githubusercontent.com/LucaKmit" width=115> | <img src="https://avatars.githubusercontent.com/murilindo" width=115> | <img src="https://avatars.githubusercontent.com/JulioCelloto" width=115> | <img src="https://avatars.githubusercontent.com/capjackOrigins" width=115> |  
-|---|---|---|---|---|
-| <a href="https://github.com/jonatasfernandespimenta">Jônatas</a> | <a href="https://github.com/LucaKmit">Luca</a> | <a href="https://github.com/murilindo">Murilo</a> | <a href="https://github.com/JulioCelloto">Julio</a> | <a href="https://github.com/capjackOrigins">Pedro</a> |
+## Contributors
+| <img src="https://avatars.githubusercontent.com/jonatasfernandespimenta" width=115> | <img src="https://avatars.githubusercontent.com/LucaKmit" width=115>
+|---|---
+| <a href="https://github.com/jonatasfernandespimenta">Jônatas</a> | <a href="https://github.com/LucaKmit">Luca</a> 
