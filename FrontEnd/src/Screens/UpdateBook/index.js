@@ -130,8 +130,7 @@ const Home = () => {
         </Col>
       </Red>
       <BookPlus onPress={addCover}>
-        <BookCover source={{ uri: typeof cover == 'object' ? cover.uri : cover.includes('http://192.168.100.68:3000/files/') ? 
-                      cover : 'http://192.168.100.68:3000/files/' + cover, }} 
+        <BookCover source={{uri: cover.uri}} 
           resizeMode="cover"
         />
       </BookPlus>

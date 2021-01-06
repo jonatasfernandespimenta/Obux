@@ -20,8 +20,9 @@ import Message from '../../../Components/Message';
 
 import { Scroll, InputContainer, Column, IconContainer } from '../styles.js';
 import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
-import { Book, BookCover, CheckProposal, H2, Proposal, Row, Title } from '../../../Components/Transactions/styles';
+import { Book, BookCover, CheckProposal, H2, Proposal, Row, Title, Container } from '../../../Components/Transactions/styles';
 import { KeyboardAvoidingView } from 'react-native';
+import { KeyboardAwareFlatList } from 'react-native-keyboard-aware-scroll-view';
 
 const Chat = () => {
   const {params} = useRoute();
@@ -74,22 +75,21 @@ const Chat = () => {
     [navigation],
   );
 
-console.log(info)
+//console.log(info)
 
   return(
     <>
-      {show && <SendTransaction receiverId={params.user_info.id} done={setDone} />}
+    {show && <SendTransaction receiverId={params.user_info.id} done={setDone} />}
 
       {check && 
-      <CheckProposal>
+        <CheckProposal>
         <Proposal>
           <Title>Você recebeu uma proposta</Title>
           <H2>Data de entrega: {info ? Moment(info.due).format('DD/MMM/YYYY') : null}</H2>
           <H2>Livro a ser emprestado: </H2>
           <Book>
-            <BookCover source={{
-              uri: info?.book.foto.includes('http://192.168.100.68:3000/files/') ? 
-              info?.book.foto : 'http://192.168.100.68:3000/files/' + info?.book.foto,
+          <BookCover source={{
+              uri: info?.book.foto,
               isStatic: true
             }} />
           </Book>
@@ -109,8 +109,8 @@ console.log(info)
       </TouchableOpacity>
 
       {done && <AcceptTransaction set={setCheck} handleInfo={handleInfo} />}
-
-      <FlatList 
+      
+      <FlatList
         ref={scrollRef}
         data={messages}
         renderItem={({ item }) => (

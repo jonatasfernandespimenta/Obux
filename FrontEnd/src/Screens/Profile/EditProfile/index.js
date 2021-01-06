@@ -71,7 +71,7 @@ const EditProfile = () => {
         <Container>
           <BgImg source={image}>
             <Pfp onPress={addPfP}>
-              <ImagePreview source={{uri: typeof userPfp == 'object' ? userPfp.uri : 'http://192.168.100.68:3000/files/' + userPfp}} />
+              <ImagePreview source={{uri: userPfp}} />
               <IconContainer onPress={addPfP}>
                 <Icon name={'plus-square'} size={40} color={'#ffffff90'} />
               </IconContainer>

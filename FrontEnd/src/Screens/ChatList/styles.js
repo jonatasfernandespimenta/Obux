@@ -1,5 +1,10 @@
 import styled from 'styled-components/native';
 
+export const Container = styled.View`
+  flex: 1;
+  background: red;
+`;
+
 export const Scroll = styled.ScrollView.attrs({
   contentContainerStyle: {
     flexGrow: 1,
@@ -13,6 +18,7 @@ export const Scroll = styled.ScrollView.attrs({
 export const InputContainer = styled.View`
   margin-bottom: 15%;
   flex-direction: row;
+  justify-content: flex-end;
 `;
 
 export const Column = styled.View`
@@ -28,4 +34,3 @@ export const IconContainer = styled.TouchableOpacity`
   justify-content: center;
   margin: 5px;
 `;
-

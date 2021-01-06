@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, Image, TouchableOpacity, Alert } from 'react-native';
+import { Text, Image, TouchableOpacity, Alert, KeyboardAvoidingView } from 'react-native';
 
 import { createUser } from '../../services/api/userService';
 
@@ -62,6 +62,7 @@ export default function Register({navigation}) {
 
   return (
     <Container>
+      <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
       <Form>
 
         <TouchableOpacity onPress={addPfP}>
@@ -188,6 +189,7 @@ export default function Register({navigation}) {
           Registrar
         </Button>
       </Form>
+      </KeyboardAvoidingView>
     </Container>
   );
 }

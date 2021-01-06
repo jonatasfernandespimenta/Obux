@@ -43,7 +43,7 @@ const History = () => {
           <H2>Livro: </H2>
           <Book>
             <BookCover source={{
-              uri: 'http://192.168.100.68:3000/files/'+check.book.foto
+              uri: check.book.foto
             }} />
           </Book>
 
@@ -58,7 +58,7 @@ const History = () => {
           info ? info.filter((item) => item.accepted).map(item => {
             return(
               <TouchableOpacity onPress={() => setCheck(item)}>
-                <List profile={false} uri={'http://192.168.100.68:3000/files/'+item.book.foto} >{item.book.titulo}</List>
+                <List profile={false} uri={item.book.foto} >{item.book.titulo}</List>
               </TouchableOpacity>
             )
           }) : null

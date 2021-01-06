@@ -79,7 +79,7 @@ const Profile = () => {
         <Container>
           <BgImg source={image}>
             <Pfp>
-              <ImagePreview source={{uri: typeof pfp == 'object' ? pfp.uri : 'http://192.168.100.68:3000/files/' + pfp}}
+              <ImagePreview source={{uri: pfp.uri}}
                resizeMode={'cover'} />
             </Pfp>
           </BgImg>
@@ -111,8 +111,7 @@ const Profile = () => {
               <Book onPress = {() => {handleNavigateToBookDetails(uri.id)}}>
                 <BookCover
                   source={{
-                    uri: uri.foto ? uri.foto.includes('http://192.168.100.68:3000/files/') ? 
-                      uri.foto : 'http://192.168.100.68:3000/files/' + uri.foto : null,
+                    uri: uri.foto,
                     isStatic: true
                   }}
                 />

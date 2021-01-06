@@ -72,8 +72,7 @@ const Home = () => {
           <BookItem onPress={() => handleNavigateToBookDetails(item.id)}>
           <BookImage
             source={{
-              uri: item.foto.includes('http://192.168.100.68:3000/files/') ? 
-              item.foto : 'http://192.168.100.68:3000/files/' + item.foto,
+              uri: item.foto,
               isStatic: true
             }}
             />

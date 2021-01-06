@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Alert, Image } from 'react-native';
+import { Alert, Image, KeyboardAvoidingView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Hr from "react-native-hr-component";
 
@@ -79,6 +79,7 @@ export default function LoginScreen() {
 
   return (
     <Container>
+      <KeyboardAvoidingView style={{ flex: 1 }} behavior="padding">
       <Form>
         <Image 
           source={ logo }
@@ -94,6 +95,7 @@ export default function LoginScreen() {
         
         <Button marginY={20} color="blue" width={200} height={40} onPress={handleRegisterClick} >Registrar</Button>
       </Form>
+    </KeyboardAvoidingView>
     </Container>
 
   );
