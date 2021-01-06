@@ -1,0 +1,37 @@
+{
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject"
+  },
+  "dependencies": {
+    "@react-native-community/checkbox": "^0.5.6",
+    "@react-native-community/datetimepicker": "^3.0.6",
+    "@react-native-community/masked-view": "^0.1.10",
+    "@react-navigation/native": "^5.8.10",
+    "@react-navigation/stack": "^5.12.8",
+    "axios": "^0.21.0",
+    "expo": "~39.0.2",
+    "expo-image-picker": "^9.1.1",
+    "expo-status-bar": "~1.0.2",
+    "lottie-react-native": "~2.6.1",
+    "moment": "^2.29.1",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.4.tar.gz",
+    "react-native-gesture-handler": "^1.9.0",
+    "react-native-hr-component": "^2.0.3",
+    "react-native-keyboard-aware-scroll-view": "^0.9.3",
+    "react-native-modal-datetime-picker": "^9.1.0",
+    "react-native-screens": "^2.15.0",
+    "react-native-web": "~0.13.12",
+    "styled-components": "^5.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "~7.9.0"
+  },
+  "private": true
+}
