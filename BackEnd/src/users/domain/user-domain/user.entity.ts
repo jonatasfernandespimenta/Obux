@@ -22,7 +22,7 @@ export class UserEntity extends BaseEntity{
 
   @IsNotEmpty()
   @Column()
-  dataNasc: String;
+  dataNasc: Date;
 
   @Column()
   telefone: number;

@@ -37,7 +37,7 @@ __decorate([
 __decorate([
     class_validator_1.IsNotEmpty(),
     typeorm_1.Column(),
-    __metadata("design:type", String)
+    __metadata("design:type", Date)
 ], UserEntity.prototype, "dataNasc", void 0);
 __decorate([
     typeorm_1.Column(),

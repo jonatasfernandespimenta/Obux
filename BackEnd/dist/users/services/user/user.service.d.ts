@@ -13,7 +13,7 @@ export declare class UserService {
         createdAt: Date;
         updatedAt: Date;
         nome: string;
-        dataNasc: String;
+        dataNasc: Date;
         telefone: number;
         email: String;
         cpf: string;
