@@ -121,6 +121,11 @@ hello@world:~$ expo start
 ## Design
 [Click here to check the app design at figma](https://www.figma.com/file/tAH0UaEkDmD9pgSNjInOwj/Untitled?node-id=157%3A177)
 
+
+# Missing Something? Something is not working?
+* Open a GitHub issue, or
+* Send a pull request
+
 ## Contributors
 | <img src="https://avatars.githubusercontent.com/jonatasfernandespimenta" width=115> | <img src="https://avatars.githubusercontent.com/LucaKmit" width=115>
 |---|---
