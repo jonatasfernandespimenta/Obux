@@ -121,6 +121,7 @@ hello@world:~$ expo start
 ## Design
 [Click here to check the app design at figma](https://www.figma.com/file/tAH0UaEkDmD9pgSNjInOwj/Untitled?node-id=157%3A177)
 
+## Want to keep track of the currently project status? [Just follow this link (portuguese only)](https://trello.com/b/mT6extOx/obux)
 
 # Missing Something? Something is not working?
 * Open a GitHub issue, or
