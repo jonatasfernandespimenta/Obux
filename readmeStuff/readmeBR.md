@@ -41,7 +41,7 @@ hello@world:~$ node app.js
 ```
 
 #### FrontEnd
-Primeiramente é preciso baixar React Native (sim expo) e rodar o seguinte comando na pasta de Frontend
+Primeiramente é preciso baixar o Expo e depois rodar o seguinte comando na pasta de Frontend
 
 ```console
 hello@world:~$ react-native run-android
@@ -110,7 +110,7 @@ hello@world:~$ react-native run-android
 ## Design
 [Clique aqui para ver o design do aplicativo no figma](https://www.figma.com/file/tAH0UaEkDmD9pgSNjInOwj/Untitled?node-id=157%3A177)
 
-## Project Members
-| <img src="https://avatars.githubusercontent.com/jonatasfernandespimenta" width=115> | <img src="https://avatars.githubusercontent.com/LucaKmit" width=115> | <img src="https://avatars.githubusercontent.com/murilindo" width=115> | <img src="https://avatars.githubusercontent.com/JulioCelloto" width=115> | <img src="https://avatars.githubusercontent.com/capjackOrigins" width=115> |  
-|---|---|---|---|---|
-| <a href="https://github.com/jonatasfernandespimenta">Jônatas</a> | <a href="https://github.com/LucaKmit">Luca</a> | <a href="https://github.com/murilindo">Murilo</a> | <a href="https://github.com/JulioCelloto">Julio</a> | <a href="https://github.com/capjackOrigins">Pedro</a> |
+## Membros do projeto
+| <img src="https://avatars.githubusercontent.com/jonatasfernandespimenta" width=115> | <img src="https://avatars.githubusercontent.com/LucaKmit" width=115>
+|---|---
+| <a href="https://github.com/jonatasfernandespimenta">Jônatas</a> | <a href="https://github.com/LucaKmit">Luca</a> 
