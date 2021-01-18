@@ -126,7 +126,7 @@ hello@world:~$ expo start
 * Open a GitHub issue, or
 * Send a pull request
 
-## Contributors
+## Project members
 | <img src="https://avatars.githubusercontent.com/jonatasfernandespimenta" width=115> | <img src="https://avatars.githubusercontent.com/LucaKmit" width=115>
 |---|---
 | <a href="https://github.com/jonatasfernandespimenta">Jônatas</a> | <a href="https://github.com/LucaKmit">Luca</a> 
