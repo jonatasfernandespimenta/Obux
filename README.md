@@ -24,7 +24,7 @@ For this project, we've used NestJS for the Backend, MySQL (TypeOrm) for databas
 
 ## Documentation Summary
 * ### [How to run](#how-to-run-it)
-* ### [Endpoints](#project-routes)
+* ### [Endpoints](#project-endpoints)
 * ### [Models](#project-models)
 
 ## How to run it
