@@ -24,7 +24,7 @@ For this project, we've used NestJS for the Backend, MySQL (TypeOrm) for databas
 
 ## Documentation Summary
 * ### [How to run](#how-to-run-it)
-* ### [Routes](#project-routes)
+* ### [Endpoints](#project-routes)
 * ### [Models](#project-models)
 
 ## How to run it
@@ -51,9 +51,9 @@ hello@world:~$ yarn
 hello@world:~$ expo start
 ```
 
-# Project Routes
+# Project Endpoints
 
-### User Routes
+### User Endpoints
 |       Route           |    Method    |                   Description                    |                                                                         
 |   :---------------:   | :----------: | :----------------------------------------------: |                                                                           
 |  `/users/create`        |    POST      |  Route that creates a User                       |                                                         
@@ -64,7 +64,7 @@ hello@world:~$ expo start
 |  `/rateuser`          |    POST      |  Creates a rating for the user based on reviews  |
 |  `/finduser`          |    POST      |  Find a user by its city and/or state            | 
 
-### Book Routes
+### Book Endpoints
 |       Route       |    Method    |                                 Description                                  |                                                                                                          
 | :--------------:  | :----------: | :--------------------------------------------------------------------------: |                                                                           
 |  `/books/create`   |    POST      |   Route that creates a book                                                  |                                                         
@@ -73,7 +73,7 @@ hello@world:~$ expo start
 |  `/books/update/:id` |    PUT       |   Updates a book by its ID                                                   |                 
 |  `/books/find`      |    POST      |   Route to search for books by its name, genre, year or author               |
 
-### Pass Recovery Routes
+### Pass Recovery Endpoints
 |       Route            |    Method    |                                 Description                                  |                                                                                                          
 | :--------------:       | :----------: | :--------------------------------------------------------------------------: |                                                                           
 |  `/request`            |    POST      |   Route that sends the pass recovery email                                                  |                                                         
