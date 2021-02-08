@@ -1,0 +1,50 @@
+version: "3.5"
+
+services:
+  admin:
+    image: phpmyadmin/phpmyadmin:latest
+    links:
+     - db:${MYSQL_HOST}
+    depends_on:
+     - db
+    ports:
+     - "8080:80"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      PMA_HOST: ${MYSQL_HOST}
+      PMA_PORT: ${MYSQL_PORT}
+
+  db:
+    image: mysql:8.0
+    container_name: ${MYSQL_HOST}
+    volumes:
+      - my-datavolume:/var/lib/mysql
+    ports:
+      - "${MYSQL_PORT}:${MYSQL_PORT}"
+    environment:
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_TCP_PORT: ${MYSQL_PORT}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DB_NAME}
+
+  backend:
+    build: ./backend
+    image: node:14-alpine
+    working_dir: /app
+    restart: always
+    container_name: backend
+    links:
+      - db:${MYSQL_HOST}
+    depends_on:
+      - db
+    ports:
+      - "${PORT}:${PORT}"
+    volumes:
+      - ./backend:/app
+    expose:
+      - "${PORT}"
+    command: 'yarn run start:dev'
+    env_file: .env
+
+volumes:
+  - my-datavolume:/var/lib/mysql
