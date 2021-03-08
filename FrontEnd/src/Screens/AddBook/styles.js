@@ -85,3 +85,14 @@ export const Scroll = styled.ScrollView.attrs({
   height: 100%;
   margin-bottom: 50px;
 `;
+
+export const CheckBox = styled.TouchableOpacity`
+  height: 20px;
+  width: 20px;
+  border-style: solid;
+  border-color: #2D2D2D;
+  border-width: 1px;
+  margin: 2px;
+  border-radius: 3px;
+  background: ${({enabled}) => (enabled ? '#2D2D2D' : 'transparent')};
+`;

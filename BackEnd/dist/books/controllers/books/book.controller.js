@@ -18,6 +18,8 @@ const platform_express_1 = require("@nestjs/platform-express");
 const book_service_1 = require("../../services/book/book.service");
 const multer_1 = require("multer");
 const path_1 = require("path");
+const customGuard_guard_1 = require("../../../users/guards/customGuard.guard");
+const isOwner_guard_1 = require("../../../users/guards/isOwner.guard");
 let BookController = class BookController {
     constructor(book) {
         this.book = book;
@@ -71,6 +73,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], BookController.prototype, "getBookByName", null);
 __decorate([
+    common_1.UseGuards(customGuard_guard_1.JwtCustomGuard, isOwner_guard_1.IsOwner),
     common_1.Delete('delete/:id'),
     __param(0, common_1.Param()),
     __metadata("design:type", Function),
@@ -78,6 +81,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], BookController.prototype, "delBook", null);
 __decorate([
+    common_1.UseGuards(customGuard_guard_1.JwtCustomGuard, isOwner_guard_1.IsOwner),
     common_1.Put('update/:id'),
     __param(0, common_1.Param()), __param(1, common_1.Body()),
     __metadata("design:type", Function),
@@ -101,6 +105,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], BookController.prototype, "uploadSingle", null);
 __decorate([
+    common_1.UseGuards(customGuard_guard_1.JwtCustomGuard, isOwner_guard_1.IsOwner),
     common_1.Post('create'),
     __param(0, common_1.Body()),
     __metadata("design:type", Function),

@@ -101,13 +101,9 @@ const Profile = () => {
           {
             books.map((uri) => (
               <>
-              {console.log('MEXICO: ', uri.titulo )}
               <Book onPress={() => {handleEditBook(uri.id)}}>
                 <BookCover
-                  source={{
-                    uri: uri.foto,
-                    isStatic: true
-                  }}
+                  source={{uri: uri.foto}}
                 />
               </Book>
               </>

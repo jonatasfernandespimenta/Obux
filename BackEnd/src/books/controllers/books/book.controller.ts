@@ -1,8 +1,10 @@
-import { Body, Controller, Delete, Get, Param, Post, Put, UploadedFile, UseInterceptors } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put, UploadedFile, UseGuards, UseInterceptors } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { BookService } from '../../services/book/book.service';
 import { diskStorage } from 'multer'
 import { extname, join } from 'path'
+import { JwtCustomGuard } from 'src/users/guards/customGuard.guard';
+import { IsOwner } from 'src/users/guards/isOwner.guard';
 
 @Controller('books')
 export class BookController {
@@ -28,11 +30,13 @@ export class BookController {
     return response;
   }
 
+  @UseGuards(JwtCustomGuard, IsOwner)
   @Delete('delete/:id')
   delBook(@Param() params) {
     return this.book.deleteBook(params.id);
   }
 
+  @UseGuards(JwtCustomGuard, IsOwner)
   @Put('update/:id')
   updateBook(@Param() params, @Body() book) {
     console.log('UPDATE BOOK!!!!!')
@@ -54,6 +58,7 @@ export class BookController {
     return file;
   }
 
+  @UseGuards(JwtCustomGuard, IsOwner)
   @Post('create')
   createBook(@Body() newBook) {
     console.log(newBook)

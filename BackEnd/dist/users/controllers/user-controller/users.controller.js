@@ -21,6 +21,8 @@ const login_dto_1 = require("../../dtos/user-dtos/login.dto");
 const platform_express_1 = require("@nestjs/platform-express");
 const multer_1 = require("multer");
 const path_1 = require("path");
+const customGuard_guard_1 = require("../../guards/customGuard.guard");
+const isOwner_guard_1 = require("../../guards/isOwner.guard");
 let UsersController = class UsersController {
     constructor(user, auth) {
         this.user = user;
@@ -103,6 +105,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UsersController.prototype, "isAvailable", null);
 __decorate([
+    common_1.UseGuards(customGuard_guard_1.JwtCustomGuard, isOwner_guard_1.IsOwner),
     common_1.Put('update/:id'),
     __param(0, common_1.Param()), __param(1, common_1.Body()),
     __metadata("design:type", Function),
@@ -110,6 +113,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], UsersController.prototype, "updateUser", null);
 __decorate([
+    common_1.UseGuards(customGuard_guard_1.JwtCustomGuard, isOwner_guard_1.IsOwner),
     common_1.Delete('deluser/:id'),
     __param(0, common_1.Param()),
     __metadata("design:type", Function),

@@ -13,12 +13,23 @@ const user_service_1 = require("./services/user/user.service");
 const users_controller_1 = require("./controllers/user-controller/users.controller");
 const user_entity_1 = require("./domain/user-domain/user.entity");
 const auth_service_1 = require("./services/auth/auth.service");
+const jwt_1 = require("@nestjs/jwt");
+const jwt_strategy_1 = require("./guards/jwt.strategy");
+const customGuard_guard_1 = require("./guards/customGuard.guard");
+const roles_guard_1 = require("./guards/roles.guard");
 let UsersModule = class UsersModule {
 };
 UsersModule = __decorate([
     common_1.Module({
-        imports: [typeorm_1.TypeOrmModule.forFeature([user_entity_1.UserEntity])],
-        providers: [user_service_1.UserService, auth_service_1.AuthService],
+        imports: [
+            typeorm_1.TypeOrmModule.forFeature([user_entity_1.UserEntity]),
+            jwt_1.JwtModule.register({
+                secret: `${process.env.SECRET_KEY}`, signOptions: {
+                    expiresIn: '600m',
+                },
+            }),
+        ],
+        providers: [user_service_1.UserService, auth_service_1.AuthService, jwt_strategy_1.JwtStrategy, customGuard_guard_1.JwtCustomGuard, roles_guard_1.JwtRoleGuard],
         controllers: [users_controller_1.UsersController],
     })
 ], UsersModule);

@@ -85,7 +85,15 @@ export default function LoginScreen() {
           source={ logo }
           style={{ width: 200, height: 200}}
         />
-        <Input placeholder='E-mail' placeholderTextColor="white" onChangeText={(text) => setEmail(text)} value={email} />
+
+        <Input 
+          placeholder='E-mail' 
+          autoCorrect={false} 
+          autoCapitalize='none' 
+          placeholderTextColor="white" 
+          onChangeText={(text) => setEmail(text)} 
+          value={email} 
+        />
         
         <Input placeholder='Senha' secureTextEntry={true} placeholderTextColor="white" onChangeText={(text) => setSenha(text)} value={senha} />
         

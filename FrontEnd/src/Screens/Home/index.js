@@ -33,7 +33,7 @@ const Home = () => {
     
     loadBooksList();
   }, []);
-  
+
   const formatBookData = useCallback((dataList, numColumns) => {
     const totalRows = Math.floor(dataList.length / numColumns);
     

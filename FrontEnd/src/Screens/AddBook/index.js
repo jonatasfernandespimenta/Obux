@@ -9,16 +9,17 @@ import * as ImagePicker from 'expo-image-picker';
 
 import { useInfo } from '../../Contexts/info.context';
 
-import CheckBox from '@react-native-community/checkbox';
+
 
 import { addBook } from '../../services/api/userService';
 
-import { Red, Container, Text, BookPlus, Col, Row, Title, InputsContainer, Scroll, Hr, Center, BookCover } from './styles.js';
+import { Red, Container, Text, BookPlus, Col, Row, Title, InputsContainer, Scroll, Hr, Center, BookCover, CheckBox } from './styles.js';
 
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
 import { Image } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const Home = () => {
   const navigation = useNavigation();
@@ -68,17 +69,17 @@ const Home = () => {
         <Title>    Disponibilidade:</Title>
         <Col>
           <Row>
-            <CheckBox onFillColor={'#2D2D2D'} onValueChange={() => setDispo(0)} value={dispo == 1 || dispo == 2 ? false : true}  />
+            <CheckBox onPress={() => setDispo(0)} value={dispo == 1 || dispo == 2 ? false : true} enabled={dispo === 0 ? true : false} />
             <Text>Troca</Text>
           </Row>
 
           <Row>
-            <CheckBox onFillColor={'#2D2D2D'} onValueChange={() => setDispo(1)} value={dispo == 0 || dispo == 2 ? false : true} />
+            <CheckBox onPress={() => setDispo(1)} value={dispo == 0 || dispo == 2 ? false : true} enabled={dispo === 1 ? true : false} />
             <Text>Empréstimo</Text>
           </Row>
 
           <Row>
-            <CheckBox onFillColor={'#2D2D2D'} onValueChange={() => setDispo(2)} value={dispo == 0 || dispo == 1 ? false : true} />
+            <CheckBox onPress={() => setDispo(2)} value={dispo == 0 || dispo == 1 ? false : true} enabled={dispo === 2 ? true : false} />
             <Text>Ambos</Text>
           </Row>
         </Col>
