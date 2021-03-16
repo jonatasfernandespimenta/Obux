@@ -83,7 +83,7 @@ export default function LoginScreen() {
       <Form>
         <Image 
           source={ logo }
-          style={{ width: 200, height: 200}}
+          style={{ width: 200, height: 200, marginBottom: 60 }}
         />
 
         <Input 
