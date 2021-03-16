@@ -62,6 +62,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], UsersController.prototype, "getUser", null);
 __decorate([
+    common_1.UseGuards(customGuard_guard_1.JwtCustomGuard),
     common_1.Get('/'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
@@ -74,7 +75,7 @@ __decorate([
             destination: './uploads',
             filename: (req, file, cb) => {
                 const randomName = Array(32).fill(null).map(() => (Math.round(Math.random() * 16)).toString(16)).join('');
-                cb(null, `${randomName}${path_1.extname(file.originalname)}`);
+                cb(null, `${randomName}${path_1.extname(file.originalname)}.jpg`);
             }
         })
     })),

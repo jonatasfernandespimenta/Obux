@@ -4,10 +4,14 @@ import { Repository } from 'typeorm';
 import { LoginDto } from '../../dtos/user-dtos/login.dto';
 import { UserEntity } from '../../domain/user-domain/user.entity';
 import * as bcrypt from 'bcrypt';
+import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class AuthService {
-  constructor(@InjectRepository(UserEntity) private usersRepository: Repository<UserEntity>) {  };
+  constructor(
+    @InjectRepository(UserEntity) private usersRepository: Repository<UserEntity>,
+    private jwtService: JwtService
+  ) {  };
 
   async login(user: LoginDto) {
     const userList = await this.usersRepository.find();
@@ -20,7 +24,7 @@ export class AuthService {
       return false;
     }
 
-    return foundLogin;
+    return {foundLogin, access_token: this.jwtService.sign({ status: 'Authorized', userId: foundLogin.id }) };
 
   }
 }

@@ -18,9 +18,11 @@ const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
 const user_entity_1 = require("../../domain/user-domain/user.entity");
 const bcrypt = require("bcrypt");
+const jwt_1 = require("@nestjs/jwt");
 let AuthService = class AuthService {
-    constructor(usersRepository) {
+    constructor(usersRepository, jwtService) {
         this.usersRepository = usersRepository;
+        this.jwtService = jwtService;
     }
     ;
     async login(user) {
@@ -29,13 +31,14 @@ let AuthService = class AuthService {
         if (!foundLogin) {
             return false;
         }
-        return foundLogin;
+        return { foundLogin, access_token: this.jwtService.sign({ status: 'Authorized', userId: foundLogin.id }) };
     }
 };
 AuthService = __decorate([
     common_1.Injectable(),
     __param(0, typeorm_1.InjectRepository(user_entity_1.UserEntity)),
-    __metadata("design:paramtypes", [typeorm_2.Repository])
+    __metadata("design:paramtypes", [typeorm_2.Repository,
+        jwt_1.JwtService])
 ], AuthService);
 exports.AuthService = AuthService;
 //# sourceMappingURL=auth.service.js.map

@@ -9,8 +9,11 @@ export declare class UsersController {
     getUser(params: any): Promise<import("../../domain/user-domain/user.entity").UserEntity[]>;
     getUsers(): Promise<import("../../domain/user-domain/user.entity").UserEntity[]>;
     uploadSingle(file: any): any;
-    createUser(newUser: CreateUserDto): Promise<import("@nestjs/common").HttpException | (CreateUserDto & import("../../domain/user-domain/user.entity").UserEntity)>;
-    userLogin(userCredentials: LoginDto): Promise<false | import("../../domain/user-domain/user.entity").UserEntity>;
+    createUser(newUser: CreateUserDto): Promise<(CreateUserDto & import("../../domain/user-domain/user.entity").UserEntity) | import("@nestjs/common").HttpException>;
+    userLogin(userCredentials: LoginDto): Promise<false | {
+        foundLogin: import("../../domain/user-domain/user.entity").UserEntity;
+        access_token: string;
+    }>;
     isAvailable(email: any): Promise<boolean>;
     updateUser(params: any, user: any): Promise<{
         id: number;
