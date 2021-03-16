@@ -12,6 +12,7 @@ export const Container = styled.TouchableOpacity`
   border-color: white;
   align-self: stretch;
   flex-direction: row;
+  align-items: center;
 `;
 
 export const IconContainer = styled.View`

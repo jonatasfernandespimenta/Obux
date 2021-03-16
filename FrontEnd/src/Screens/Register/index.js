@@ -65,7 +65,7 @@ export default function Register({navigation}) {
       <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
       <Form>
 
-        <TouchableOpacity onPress={addPfP}>
+        <TouchableOpacity onPress={addPfP} style={{ marginTop: 30 }}>
           <Image source={pfp.uri ? { uri: pfp.uri} : addPfpIcon} 
             style={{width: 150, 
             height: 150, 
@@ -180,14 +180,24 @@ export default function Register({navigation}) {
           value={description}
         />
 
+      <Row style={{ marginTop: 30 }}>
         <Button
-          marginY={20}
+          marginX={15}
           color="blue"
-          width={200}
+          width={150}
           height={40}
           onPress={handleRegisterClick}>
           Registrar
         </Button>
+        <Button
+          marginX={15}
+          color="blue"
+          width={150}
+          height={40}
+          onPress={() => navigation.navigate('Login')}>
+          Voltar
+        </Button>
+      </Row>
       </Form>
       </KeyboardAvoidingView>
     </Container>

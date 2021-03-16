@@ -93,9 +93,17 @@ export default function LoginScreen() {
           placeholderTextColor="white" 
           onChangeText={(text) => setEmail(text)} 
           value={email} 
+          style={{ height: 30 }}
         />
         
-        <Input placeholder='Senha' secureTextEntry={true} placeholderTextColor="white" onChangeText={(text) => setSenha(text)} value={senha} />
+        <Input 
+          placeholder='Senha' 
+          secureTextEntry={true} 
+          placeholderTextColor="white" 
+          onChangeText={(text) => setSenha(text)} 
+          value={senha} 
+          style={{ height: 30 }}
+        />
         
         <Button marginY={20} color="blue" width={200} onPress={handleLoginClick} height={40} >Logar</Button>
         
