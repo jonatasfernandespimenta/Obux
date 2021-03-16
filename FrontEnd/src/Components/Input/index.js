@@ -14,7 +14,7 @@ export default function InputComponent({ icon, iconColor, date, setShow, ...rest
    const inputRef = useRef(null);
    return (
     <Touchable onPress={date ? () => {setShow(true)} : () => inputRef.current.focus()}>
-        <Container onPress={date ? () => {setShow(true)} : null}>
+        <Container onPress={date ? () => {setShow(true)} : () => inputRef.current.focus()}>
             {icon && (
                 <IconContainer>
                     <Icon name={icon} color={iconColor || '#fff'} size={16}/>
