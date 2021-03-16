@@ -46,8 +46,9 @@ export default function LoginScreen() {
     try {
       const loginstatus = await login(email, senha);
       if(loginstatus.data !== false) {
-        const User = await getuser(loginstatus.data.id);
-        setUserId(loginstatus.data.id);
+        const User = await getuser(loginstatus.data.foundLogin.id);
+
+        setUserId(loginstatus.data.foundLogin.id);
         setUserName(User.data[0].nome);
         setUserPhone(User.data[0].telefone);
         setUserEmail(User.data[0].email);

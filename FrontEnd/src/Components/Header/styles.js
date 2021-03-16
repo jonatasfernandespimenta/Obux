@@ -1,7 +1,6 @@
 import styled, {css} from 'styled-components/native';
 
 export const Container = styled.View`
-
   ${({ background }) => background && css`
     background: ${`#${background || 'fa695f'}`};
   `}
@@ -9,7 +8,6 @@ export const Container = styled.View`
   ${({ height }) => height && css`
     height: ${`${height}px`};
   `}
-
   justify-content: center;
 `;
 

@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import {useNavigation} from '@react-navigation/native';
+import {useFocusEffect, useNavigation} from '@react-navigation/native';
 import React, {useCallback, useEffect, useState} from 'react';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 
@@ -25,7 +25,7 @@ const Home = () => {
   const [data, setData] = useState([]);
   const [bookName, setBookName] = useState('');
   
-  useEffect(() => {
+  useFocusEffect(() => {
     async function loadBooksList() {
       const response = await getBooks();
       setData([...response.data]);
@@ -58,21 +58,20 @@ const Home = () => {
 
     const handleGetBook = async (bookName) => {
       const response = await getBookByName(bookName)
-      console.log('RESPONSE: ', response.data)
       setData([...response.data]);
     }
     
     const renderBookItem = useCallback(
       ({item}) => {
         if (item.empty) {
-          return <BookItem style={{backgroundColor: 'transparent'}} disabled />;
+          return <BookItem style={{backgroundColor: 'red'}} disabled />;
         }
         
         return (
           <BookItem onPress={() => handleNavigateToBookDetails(item.id)}>
           <BookImage
             source={{
-              uri: item.foto,
+              uri: item.foto.replace('192.168.100.68', 'localhost'),
               isStatic: true
             }}
             />

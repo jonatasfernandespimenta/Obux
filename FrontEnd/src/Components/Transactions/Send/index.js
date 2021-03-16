@@ -63,7 +63,7 @@ const Send = ({ receiverId, done }) => {
               {selectedBooks === uri.id ? <Selected/> : null}
               <BookCover
                 source={{
-                  uri: uri.foto,
+                  uri: uri.foto.replace('192.168.100.68', 'localhost'),
                   isStatic: true
                 }}
               />

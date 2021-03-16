@@ -111,7 +111,7 @@ const Profile = () => {
               <Book onPress = {() => {handleNavigateToBookDetails(uri.id)}}>
                 <BookCover
                   source={{
-                    uri: uri.foto,
+                    uri: uri.foto.replace('192.168.100.68', 'localhost'),
                     isStatic: true
                   }}
                 />

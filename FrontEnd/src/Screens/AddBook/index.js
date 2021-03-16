@@ -88,20 +88,20 @@ const Home = () => {
           {
             cover.uri ?
             <BookCover source={{ uri: cover.uri}} 
-              resizeMode="cover"
+              resizeMode="stretch"
             /> :
           <Icon name="plus" color="white" size={40} />
           }
       </BookPlus>
     </Container>
 
-    <Input placeholder={'Titulo'} placeholderTextColor={'#ffffff90'} onChangeText={(text) => setTitle(text)} value={title} />
+    <Input style={{ height: 30 }} placeholder={'Titulo'} placeholderTextColor={'#ffffff90'} onChangeText={(text) => setTitle(text)} value={title} />
     <InputsContainer>
-      <Input placeholder={'Autor'} placeholderTextColor={'#ffffff90'}  onChangeText={(text) => setAuthor(text)} value={author} />
-      <Input placeholder={'Editora'} placeholderTextColor={'#ffffff90'} onChangeText={(text) => setEditora(text)} value={editora} />
-      <Input placeholder={'Qualidade'} placeholderTextColor={'#ffffff90'} onChangeText={(text) => setQuality(text)} value={quality} />
-      <Input placeholder={'Gênero'} placeholderTextColor={'#ffffff90'} onChangeText={(text) => setGenre(text)} value={genre} />
-      <Input placeholder={'Ano'} placeholderTextColor={'#ffffff90'} onChangeText={(text) => setYear(text)} value={year} />
+      <Input style={{ height: 30 }} placeholder={'Autor'} placeholderTextColor={'#ffffff90'}  onChangeText={(text) => setAuthor(text)} value={author} />
+      <Input style={{ height: 30 }} placeholder={'Editora'} placeholderTextColor={'#ffffff90'} onChangeText={(text) => setEditora(text)} value={editora} />
+      <Input style={{ height: 30 }} placeholder={'Qualidade'} placeholderTextColor={'#ffffff90'} onChangeText={(text) => setQuality(text)} value={quality} />
+      <Input style={{ height: 30 }} placeholder={'Gênero'} placeholderTextColor={'#ffffff90'} onChangeText={(text) => setGenre(text)} value={genre} />
+      <Input style={{ height: 30 }} placeholder={'Ano'} placeholderTextColor={'#ffffff90'} onChangeText={(text) => setYear(text)} value={year} />
       <Hr/>
       <Title>Sinopse:</Title>
       <Input width={250} multiline={true} height={100} onChangeText={(text) => setSinopse(text)} value={sinopse} />

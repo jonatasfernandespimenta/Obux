@@ -103,7 +103,7 @@ const Profile = () => {
               <>
               <Book onPress={() => {handleEditBook(uri.id)}}>
                 <BookCover
-                  source={{uri: uri.foto}}
+                  source={{uri: uri.foto.replace('192.168.100.68', 'localhost')}}
                 />
               </Book>
               </>

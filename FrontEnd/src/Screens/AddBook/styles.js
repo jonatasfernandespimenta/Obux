@@ -40,14 +40,14 @@ export const BookPlus = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   background: gray;
-  width: 40%;
+  width: 30%;
   height: 180px;
   color: white;
 `;
 
 export const BookCover = styled.Image`
   width: 100%;
-  height: 180px;
+  height: 100%;
 `;
 
 export const Container = styled.View`

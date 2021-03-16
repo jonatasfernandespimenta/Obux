@@ -33,7 +33,7 @@ const History = () => {
 
   return(
     <>
-      <Header height={50} background={'1E1E1E'} color={'#fff'}>HISTORICO</Header>
+      <Header height={90} background={'1E1E1E'} color={'#fff'}>HISTORICO</Header>
 
       {check && 
       <CheckProposal>

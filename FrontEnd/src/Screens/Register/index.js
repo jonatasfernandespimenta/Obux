@@ -90,6 +90,7 @@ export default function Register({navigation}) {
           placeholder="E-mail *"
           placeholderTextColor="white"
           onChangeText={(text) => setEmail(text)}
+          autoCapitalize='none'
           value={email}
         />
         <Input

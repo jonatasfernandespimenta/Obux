@@ -26,6 +26,7 @@
     "react-native-hr-component": "^2.0.3",
     "react-native-keyboard-aware-scroll-view": "^0.9.3",
     "react-native-modal-datetime-picker": "^9.1.0",
+    "react-native-popup-menu": "^0.15.10",
     "react-native-screens": "^2.15.0",
     "react-native-web": "~0.13.12",
     "styled-components": "^5.2.1"
