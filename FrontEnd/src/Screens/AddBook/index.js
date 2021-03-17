@@ -18,7 +18,7 @@ import { Red, Container, Text, BookPlus, Col, Row, Title, InputsContainer, Scrol
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
-import { Image } from 'react-native';
+import { Image, KeyboardAvoidingView } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const Home = () => {
@@ -64,6 +64,7 @@ const Home = () => {
   return(
     <>
     <Scroll>
+    <KeyboardAvoidingView behavior="position">
     <Container>
       <Red>
         <Title>    Disponibilidade:</Title>
@@ -95,8 +96,8 @@ const Home = () => {
       </BookPlus>
     </Container>
 
-    <Input style={{ height: 30 }} placeholder={'Titulo'} placeholderTextColor={'#ffffff90'} onChangeText={(text) => setTitle(text)} value={title} />
     <InputsContainer>
+    <Input style={{ height: 30 }} placeholder={'Titulo'} placeholderTextColor={'#ffffff90'} onChangeText={(text) => setTitle(text)} value={title} />
       <Input style={{ height: 30 }} placeholder={'Autor'} placeholderTextColor={'#ffffff90'}  onChangeText={(text) => setAuthor(text)} value={author} />
       <Input style={{ height: 30 }} placeholder={'Editora'} placeholderTextColor={'#ffffff90'} onChangeText={(text) => setEditora(text)} value={editora} />
       <Input style={{ height: 30 }} placeholder={'Qualidade'} placeholderTextColor={'#ffffff90'} onChangeText={(text) => setQuality(text)} value={quality} />
@@ -107,6 +108,7 @@ const Home = () => {
       <Input width={250} multiline={true} height={100} onChangeText={(text) => setSinopse(text)} value={sinopse} />
     </InputsContainer>
 
+    </KeyboardAvoidingView>
     <Center>
       <Button width={130} height={40} marginX={10} background={'#007019'} onPress={handleCreateBook} >Salvar</Button>
       <Button width={130} height={40} marginX={10} onPress={handleCancelClick}>Cancelar</Button>

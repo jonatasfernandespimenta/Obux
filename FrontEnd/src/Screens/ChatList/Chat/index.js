@@ -75,6 +75,8 @@ const Chat = () => {
     [navigation],
   );
 
+  const keyboardVerticalOffset = Platform.OS === 'ios' ? 5 : 0
+
 //console.log(info)
 
   return(
@@ -104,35 +106,34 @@ const Chat = () => {
       }
 
       <TouchableOpacity onPress={() => handleNavigateToProfile(params.user_info.id)}>
-        <List rate={'3'} uri={'http://192.168.100.68:3000/files/' + params.user_info.file}
+        <List rate={'3'} uri={params.user_info.file.replace('192.168.100.68', 'localhost')}
         profile={true}>{params.user_info.nome} / {params.user_info.estado}</List>
       </TouchableOpacity>
 
       {done && <AcceptTransaction set={setCheck} handleInfo={handleInfo} />}
-      
       <FlatList
         ref={scrollRef}
         data={messages}
         renderItem={({ item }) => (
-          <>
           <Message author={item.author} message={item.message} received={item.author === 'Luca'} />
-          </>
           )}
-        keyExtractor={(item, index) => index.toString()}
-        onContentSizeChange={() => scrollRef.current.scrollToEnd()}
-      />
+          keyExtractor={(item, index) => index.toString()}
+          onContentSizeChange={() => scrollRef.current.scrollToEnd()}
+          />
       
-      <InputContainer>
-        <Column fill="3">
-          <ChatInput onSend={sendMsg} placeholder={'Escreva uma mensagem...'} />
-        </Column>
-        <Column fill=".6">
-          <IconContainer onPress={handleSendTransaction}>
-            <Icon name={'address-card'} size={25} color={'white'} onPress={handleSendTransaction} />
-          </IconContainer>
-        </Column>
-      </InputContainer>
-      <Menu />
+      <KeyboardAvoidingView behavior='position'>
+        <InputContainer>
+          <Column fill="3">
+            <ChatInput onSend={sendMsg} placeholder={'Escreva uma mensagem...'} />
+          </Column>
+          <Column fill=".6">
+            <IconContainer onPress={handleSendTransaction}>
+              <Icon name={'address-card'} size={25} color={'white'} onPress={handleSendTransaction} />
+            </IconContainer>
+          </Column>
+        </InputContainer>
+        <Menu />
+      </KeyboardAvoidingView>
     </>
   );
 }

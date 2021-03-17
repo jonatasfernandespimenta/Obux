@@ -76,7 +76,6 @@ const Home = () => {
               isStatic: true
             }}
             />
-            <View></View>
         </BookItem>
       );
     },

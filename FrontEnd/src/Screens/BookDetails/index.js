@@ -113,7 +113,7 @@ const BookDetails = () => {
             <TouchableOpacity onPress={() => handleNavigateToProfile(userid)}>
             <UserImage
               source={{
-                uri: pfp,
+                uri: pfp.replace('192.168.100.68', 'localhost'),
                 isStatic: true
               }}
             />
@@ -131,7 +131,7 @@ const BookDetails = () => {
           {book?.foto && (
             <BookImage
             source={{
-              uri: book.foto,
+              uri: book.foto.replace('192.168.100.68', 'localhost'),
               isStatic: true
             }}
             />

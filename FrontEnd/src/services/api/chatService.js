@@ -1,3 +1,4 @@
+import { AsyncStorage } from 'react-native';
 import api from './index';
 
 export const getChats = async() => {
@@ -11,7 +12,10 @@ export const createChat = async(chattingWith, userId) => {
       id: userId
     }
   }
-  const res = await api.post('/chats/create', data);
+
+  const res = await api.post('/chats/create', data, {
+    headers: {'access-token': await AsyncStorage.getItem('@token')}
+  });
   console.log('RESPOSTA AQUI: ', res.data);
   return res;
 };
@@ -30,7 +34,9 @@ export const createProposal = async(due, userid, receiverid, bookid) => {
     }
   };
 
-  return await api.post('/transactions/create', data);
+  return await api.post('/transactions/create', data, {
+    headers: {'access-token': await AsyncStorage.getItem('@token')}
+  });
 }
 
 export const updateProposal = async(transactionId, accepted) => {
@@ -38,7 +44,9 @@ export const updateProposal = async(transactionId, accepted) => {
     accepted: accepted
   };
 
-  return await api.put('/transactions/update/' + transactionId, data);
+  return await api.put('/transactions/update/' + transactionId, data, {
+    headers: {'access-token': await AsyncStorage.getItem('@token')}
+  });
 }
 
 export const getTransaction = async(id) => { return await api.get('/transactions/' + id) }
