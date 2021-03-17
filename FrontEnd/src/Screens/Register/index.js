@@ -131,9 +131,10 @@ export default function Register({navigation}) {
         <DateTimePickerModal
           isVisible={showDate}
           mode="date"
+          color={'white'}
           onConfirm={(text) => setDataNasc(text)}
           onCancel={() => setShowDate(false)}
-          isDarkModeEnabled={true}
+          isDarkModeEnabled={false}
         />
 
         <Input

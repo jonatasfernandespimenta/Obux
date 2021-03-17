@@ -78,9 +78,10 @@ const Send = ({ receiverId, done }) => {
         <DateTimePickerModal
           isVisible={showDate}
           mode="date"
+          color={'white'}
           onConfirm={handleCreateProposal}
           onCancel={() => setShowDate(false)}
-          isDarkModeEnabled={true}
+          isDarkModeEnabled={false}
         />
 
         <ButtonContainer>

@@ -123,13 +123,13 @@ const Chat = () => {
       
       <KeyboardAvoidingView behavior='position'>
         <InputContainer>
-          <Column fill="3">
-            <ChatInput onSend={sendMsg} placeholder={'Escreva uma mensagem...'} />
-          </Column>
           <Column fill=".6">
             <IconContainer onPress={handleSendTransaction}>
               <Icon name={'address-card'} size={25} color={'white'} onPress={handleSendTransaction} />
             </IconContainer>
+          </Column>
+          <Column fill="3">
+            <ChatInput onSend={sendMsg} placeholder={'Escreva uma mensagem...'} />
           </Column>
         </InputContainer>
         <Menu />
