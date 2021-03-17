@@ -37,11 +37,13 @@ export const BookItem = styled.TouchableOpacity`
   flex: 1;
   overflow: hidden;
   margin: 3px;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const BookImage = styled.Image.attrs({
   resizeMode: 'cover',
 })`
   height: 100%;
-  width: 100%;
+  width: 80%;
 `;

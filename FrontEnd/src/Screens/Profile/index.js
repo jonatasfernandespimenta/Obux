@@ -7,6 +7,13 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { useInfo } from '../../Contexts/info.context';
 import { getuser } from '../../services/api/userService';
 
+import {
+  Menu as PopMenu,
+  MenuOptions,
+  MenuOption,
+  MenuTrigger,
+} from 'react-native-popup-menu';
+
 import { 
   Scroll,
   Container,
@@ -67,9 +74,23 @@ const Profile = () => {
     <>
       <Scroll>
 
-        <IconContainer onPress={handleEditClick}>
-          <Icon name={'ellipsis-v'} size={40} color={'white'} />
+
+        <IconContainer>
+          <PopMenu>
+            <MenuTrigger>
+              <Icon name={'ellipsis-v'} size={40} color={'white'} />
+            </MenuTrigger>
+            <MenuOptions>
+              <MenuOption onSelect={handleEditClick}>
+                <Text style={{ color: 'black', width: '100%' }}>Editar perfil</Text>
+              </MenuOption>
+              <MenuOption onSelect={() => navigation.navigate('Login')}>
+                <Text style={{ color: 'red' }}>Sair</Text>
+              </MenuOption>
+            </MenuOptions>
+          </PopMenu>
         </IconContainer>
+
         <Container>
           <BgImg source={image}>
             <Pfp>

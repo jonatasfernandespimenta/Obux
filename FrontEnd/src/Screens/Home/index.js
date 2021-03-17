@@ -1,6 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import {useFocusEffect, useNavigation} from '@react-navigation/native';
 import React, {useCallback, useEffect, useState} from 'react';
+import { View } from 'react-native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 
 import Menu from '../../Components/Menu';
@@ -25,7 +26,7 @@ const Home = () => {
   const [data, setData] = useState([]);
   const [bookName, setBookName] = useState('');
   
-  useFocusEffect(() => {
+  useEffect(() => {
     async function loadBooksList() {
       const response = await getBooks();
       setData([...response.data]);
@@ -75,6 +76,7 @@ const Home = () => {
               isStatic: true
             }}
             />
+            <View></View>
         </BookItem>
       );
     },
