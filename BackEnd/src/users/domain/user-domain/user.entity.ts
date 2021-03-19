@@ -50,6 +50,9 @@ export class UserEntity extends BaseEntity{
   @Column({ default: 'https://d32ogoqmya1dw8.cloudfront.net/images/serc/empty_user_icon_256.v2.png' })
   file: String;
 
+  @Column({ default: 'https://i.pinimg.com/originals/7c/cb/01/7ccb010d8fddc4bcd84587ef3c34d100.jpg' })
+  thumb: String;
+
   @Column({ default: 0 })
   givenrates: Number;
 

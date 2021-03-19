@@ -23,7 +23,6 @@ export class UsersController {
     return this.user.getUser(params.id);
   }
 
-  @UseGuards(JwtCustomGuard)
   @Get('/')
   getUsers() {
     return this.user.getUsers();
