@@ -11,7 +11,7 @@
 Obux Will let you trade books with someone that has a book of your interest, borrow someone's else book or put your own books up for trades and for other people to borrow.
 <br/>
 
-## Technologies Used
+## 💻 Technologies Used
 <p align="center" style="display: flex; align-items: center; justify-content: space-around">
   <img src="https://docs.nestjs.com/assets/logo-small.svg" width="100">
   <img src="https://avatars2.githubusercontent.com/u/20165699?s=400&v=4" width="100">
