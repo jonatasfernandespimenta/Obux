@@ -22,6 +22,7 @@ export declare class UserService {
         estado: String;
         description: String;
         file: String;
+        thumb: String;
         givenrates: Number;
         totalrates: Number;
         books: import("../../../books/domain/book-domain/book.entity").BookEntity[];

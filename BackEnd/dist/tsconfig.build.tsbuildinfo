@@ -3152,8 +3152,8 @@
         "affectsGlobalScope": false
       },
       "../src/users/domain/user-domain/user.entity.ts": {
-        "version": "cab6ff5d2b758878e1b5802c9ca49af3e9dadc34425c4cab035c0e94cffeb55b",
-        "signature": "d53387f0cc82610f4353479a2a55fbc04ab5500acd0b7040d3c103faed33f506",
+        "version": "78262b3a09ce44577410ee80a40b8b7271bf5d86e3a8887b1e51a0b3255f3284",
+        "signature": "47713e4dbb888e581793887106341e0aadd00d80fc40ac250784142e1c20d378",
         "affectsGlobalScope": false
       },
       "../node_modules/@nestjs/swagger/dist/decorators/api-basic.decorator.d.ts": {
@@ -3353,7 +3353,7 @@
       },
       "../src/users/services/user/user.service.ts": {
         "version": "f39ea9548fee9021e377b31bd63566717436b5ae73370bf5e1873a6f7a94c295",
-        "signature": "5b196f19079d73a6cd44fce514ef11fe12f899a7d95a2a01927205b5311d894d",
+        "signature": "14dbcdb5922d8782e4e00cf011b447672a5d68a5903ec3e16117158fa2a02737",
         "affectsGlobalScope": false
       },
       "../src/users/dtos/user-dtos/login.dto.ts": {
@@ -3958,7 +3958,7 @@
       },
       "../src/users/controllers/user-controller/users.controller.ts": {
         "version": "37a9fcd70f070b66d83cf25a7de1bc9132655f5fc073ef3eca8c530f9e1bac8b",
-        "signature": "5d6a5a3343b195f8482e16517817f8378066c5e3ac30970ad2f45507a3e55376",
+        "signature": "4b116cad1e62ade97537965abaaf0170a1d845c0f7cd434a77e2324197c62188",
         "affectsGlobalScope": false
       },
       "../node_modules/@nestjs/passport/dist/abstract.strategy.d.ts": {

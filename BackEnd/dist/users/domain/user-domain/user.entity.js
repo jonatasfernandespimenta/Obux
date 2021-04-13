@@ -74,6 +74,10 @@ __decorate([
     __metadata("design:type", String)
 ], UserEntity.prototype, "file", void 0);
 __decorate([
+    typeorm_1.Column({ default: 'https://lcconroy.files.wordpress.com/2014/04/london-rain.jpg' }),
+    __metadata("design:type", String)
+], UserEntity.prototype, "thumb", void 0);
+__decorate([
     typeorm_1.Column({ default: 0 }),
     __metadata("design:type", Number)
 ], UserEntity.prototype, "givenrates", void 0);

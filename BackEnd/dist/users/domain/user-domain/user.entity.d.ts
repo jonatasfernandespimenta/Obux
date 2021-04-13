@@ -16,6 +16,7 @@ export declare class UserEntity extends BaseEntity {
     estado: String;
     description: String;
     file: String;
+    thumb: String;
     givenrates: Number;
     totalrates: Number;
     books: BookEntity[];

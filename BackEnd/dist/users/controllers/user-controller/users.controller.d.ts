@@ -9,7 +9,7 @@ export declare class UsersController {
     getUser(params: any): Promise<import("../../domain/user-domain/user.entity").UserEntity[]>;
     getUsers(): Promise<import("../../domain/user-domain/user.entity").UserEntity[]>;
     uploadSingle(file: any): any;
-    createUser(newUser: CreateUserDto): Promise<(CreateUserDto & import("../../domain/user-domain/user.entity").UserEntity) | import("@nestjs/common").HttpException>;
+    createUser(newUser: CreateUserDto): Promise<import("@nestjs/common").HttpException | (CreateUserDto & import("../../domain/user-domain/user.entity").UserEntity)>;
     userLogin(userCredentials: LoginDto): Promise<false | {
         foundLogin: import("../../domain/user-domain/user.entity").UserEntity;
         access_token: string;
@@ -29,6 +29,7 @@ export declare class UsersController {
         estado: String;
         description: String;
         file: String;
+        thumb: String;
         givenrates: Number;
         totalrates: Number;
         books: import("../../../books/domain/book-domain/book.entity").BookEntity[];
