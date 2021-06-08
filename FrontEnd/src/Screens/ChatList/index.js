@@ -15,7 +15,7 @@ import { useInfo } from '../../Contexts/info.context';
 
 const ChatList = () => {
 
-  const [userInfo, setUser] = useState([]);
+  const [userInfo, setUserInfo] = useState([]);
 
   const { userId } = useInfo();
   const { params } = useRoute();
@@ -31,10 +31,12 @@ const ChatList = () => {
           const res = await getuser(info)
           return res.data[0];
         })
-      ).then(users => setUser(users));
+      ).then(users => setUserInfo([{user: users, chatId: chatRes.data[0].chats.map((user) => user.id)}]));
     }
     fetchData();
   }, []);
+
+  console.log('copel: ', userInfo);
 
   const handleChat = (user_info) => {
     navigation.navigate('Chat', { user_info });
@@ -48,8 +50,8 @@ const ChatList = () => {
           userInfo.map((info) => (
             <>
             <TouchableOpacity onPress={() => handleChat(info)}>
-              <List rate={'3'} profile={true} uri={'http://192.168.100.68:3000/files/'+info.file} >
-                {info.nome}
+              <List rate={'3'} profile={true} uri={'http://192.168.100.68:3000/files/'+info.user[0].file} >
+                {info.user[0].nome}
               </List>
             </TouchableOpacity>
             </>

@@ -50,3 +50,13 @@ export const updateProposal = async(transactionId, accepted) => {
 }
 
 export const getTransaction = async(id) => { return await api.get('/transactions/' + id) }
+
+export const createMessage = async(userId, chatId, text) => { 
+  return await api.post('/messages/', {
+    userId,
+    chatId,
+    text
+  }, {
+    headers: {'access-token': await AsyncStorage.getItem('@token')}
+  })
+}
