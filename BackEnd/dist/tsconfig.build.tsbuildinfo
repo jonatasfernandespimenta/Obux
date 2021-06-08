@@ -3147,12 +3147,12 @@
         "affectsGlobalScope": false
       },
       "../src/chats/domain/chat-domain/messages.entity.ts": {
-        "version": "94791988a5bcba49256ade95e47820b7b5efabbb8cda758552f13e784cb49838",
-        "signature": "e9a5b3bd91f18be91af6aa2243663455c5e1879ee4532d94b182a80d35cc8ebc",
+        "version": "1f294205386edee659b3564890891219952588832578a5b9d575767fb1b1d791",
+        "signature": "a3b068543b5f6f57368611b6014337b868f4a44ec35913673491ed2820d53d7a",
         "affectsGlobalScope": false
       },
       "../src/chats/domain/chat-domain/chat.entity.ts": {
-        "version": "dcdefdb63d8612bcdaca5bdca09f98ca7d9301f601ce1320cd398dcf91840243",
+        "version": "bf0b683ec5178aa471392bec3d82ccdc9c5b5008fdc3a80a8f526f8986756f24",
         "signature": "75035b3f15a255fdc2fa1d081316873a4842c58b8249520dfd2a09229049ab9f",
         "affectsGlobalScope": false
       },

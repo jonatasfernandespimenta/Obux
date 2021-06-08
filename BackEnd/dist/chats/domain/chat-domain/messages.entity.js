@@ -20,20 +20,12 @@ __decorate([
 ], MessagesEntity.prototype, "id", void 0);
 __decorate([
     typeorm_1.Column(),
-    __metadata("design:type", Number)
-], MessagesEntity.prototype, "userId", void 0);
-__decorate([
-    typeorm_1.Column(),
-    __metadata("design:type", Number)
-], MessagesEntity.prototype, "secondUserId", void 0);
-__decorate([
-    typeorm_1.Column(),
     __metadata("design:type", String)
 ], MessagesEntity.prototype, "text", void 0);
 __decorate([
     typeorm_1.ManyToOne(type => chat_entity_1.ChatEntity, chat => chat.messages),
-    __metadata("design:type", Array)
-], MessagesEntity.prototype, "messages", void 0);
+    __metadata("design:type", chat_entity_1.ChatEntity)
+], MessagesEntity.prototype, "chatId", void 0);
 MessagesEntity = __decorate([
     typeorm_1.Entity()
 ], MessagesEntity);
