@@ -4117,7 +4117,7 @@
         "affectsGlobalScope": false
       },
       "../src/chats/controllers/chat/message.controller.ts": {
-        "version": "7436a413617e6997c0021c89e7aea3b48a72a58ff691fdd627ec6c6a7ef3f341",
+        "version": "10d312a87f384b32f911a55ebbea8000a131a35bb873676a413cda748ca0e490",
         "signature": "8a5f08ca1395bae105ddde6adc882e0794052a289dfa52fcf641c466dc692eac",
         "affectsGlobalScope": false
       },

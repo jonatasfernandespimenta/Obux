@@ -41,6 +41,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], MessageController.prototype, "getMessage", null);
 __decorate([
+    common_1.UseGuards(customGuard_guard_1.JwtCustomGuard, isOwner_guard_1.IsOwner),
     common_1.Get('/'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
