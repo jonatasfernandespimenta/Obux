@@ -9,30 +9,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ChatEntity = void 0;
-const user_entity_1 = require("../../../users/domain/user-domain/user.entity");
-const messages_entity_1 = require("./messages.entity");
+exports.MessagesEntity = void 0;
 const typeorm_1 = require("typeorm");
-let ChatEntity = class ChatEntity extends typeorm_1.BaseEntity {
+const chat_entity_1 = require("./chat.entity");
+let MessagesEntity = class MessagesEntity extends typeorm_1.BaseEntity {
 };
 __decorate([
     typeorm_1.PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
-], ChatEntity.prototype, "id", void 0);
+], MessagesEntity.prototype, "id", void 0);
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", Number)
-], ChatEntity.prototype, "chattingWith", void 0);
+], MessagesEntity.prototype, "userId", void 0);
 __decorate([
-    typeorm_1.ManyToOne(type => user_entity_1.UserEntity, user => user.chats),
-    __metadata("design:type", Array)
-], ChatEntity.prototype, "user", void 0);
+    typeorm_1.Column(),
+    __metadata("design:type", Number)
+], MessagesEntity.prototype, "secondUserId", void 0);
 __decorate([
-    typeorm_1.OneToMany(type => messages_entity_1.MessagesEntity, msg => msg.messages),
+    typeorm_1.Column(),
+    __metadata("design:type", String)
+], MessagesEntity.prototype, "text", void 0);
+__decorate([
+    typeorm_1.ManyToOne(type => chat_entity_1.ChatEntity, chat => chat.messages),
     __metadata("design:type", Array)
-], ChatEntity.prototype, "messages", void 0);
-ChatEntity = __decorate([
+], MessagesEntity.prototype, "messages", void 0);
+MessagesEntity = __decorate([
     typeorm_1.Entity()
-], ChatEntity);
-exports.ChatEntity = ChatEntity;
-//# sourceMappingURL=chat.entity.js.map
+], MessagesEntity);
+exports.MessagesEntity = MessagesEntity;
+//# sourceMappingURL=messages.entity.js.map

@@ -1,5 +1,6 @@
 import { UserEntity } from '../../../users/domain/user-domain/user.entity';
-import { Entity, Column, PrimaryGeneratedColumn, BaseEntity, ManyToOne } from 'typeorm';
+import { MessagesEntity } from './messages.entity';
+import { Entity, Column, PrimaryGeneratedColumn, BaseEntity, ManyToOne, OneToMany } from 'typeorm';
 
 @Entity()
 
@@ -13,7 +14,7 @@ export class ChatEntity extends BaseEntity{
   @ManyToOne(type => UserEntity, user => user.chats)
   user: UserEntity[];
 
-  @Column({ nullable: true })
-  messages: String;
+  @OneToMany(type => MessagesEntity, msg => msg.messages)
+  messages: MessagesEntity[];
 
 }

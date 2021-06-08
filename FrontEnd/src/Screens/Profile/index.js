@@ -7,6 +7,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { useInfo } from '../../Contexts/info.context';
 import { getuser } from '../../services/api/userService';
 
+import * as ImagePicker from 'expo-image-picker'
+
 import {
   Menu as PopMenu,
   MenuOptions,
@@ -34,13 +36,13 @@ import {
 } from './styles';
 
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const Profile = () => {
   const {userName, userCity, userState, userPfp, userDescricao, userAge, userId} = useInfo();
 
   const [books, setBooks] = useState([]);
-
-  const image = { uri: "https://lcconroy.files.wordpress.com/2014/04/london-rain.jpg" };
+  const [thumb, setThumb] = useState(null);
 
   const navigation = useNavigation();
 
@@ -60,6 +62,27 @@ const Profile = () => {
   const handleBookClick = () => {
     navigation.navigate('AddBook');
   };
+
+  const handleThumb = async () => {
+    const result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+    });
+  
+    setThumb({
+      uri: result.uri,
+      name: 'IMG_' + Math.random(4000),
+      type: result.type,
+    });
+  
+  };
+
+  useEffect(() => {
+    const fetchData = async() => {
+      const response = await getuser(userId);
+      setThumb(response.data[0].thumb);
+    };
+    fetchData();
+  }, []);
 
   useFocusEffect(() => {
     async function loadUserData() {
@@ -91,10 +114,14 @@ const Profile = () => {
           </PopMenu>
         </IconContainer>
 
+        <IconContainer style={{ marginLeft: 350 }} onPres={handleThumb}>
+          <Icon name={'pencil'} size={30} color={'#ccc'} />
+        </IconContainer>
+
         <Container>
-          <BgImg source={image}>
+          <BgImg source={{uri: thumb}}>
             <Pfp>
-              <ImagePreview source={{uri: userPfp}} resizeMode={'cover'} />
+              <ImagePreview source={{uri: 'userPfp'}} resizeMode={'cover'} />
             </Pfp>
           </BgImg>
 
