@@ -9,6 +9,9 @@ export class MessagesEntity extends BaseEntity{
   id: number;
 
   @Column()
+  userId: number;
+
+  @Column()
   text: string;
 
   @ManyToOne(type => ChatEntity, chat => chat.messages)

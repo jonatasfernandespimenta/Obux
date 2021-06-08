@@ -20,6 +20,10 @@ __decorate([
 ], MessagesEntity.prototype, "id", void 0);
 __decorate([
     typeorm_1.Column(),
+    __metadata("design:type", Number)
+], MessagesEntity.prototype, "userId", void 0);
+__decorate([
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], MessagesEntity.prototype, "text", void 0);
 __decorate([
