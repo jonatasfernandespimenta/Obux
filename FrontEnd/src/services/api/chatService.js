@@ -5,6 +5,10 @@ export const getChats = async() => {
   return await api.get('/chats');
 };
 
+export const getChat = async(id) => {
+  return await api.get('/chats/' + id);
+};
+
 export const createChat = async(chattingWith, userId) => {
   const data = {
     chattingWith,
@@ -54,7 +58,9 @@ export const getTransaction = async(id) => { return await api.get('/transactions
 export const createMessage = async(userId, chatId, text) => { 
   return await api.post('/messages/', {
     userId,
-    chatId,
+    chatId: {
+      id: chatId
+    },
     text
   }, {
     headers: {'access-token': await AsyncStorage.getItem('@token')}

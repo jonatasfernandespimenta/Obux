@@ -13,7 +13,7 @@ import ChatInput from '../../../Components/Footer';
 import { useInfo } from '../../../Contexts/info.context';
 import Moment from 'moment';
 
-import { createMessage, getTransaction, updateProposal } from '../../../services/api/chatService';
+import { createMessage, getTransaction, updateProposal, getChat } from '../../../services/api/chatService';
 
 import Button from '../../../Components/Button';
 import Message from '../../../Components/Message';
@@ -22,7 +22,6 @@ import { Scroll, InputContainer, Column, IconContainer } from '../styles.js';
 import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
 import { Book, BookCover, CheckProposal, H2, Proposal, Row, Title, Container } from '../../../Components/Transactions/styles';
 import { KeyboardAvoidingView } from 'react-native';
-import { KeyboardAwareFlatList } from 'react-native-keyboard-aware-scroll-view';
 
 const Chat = () => {
   const {params} = useRoute();
@@ -38,10 +37,16 @@ const Chat = () => {
   const [info, setInfo] = useState();
   const [messages, setMessages] = useState([]);
   const [done, setDone] = useState(false);
+  const [chatMessages, setChatMessages] = useState([]);
 
   const navigation = useNavigation();
 
-  console.log('USER INFO:', params.user_info)
+  useEffect(async() => {
+    const chatId = params.user_info.chatId[0];
+    const res = await getChat(chatId);
+
+    setChatMessages(res.data[0].messages);
+  }, [])
 
   const handleInfo = async() => {
 
@@ -120,9 +125,9 @@ const Chat = () => {
       {done && <AcceptTransaction set={setCheck} handleInfo={handleInfo} />}
       <FlatList
         ref={scrollRef}
-        data={messages}
+        data={chatMessages}
         renderItem={({ item }) => (
-          <Message author={item.author} message={item.message} received={item.author === 'Luca'} />
+          <Message author={item.userId === userId} message={item.text} received={item.userId !== userId} />
           )}
           keyExtractor={(item, index) => index.toString()}
           onContentSizeChange={() => scrollRef.current.scrollToEnd()}
