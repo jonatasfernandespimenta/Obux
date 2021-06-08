@@ -28,7 +28,7 @@ __decorate([
 ], MessagesEntity.prototype, "text", void 0);
 __decorate([
     typeorm_1.ManyToOne(type => chat_entity_1.ChatEntity, chat => chat.messages),
-    __metadata("design:type", chat_entity_1.ChatEntity)
+    __metadata("design:type", Array)
 ], MessagesEntity.prototype, "chatId", void 0);
 MessagesEntity = __decorate([
     typeorm_1.Entity()

@@ -28,8 +28,8 @@ __decorate([
     __metadata("design:type", Array)
 ], ChatEntity.prototype, "user", void 0);
 __decorate([
-    typeorm_1.OneToMany(type => messages_entity_1.MessagesEntity, msg => msg.chatId),
-    __metadata("design:type", Array)
+    typeorm_1.OneToMany(type => messages_entity_1.MessagesEntity, msg => msg.chatId, { eager: true }),
+    __metadata("design:type", messages_entity_1.MessagesEntity)
 ], ChatEntity.prototype, "messages", void 0);
 ChatEntity = __decorate([
     typeorm_1.Entity()

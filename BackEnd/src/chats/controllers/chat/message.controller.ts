@@ -16,7 +16,7 @@ export class MessageController {
     return this.message.getMessage(params.id);
   }
 
-  @UseGuards(JwtCustomGuard, IsOwner)
+
   @Get('/')
   getMessages() {
     return this.message.getMessages();

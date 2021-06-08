@@ -3147,13 +3147,13 @@
         "affectsGlobalScope": false
       },
       "../src/chats/domain/chat-domain/messages.entity.ts": {
-        "version": "3123337a6628205f8458e89a44646b58b872e1b6ee3127a337432d20be900f3f",
-        "signature": "de2f5146c9baa586389ca43789fffcb6928ac1ee3293a2796f7176cc6ffcbd4c",
+        "version": "de95e25aae0eca083b07515f225b52dc97f0b73dcebe035b077c5e40a409a040",
+        "signature": "152f803987a7e31dc038a19aa0620f5c73624bcf61add57e3f11e90fc5512d35",
         "affectsGlobalScope": false
       },
       "../src/chats/domain/chat-domain/chat.entity.ts": {
-        "version": "bf0b683ec5178aa471392bec3d82ccdc9c5b5008fdc3a80a8f526f8986756f24",
-        "signature": "75035b3f15a255fdc2fa1d081316873a4842c58b8249520dfd2a09229049ab9f",
+        "version": "f1cdd786363f63ce84c1902d4e61296f82b8c49a191657e5dad94af0c7212212",
+        "signature": "789122c63423fe8075e57ba3d468ca5a1fe09ae684e142263f86259858f8b93b",
         "affectsGlobalScope": false
       },
       "../src/users/domain/user-domain/user.entity.ts": {
@@ -4117,7 +4117,7 @@
         "affectsGlobalScope": false
       },
       "../src/chats/controllers/chat/message.controller.ts": {
-        "version": "10d312a87f384b32f911a55ebbea8000a131a35bb873676a413cda748ca0e490",
+        "version": "7436a413617e6997c0021c89e7aea3b48a72a58ff691fdd627ec6c6a7ef3f341",
         "signature": "8a5f08ca1395bae105ddde6adc882e0794052a289dfa52fcf641c466dc692eac",
         "affectsGlobalScope": false
       },

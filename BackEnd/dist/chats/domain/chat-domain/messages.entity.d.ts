@@ -4,5 +4,5 @@ export declare class MessagesEntity extends BaseEntity {
     id: number;
     userId: number;
     text: string;
-    chatId: ChatEntity;
+    chatId: ChatEntity[];
 }

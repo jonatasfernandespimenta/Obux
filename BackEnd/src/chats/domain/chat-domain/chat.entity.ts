@@ -14,7 +14,7 @@ export class ChatEntity extends BaseEntity{
   @ManyToOne(type => UserEntity, user => user.chats)
   user: UserEntity[];
 
-  @OneToMany(type => MessagesEntity, msg => msg.chatId)
-  messages: MessagesEntity[];
+  @OneToMany(type => MessagesEntity, msg => msg.chatId, {eager: true})
+  messages: MessagesEntity;
 
 }

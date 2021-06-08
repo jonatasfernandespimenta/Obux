@@ -15,6 +15,6 @@ export class MessagesEntity extends BaseEntity{
   text: string;
 
   @ManyToOne(type => ChatEntity, chat => chat.messages)
-  chatId: ChatEntity;
+  chatId: ChatEntity[];
 
 }

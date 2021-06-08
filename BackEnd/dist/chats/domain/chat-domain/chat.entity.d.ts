@@ -5,5 +5,5 @@ export declare class ChatEntity extends BaseEntity {
     id: number;
     chattingWith: number;
     user: UserEntity[];
-    messages: MessagesEntity[];
+    messages: MessagesEntity;
 }
