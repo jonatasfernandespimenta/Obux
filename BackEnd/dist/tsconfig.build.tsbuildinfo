@@ -4111,8 +4111,18 @@
         "signature": "ab0d17b42840b9a0365ca0f9b7ded6ba6d14ba44cb82f8c860f803edf714fac7",
         "affectsGlobalScope": false
       },
+      "../src/chats/services/chat/messages.service.ts": {
+        "version": "beb45ed3c6abb3c57578edd480a3711fbe98ae1ec0a721e0821fc3be265b5edc",
+        "signature": "4eafc443afe74833a82b486b3bb76989ca61fe0f34131a9b03a1ad3418aa53df",
+        "affectsGlobalScope": false
+      },
+      "../src/chats/controllers/chat/message.controller.ts": {
+        "version": "10d312a87f384b32f911a55ebbea8000a131a35bb873676a413cda748ca0e490",
+        "signature": "8a5f08ca1395bae105ddde6adc882e0794052a289dfa52fcf641c466dc692eac",
+        "affectsGlobalScope": false
+      },
       "../src/chats/chat.module.ts": {
-        "version": "214c7a6e0965de1645647cf46f5ca199dab13d802adfac12553e66f9fc60311f",
+        "version": "7cdc33b4236b12d9ddd1ffdbcd949116296f044fca03d656fc17bfcfb2a5bc90",
         "signature": "331ca11e3787e052563694011f0c6a02519dd2acfaff07e2e38c22b2ffd0cae7",
         "affectsGlobalScope": false
       },
@@ -5829,16 +5839,6 @@
       "../src/main.ts": {
         "version": "1149f18af54270c02c6b5bd63b32faa247535d71bd5d60fbdcdf6ca37563d0c7",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
-        "affectsGlobalScope": false
-      },
-      "../src/chats/services/chat/messages.service.ts": {
-        "version": "beb45ed3c6abb3c57578edd480a3711fbe98ae1ec0a721e0821fc3be265b5edc",
-        "signature": "4eafc443afe74833a82b486b3bb76989ca61fe0f34131a9b03a1ad3418aa53df",
-        "affectsGlobalScope": false
-      },
-      "../src/chats/controllers/chat/message.controller.ts": {
-        "version": "10d312a87f384b32f911a55ebbea8000a131a35bb873676a413cda748ca0e490",
-        "signature": "8a5f08ca1395bae105ddde6adc882e0794052a289dfa52fcf641c466dc692eac",
         "affectsGlobalScope": false
       },
       "../node_modules/@nestjs/websockets/adapters/ws-adapter.d.ts": {
@@ -10823,10 +10823,13 @@
         "../node_modules/@nestjs/jwt/index.d.ts",
         "../node_modules/@nestjs/typeorm/index.d.ts",
         "../src/chats/controllers/chat/chat.controller.ts",
+        "../src/chats/controllers/chat/message.controller.ts",
         "../src/chats/controllers/transactions/transactions.controller.ts",
         "../src/chats/domain/chat-domain/chat.entity.ts",
+        "../src/chats/domain/chat-domain/messages.entity.ts",
         "../src/chats/domain/transaction-domain/transaction.entity.ts",
         "../src/chats/services/chat/chat.service.ts",
+        "../src/chats/services/chat/messages.service.ts",
         "../src/chats/services/transactions/transactions.service.ts",
         "../src/users/guards/customguard.guard.ts",
         "../src/users/guards/jwt.strategy.ts",

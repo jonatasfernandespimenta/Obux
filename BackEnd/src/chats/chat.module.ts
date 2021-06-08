@@ -12,10 +12,13 @@ import { JwtModule } from '@nestjs/jwt';
 import { JwtStrategy } from 'src/users/guards/jwt.strategy';
 import { JwtCustomGuard } from 'src/users/guards/customGuard.guard';
 import { JwtRoleGuard } from 'src/users/guards/roles.guard';
+import { MessagesService } from './services/chat/messages.service';
+import { MessagesEntity } from './domain/chat-domain/messages.entity';
+import { MessageController } from './controllers/chat/message.controller';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([ChatEntity, TransactionEntity]),
+    TypeOrmModule.forFeature([ChatEntity, TransactionEntity, MessagesEntity]),
     JwtModule.register(
       {
         secret: `${process.env.SECRET_KEY}`, signOptions: {
@@ -24,7 +27,7 @@ import { JwtRoleGuard } from 'src/users/guards/roles.guard';
       }
     ),
   ],
-  providers: [ChatService, TransactionService, JwtStrategy, JwtCustomGuard, JwtRoleGuard],
-  controllers: [TransactionController, ChatController],
+  providers: [ChatService, TransactionService, JwtStrategy, JwtCustomGuard, JwtRoleGuard, MessagesService],
+  controllers: [TransactionController, ChatController, MessageController],
 })
 export class ChatModule { }
