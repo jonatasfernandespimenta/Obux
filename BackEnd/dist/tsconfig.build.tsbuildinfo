@@ -4092,8 +4092,8 @@
         "affectsGlobalScope": false
       },
       "../src/chats/services/chat/chat.service.ts": {
-        "version": "073753b56b36fccc2b78e34ebc3ac8ed55fad5242f7c95835d3103f287922c66",
-        "signature": "b810fa00e6940a4fc8cf9d0f4b1cc6a0442828943d1a6543a4856b6b86de1e16",
+        "version": "cee198fa700cdef250280716719783e9c271d49d08db7b73e5054b13b233b6e6",
+        "signature": "404053f00637732fdfc6c215fd542d9a836fa67b4166883e57a4736dc3ec8c8e",
         "affectsGlobalScope": false
       },
       "../src/chats/controllers/chat/chat.controller.ts": {
@@ -4122,7 +4122,7 @@
         "affectsGlobalScope": false
       },
       "../src/chats/chat.module.ts": {
-        "version": "7cdc33b4236b12d9ddd1ffdbcd949116296f044fca03d656fc17bfcfb2a5bc90",
+        "version": "ce16502175b9ac6a375750e80c2301634968ad956391875167030ef0db252469",
         "signature": "331ca11e3787e052563694011f0c6a02519dd2acfaff07e2e38c22b2ffd0cae7",
         "affectsGlobalScope": false
       },
@@ -10831,9 +10831,11 @@
         "../src/chats/services/chat/chat.service.ts",
         "../src/chats/services/chat/messages.service.ts",
         "../src/chats/services/transactions/transactions.service.ts",
+        "../src/users/domain/user-domain/user.entity.ts",
         "../src/users/guards/customguard.guard.ts",
         "../src/users/guards/jwt.strategy.ts",
-        "../src/users/guards/roles.guard.ts"
+        "../src/users/guards/roles.guard.ts",
+        "../src/users/services/user/user.service.ts"
       ],
       "../src/chats/controllers/chat/chat.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -10871,7 +10873,8 @@
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/typeorm/index.d.ts",
         "../node_modules/typeorm/index.d.ts",
-        "../src/chats/domain/chat-domain/chat.entity.ts"
+        "../src/chats/domain/chat-domain/chat.entity.ts",
+        "../src/users/domain/user-domain/user.entity.ts"
       ],
       "../src/chats/services/chat/messages.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -15521,7 +15524,8 @@
       ],
       "../src/chats/services/chat/chat.service.ts": [
         "../node_modules/typeorm/index.d.ts",
-        "../src/chats/domain/chat-domain/chat.entity.ts"
+        "../src/chats/domain/chat-domain/chat.entity.ts",
+        "../src/users/domain/user-domain/user.entity.ts"
       ],
       "../src/chats/services/chat/messages.service.ts": [
         "../node_modules/typeorm/index.d.ts",

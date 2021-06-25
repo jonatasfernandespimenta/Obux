@@ -15,10 +15,12 @@ import { JwtRoleGuard } from 'src/users/guards/roles.guard';
 import { MessagesService } from './services/chat/messages.service';
 import { MessagesEntity } from './domain/chat-domain/messages.entity';
 import { MessageController } from './controllers/chat/message.controller';
+import { UserService } from 'src/users/services/user/user.service';
+import { UserEntity } from 'src/users/domain/user-domain/user.entity';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([ChatEntity, TransactionEntity, MessagesEntity]),
+    TypeOrmModule.forFeature([ChatEntity, TransactionEntity, MessagesEntity, UserEntity]),
     JwtModule.register(
       {
         secret: `${process.env.SECRET_KEY}`, signOptions: {
@@ -27,7 +29,7 @@ import { MessageController } from './controllers/chat/message.controller';
       }
     ),
   ],
-  providers: [ChatService, TransactionService, JwtStrategy, JwtCustomGuard, JwtRoleGuard, MessagesService],
+  providers: [UserService, ChatService, TransactionService, JwtStrategy, JwtCustomGuard, JwtRoleGuard, MessagesService],
   controllers: [TransactionController, ChatController, MessageController],
 })
 export class ChatModule { }

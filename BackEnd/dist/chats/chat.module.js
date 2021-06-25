@@ -22,19 +22,21 @@ const roles_guard_1 = require("../users/guards/roles.guard");
 const messages_service_1 = require("./services/chat/messages.service");
 const messages_entity_1 = require("./domain/chat-domain/messages.entity");
 const message_controller_1 = require("./controllers/chat/message.controller");
+const user_service_1 = require("../users/services/user/user.service");
+const user_entity_1 = require("../users/domain/user-domain/user.entity");
 let ChatModule = class ChatModule {
 };
 ChatModule = __decorate([
     common_1.Module({
         imports: [
-            typeorm_1.TypeOrmModule.forFeature([chat_entity_1.ChatEntity, transaction_entity_1.TransactionEntity, messages_entity_1.MessagesEntity]),
+            typeorm_1.TypeOrmModule.forFeature([chat_entity_1.ChatEntity, transaction_entity_1.TransactionEntity, messages_entity_1.MessagesEntity, user_entity_1.UserEntity]),
             jwt_1.JwtModule.register({
                 secret: `${process.env.SECRET_KEY}`, signOptions: {
                     expiresIn: '600m',
                 },
             }),
         ],
-        providers: [chat_service_1.ChatService, transactions_service_1.TransactionService, jwt_strategy_1.JwtStrategy, customGuard_guard_1.JwtCustomGuard, roles_guard_1.JwtRoleGuard, messages_service_1.MessagesService],
+        providers: [user_service_1.UserService, chat_service_1.ChatService, transactions_service_1.TransactionService, jwt_strategy_1.JwtStrategy, customGuard_guard_1.JwtCustomGuard, roles_guard_1.JwtRoleGuard, messages_service_1.MessagesService],
         controllers: [transactions_controller_1.TransactionController, chat_controller_1.ChatController, message_controller_1.MessageController],
     })
 ], ChatModule);

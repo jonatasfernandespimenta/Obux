@@ -15,11 +15,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ChatService = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
+const user_entity_1 = require("../../../users/domain/user-domain/user.entity");
 const typeorm_2 = require("typeorm");
 const chat_entity_1 = require("../../domain/chat-domain/chat.entity");
 let ChatService = class ChatService {
-    constructor(chatRepository) {
+    constructor(chatRepository, usersRepository) {
         this.chatRepository = chatRepository;
+        this.usersRepository = usersRepository;
     }
     async getChats() {
         return await this.chatRepository.find();
@@ -32,13 +34,17 @@ let ChatService = class ChatService {
     }
     ;
     async createChat(newChat) {
-        return await this.chatRepository.save(newChat);
+        const res = await this.chatRepository.save(newChat);
+        await this.usersRepository.update(newChat.chattingWith, { chats: [{ id: res.id }] });
+        return res;
     }
 };
 ChatService = __decorate([
     common_1.Injectable(),
     __param(0, typeorm_1.InjectRepository(chat_entity_1.ChatEntity)),
-    __metadata("design:paramtypes", [typeorm_2.Repository])
+    __param(1, typeorm_1.InjectRepository(user_entity_1.UserEntity)),
+    __metadata("design:paramtypes", [typeorm_2.Repository,
+        typeorm_2.Repository])
 ], ChatService);
 exports.ChatService = ChatService;
 //# sourceMappingURL=chat.service.js.map
