@@ -3357,8 +3357,8 @@
         "affectsGlobalScope": false
       },
       "../src/users/services/user/user.service.ts": {
-        "version": "f39ea9548fee9021e377b31bd63566717436b5ae73370bf5e1873a6f7a94c295",
-        "signature": "14dbcdb5922d8782e4e00cf011b447672a5d68a5903ec3e16117158fa2a02737",
+        "version": "8cbd4752bc603073d83039775fe6f46111bf4bddb32f8f907f9c1806b8d05ec5",
+        "signature": "55a4ad134247effe3c9ac99c69ea80f7214cdd085390ea7cf3b69e6065001ae5",
         "affectsGlobalScope": false
       },
       "../src/users/dtos/user-dtos/login.dto.ts": {
@@ -3962,8 +3962,8 @@
         "affectsGlobalScope": false
       },
       "../src/users/controllers/user-controller/users.controller.ts": {
-        "version": "37a9fcd70f070b66d83cf25a7de1bc9132655f5fc073ef3eca8c530f9e1bac8b",
-        "signature": "4b116cad1e62ade97537965abaaf0170a1d845c0f7cd434a77e2324197c62188",
+        "version": "db8f304daf957c4417bef5d575cb15e38e72478f72ac67acc6a68f4f67ed2081",
+        "signature": "a3841122653a8ff725d946595ae19988be80a91f0eab73f89ec9b53636bdcc67",
         "affectsGlobalScope": false
       },
       "../node_modules/@nestjs/passport/dist/abstract.strategy.d.ts": {
@@ -4092,7 +4092,7 @@
         "affectsGlobalScope": false
       },
       "../src/chats/services/chat/chat.service.ts": {
-        "version": "e258301f6de1e578fe03922568e80011e89d2739f23d8529778da0beb22f6ca9",
+        "version": "073753b56b36fccc2b78e34ebc3ac8ed55fad5242f7c95835d3103f287922c66",
         "signature": "b810fa00e6940a4fc8cf9d0f4b1cc6a0442828943d1a6543a4856b6b86de1e16",
         "affectsGlobalScope": false
       },
@@ -15534,12 +15534,10 @@
         "../src/users/domain/user-domain/user.entity.ts"
       ],
       "../src/users/controllers/user-controller/users.controller.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
         "../src/books/domain/book-domain/book.entity.ts",
         "../src/chats/domain/chat-domain/chat.entity.ts",
         "../src/chats/domain/transaction-domain/transaction.entity.ts",
         "../src/users/domain/user-domain/user.entity.ts",
-        "../src/users/dtos/user-dtos/createuser.dto.ts",
         "../src/users/dtos/user-dtos/login.dto.ts",
         "../src/users/services/auth/auth.service.ts",
         "../src/users/services/user/user.service.ts"
@@ -15571,13 +15569,11 @@
         "../src/users/dtos/user-dtos/login.dto.ts"
       ],
       "../src/users/services/user/user.service.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/typeorm/index.d.ts",
         "../src/books/domain/book-domain/book.entity.ts",
         "../src/chats/domain/chat-domain/chat.entity.ts",
         "../src/chats/domain/transaction-domain/transaction.entity.ts",
-        "../src/users/domain/user-domain/user.entity.ts",
-        "../src/users/dtos/user-dtos/createuser.dto.ts"
+        "../src/users/domain/user-domain/user.entity.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [

@@ -42,7 +42,7 @@ const Chat = () => {
   const navigation = useNavigation();
 
   useEffect(async() => {
-    const chatId = params.user_info.chatId[0];
+    const chatId = params.chatId;
     const res = await getChat(chatId);
 
     setChatMessages(res.data[0].messages);
@@ -68,14 +68,11 @@ const Chat = () => {
   }
 
   const sendMsg = async (text) => {
-    const chatId = params.user_info.chatId[0];
+    const chatId = params.chatId;
 
     await createMessage(userId, chatId, text)
 
-    setMessages((oldState) => [...oldState, { author: 'You', message: text }]);
-    setTimeout(function() {
-      setMessages((oldState) => [...oldState, { author: 'Luca', message: 'Salve Jhonny' }]);
-    }, 8000)
+    setChatMessages((oldState) => [...oldState, { author: 'You', message: text }]);
   };
 
   const handleNavigateToProfile = useCallback(
@@ -93,7 +90,7 @@ const Chat = () => {
 
   return(
     <>
-    {show && <SendTransaction receiverId={params.user_info.user[0].id} done={setDone} />}
+    {show && <SendTransaction receiverId={params?.user_info.id} done={setDone} />}
 
       {check && 
         <CheckProposal>
@@ -115,11 +112,11 @@ const Chat = () => {
 
         </Proposal>
       </CheckProposal>
-      }
+      } 
 
-      <TouchableOpacity onPress={() => handleNavigateToProfile(params.user_info.user[0].id)}>
-        <List rate={'3'} uri={params.user_info.user[0].file.replace('192.168.100.68', 'localhost')}
-        profile={true}>{params.user_info.user[0].nome} / {params.user_info.user[0].estado}</List>
+      <TouchableOpacity onPress={() => handleNavigateToProfile(params?.user_info?.id)}>
+        <List rate={'3'} uri={params?.user_info?.file.replace('192.168.100.68', 'localhost')}
+        profile={true}>{params?.user_info?.nome} / {params?.user_info?.estado}</List>
       </TouchableOpacity>
 
       {done && <AcceptTransaction set={setCheck} handleInfo={handleInfo} />}

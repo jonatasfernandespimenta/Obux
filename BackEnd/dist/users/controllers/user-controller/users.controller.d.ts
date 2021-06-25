@@ -1,6 +1,5 @@
 import { UserService } from '../../services/user/user.service';
 import { AuthService } from '../../services/auth/auth.service';
-import { CreateUserDto } from '../../dtos/user-dtos/createuser.dto';
 import { LoginDto } from '../../dtos/user-dtos/login.dto';
 export declare class UsersController {
     private readonly user;
@@ -9,7 +8,7 @@ export declare class UsersController {
     getUser(params: any): Promise<import("../../domain/user-domain/user.entity").UserEntity[]>;
     getUsers(): Promise<import("../../domain/user-domain/user.entity").UserEntity[]>;
     uploadSingle(file: any): any;
-    createUser(newUser: CreateUserDto): Promise<import("@nestjs/common").HttpException | (CreateUserDto & import("../../domain/user-domain/user.entity").UserEntity)>;
+    createUser(newUser: any): Promise<any>;
     userLogin(userCredentials: LoginDto): Promise<false | {
         foundLogin: import("../../domain/user-domain/user.entity").UserEntity;
         access_token: string;

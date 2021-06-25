@@ -46,7 +46,7 @@ export class UserService {
     this.usersRepository.delete(id);
   }
 
-  async createUser(newUser: CreateUserDto) {
+  async createUser(newUser) {
 
     const existingUser = await this.usersRepository.findOne({
       where: [{

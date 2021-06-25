@@ -1,7 +1,5 @@
-import { HttpException } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { UserEntity } from '../../domain/user-domain/user.entity';
-import { CreateUserDto } from '../../dtos/user-dtos/createuser.dto';
 export declare class UserService {
     private usersRepository;
     constructor(usersRepository: Repository<UserEntity>);
@@ -31,5 +29,5 @@ export declare class UserService {
         receivedTransactions: import("../../../chats/domain/transaction-domain/transaction.entity").TransactionEntity[];
     } & UserEntity>;
     deleteUser(id: string): Promise<void>;
-    createUser(newUser: CreateUserDto): Promise<HttpException | (CreateUserDto & UserEntity)>;
+    createUser(newUser: any): Promise<any>;
 }

@@ -50,8 +50,8 @@ const ChatList = () => {
           userInfo.map((info) => (
             <>
             <TouchableOpacity onPress={() => handleChat(info)}>
-              <List rate={'3'} profile={true} uri={'http://192.168.100.68:3000/files/'+info.user[0].file} >
-                {info.user[0].nome}
+              <List rate={'3'} profile={true} uri={'http://localhost:3000/files/'+info?.user[0]?.file} >
+                {info?.user[0]?.nome}
               </List>
             </TouchableOpacity>
             </>

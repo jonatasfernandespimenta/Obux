@@ -16,7 +16,6 @@ exports.UsersController = void 0;
 const common_1 = require("@nestjs/common");
 const user_service_1 = require("../../services/user/user.service");
 const auth_service_1 = require("../../services/auth/auth.service");
-const createuser_dto_1 = require("../../dtos/user-dtos/createuser.dto");
 const login_dto_1 = require("../../dtos/user-dtos/login.dto");
 const platform_express_1 = require("@nestjs/platform-express");
 const multer_1 = require("multer");
@@ -87,7 +86,7 @@ __decorate([
     common_1.Post('create'),
     __param(0, common_1.Body()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [createuser_dto_1.CreateUserDto]),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], UsersController.prototype, "createUser", null);
 __decorate([

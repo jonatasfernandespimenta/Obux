@@ -87,11 +87,13 @@ const BookDetails = () => {
   const handleSendMessage = useCallback(
     async (user_Id) => {
 
-      await createChat(user_Id, userId);
+      const res = await createChat(user_Id, userId);
+
+      const chatId = res.data.id;
 
       const userData = await getuser(user_Id)
       const user_info = userData.data[0]
-      navigation.navigate('Chat', { user_info });
+      navigation.navigate('Chat', { user_info, chatId });
     },
     [navigation],
   );
