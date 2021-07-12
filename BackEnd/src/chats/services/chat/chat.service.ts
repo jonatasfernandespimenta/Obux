@@ -28,7 +28,10 @@ export class ChatService {
     // Update User2 to add chat. Current User2.chats = []
     // After update -> User2.chats = [{ id: 1 }]
     const res = await this.chatRepository.save(newChat);
-    await this.usersRepository.update(newChat.chattingWith, { chats: [{ id: res.id }] });
+    await this.usersRepository.save({
+      id: newChat.chattingWith, 
+      chats: [{id: res.id}]
+    });
     return res;
   }
 

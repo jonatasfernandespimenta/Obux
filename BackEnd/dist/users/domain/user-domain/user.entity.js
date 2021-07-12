@@ -90,7 +90,7 @@ __decorate([
     __metadata("design:type", Array)
 ], UserEntity.prototype, "books", void 0);
 __decorate([
-    typeorm_1.OneToMany(type => chat_entity_1.ChatEntity, chat => chat.user, { eager: true }),
+    typeorm_1.OneToMany(type => chat_entity_1.ChatEntity, chat => chat.user, { eager: true, cascade: true }),
     __metadata("design:type", Array)
 ], UserEntity.prototype, "chats", void 0);
 __decorate([

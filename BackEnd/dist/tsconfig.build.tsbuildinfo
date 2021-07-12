@@ -3157,7 +3157,7 @@
         "affectsGlobalScope": false
       },
       "../src/users/domain/user-domain/user.entity.ts": {
-        "version": "78262b3a09ce44577410ee80a40b8b7271bf5d86e3a8887b1e51a0b3255f3284",
+        "version": "68117665ba65ee51cb2d9b067430c4809c446a881ce7dacbcef925db3482d22d",
         "signature": "47713e4dbb888e581793887106341e0aadd00d80fc40ac250784142e1c20d378",
         "affectsGlobalScope": false
       },
